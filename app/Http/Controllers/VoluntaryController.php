@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Voluntary;
+use App\voluntary;
 use Illuminate\Http\Request;
 use App\Http\Requests\VoluntaryRequest;
 
@@ -17,7 +17,7 @@ class VoluntaryController extends Controller
      */
     public function index()
     {
-        $voluntaryC = Voluntary::all();
+        $voluntaryC = voluntary::all();
         //dd($voluntaryC);
         return view('voluntary')->with('voluntaryN', $voluntaryC);
     }
@@ -62,26 +62,26 @@ class VoluntaryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Voluntary  $voluntary
+     * @param  \App\voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
     public function show(Voluntary $id)
     {
-        $VoluntaryB = Voluntary::find($id); 
+        $VoluntaryB = voluntary::find($id); 
         return view('Volun.show',compact('VoluntaryB'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Voluntary  $voluntary
+     * @param  \App\voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
     public function edit(Voluntary $id)
     {
      
        
-    $VoluntaryE = Voluntary::find($id);
+    $VoluntaryE = voluntary::find($id);
     return view('Volun.edit', compact('VoluntaryE'));
 
     }
@@ -90,12 +90,12 @@ class VoluntaryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Voluntary  $voluntary
+     * @param  \App\voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Voluntary $id)
     {
-        $VoluntaryU = Voluntary::find($id);
+        $VoluntaryU = voluntary::find($id);
         $VoluntaryU->id = $request->id;
         $VoluntaryU->nombre = $request->nombre;
         $VoluntaryU->apellido1 = $request->apellido1;
@@ -112,13 +112,13 @@ class VoluntaryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Voluntary  $voluntary
+     * @param  \App\voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
     public function destroy(Voluntary $id)
     {
         //try{
-        $VoluntaryE = Voluntary::find($id);
+        $VoluntaryE = voluntary::find($id);
         $VoluntaryE->delete();
         return redirect()->route('Voluntary.index');
         //} //catch ('Exception $e'){
