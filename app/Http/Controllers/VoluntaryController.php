@@ -54,7 +54,6 @@ class VoluntaryController extends Controller
             "Email" =>'required|email|unique:voluntaries',
             "Cantidad" =>'required',
             "Descripcion" =>'required'
-        
         ]);
 
         $VoluntaryN= new voluntary;
