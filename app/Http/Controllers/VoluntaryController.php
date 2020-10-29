@@ -71,7 +71,6 @@ class VoluntaryController extends Controller
         $VoluntaryN->save();
         return redirect()->route('amigoReq');
     }
-
     /**
      * Display the specified resource.
      *
