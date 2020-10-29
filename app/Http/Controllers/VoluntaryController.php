@@ -69,7 +69,7 @@ class VoluntaryController extends Controller
         $VoluntaryN->Descripcion= $request->Descripcion;
 
         $VoluntaryN->save();
-        return redirect()->route('amigoReq')->with('success', 'Se ha registrado un nuevo usuario');
+        return redirect()->route('amigoReq');
     }
 
     /**

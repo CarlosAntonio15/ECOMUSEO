@@ -19,16 +19,6 @@
         <div class="col-md-12">
             <div class="card">
             <div class="container" data-aos="fade-up">
-            
-            @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 
               <div class="row mt-5">
                 <div class="col-sm-8 offset-sm-2">
