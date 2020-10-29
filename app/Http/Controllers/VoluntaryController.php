@@ -54,7 +54,6 @@ class VoluntaryController extends Controller
             "Email" =>'required|email|unique:voluntaries',
             "Cantidad" =>'required',
             "Descripcion" =>'required'
-        
         ]);
 
         $VoluntaryN= new voluntary;
@@ -72,7 +71,6 @@ class VoluntaryController extends Controller
         $VoluntaryN->save();
         return redirect()->route('amigoReq');
     }
-
     /**
      * Display the specified resource.
      *
