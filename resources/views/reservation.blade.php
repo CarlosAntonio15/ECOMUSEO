@@ -31,7 +31,6 @@
                                 <th >Cantidad_Adultos</th>
                                 <th >Cantidad_niños</th>
                                 <th >Tipo_Tour</th>
-                                <th >Precio</th>
                                 <th >Correo</th>
                                 <th >Telefono</th>
 
@@ -50,7 +49,6 @@
                                 <td>{{ $reservation->adultQuantity }}</td>
                                 <td>{{ $reservation->childrenQuantity }}</td>
                                 <td>{{ $reservation->tourType }}</td>
-                                <td>{{ $reservation->tourPrice }}</td>
                                 <td>{{ $reservation->email }}</td>
                                 <td>{{ $reservation->phone }}</td>
 

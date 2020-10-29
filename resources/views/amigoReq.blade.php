@@ -15,12 +15,14 @@
   <link href="css/style.css" rel="stylesheet">
 
 <?php $page = 'amigo'; ?>
+<br><br><br>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-14">
                 <div class="card">
                     <div class="container" data-aos="fade-up">
-
+  
+                    
                         <div class="card text-center">
                             <div class="card-header">
                                 Voluntariado
@@ -37,15 +39,28 @@
 
                     </div>
                     <br>
-                    <div class="container" data-aos="fade-up">
+                  
+                        <div class="container" data-aos="fade-up">
+
                         <div class="card text-center">
-                        <br>
-                        <div class="icon-box">
-                            <div class="col-lg-6 col-md-9 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                                <img src="img/voluntariado.jpeg" class="rounded float-right img-fluid col-md-12" alt="...">
-                                <img src="img/voluntariogrupo.jpeg" class="rounded float-left img-fluid col-md-12 col-md-offset-12"alt="..." >
-                            </div>
-                            <br>
+                                <br>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                                            <div class="icon-box">
+                                                <img src="img/voluntariado.jpeg" class="rounded float-right img-fluid" alt="...">
+                                                <a href="img/voluntariado.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Voluntariado"><i class="bx bx-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="col-lg-6 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                                            <div class="icon-box">
+                                                <img src="img/voluntariogrupo.jpeg" class="rounded float-right img-fluid" alt="...">
+                                                <a href="img/voluntariogrupo.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Voluntariado"><i class="bx bx-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                <br>
+
                             </div>
                             <div class="card-footer text-muted"></div>
                         </div>

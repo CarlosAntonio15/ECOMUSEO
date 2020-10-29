@@ -45,6 +45,29 @@
                             </div>
                             <br>
                             <div>
+                                <h5>¿Con qué cuenta el ecomuseo?</h5>
+                                <p>
+                                El Ecomuseo de las Minas de Abangares cuenta con una exhibición al aire libre de maquinaria minera,
+                                un salón con viejas fotografías y objetos mineros como crisoles, carburas, poleas, un horno, entre otras.
+                                </p>
+                                <p>
+                                Además se ven ruinas de piedra labrada de los cimientos del antiguo Edificio de los Mazos, que molieron 100
+                                toneladas de materias aurífero cada día durante los 30 añños que durara la explotación minera. Semejan ruinas
+                                arqueológicas indígenas imponentes, encontramos también un dinamo o peldon que se utilizó en la planta 
+                                hidroeléctrica, una pala de aire o cargador de vagones y una de las máquinas de ferrocarril a vapor llamada
+                                la Tulita, en honor de la esposa del administrador de las minas en 1904, Mr.Hito, máquina acarreaba el material
+                                minero a los Mazos desde las minas cercanas.
+                                </p>
+                            </div>
+                            <br>
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                            <img src="img/portfolio/Ecotrail.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                              <a href="img/portfolio/Ecotrail.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title=""><i class="bx bx-plus"></i></a>
+                            </div>
+                          </div>
+
+                            <div>
                                 <h5>Objetivo Principal:</h5>
                                 <p>
                                 El Ecomuseo de las Minas de Abangares tiene como objetivo principal rescatar,
@@ -113,9 +136,31 @@
                             Lajas.
                             </p>
                         </div>
+
+                        <div>
+                      <br>
+                        <h5>División administrativa:</h5>
+                            <p>
+                            El contexto geográfico y político de Abangares se puede definir
+                            primeramente por la División Administrativa la cual se encuentra conformada por cuatro
+                            distritos, es de gran utilidad investigativa debido a la caracterización del territorio, la cual se
+                            debe implementar con el fin de fomentar una mejor dinamización y poder conocer los
+                            diversos públicos meta que se debe orientar el Ecomuseo.
+                            </p>
+                            <p>Políticamente el cantón de Abangares está dividido en cuatro distritos:</p>
+                            <p>1) Distrito Primero de Las Juntas</p>
+                            <p>2) Distrito Segundo La Sierra</p>
+                            <p>3) Distrito Tercero San Juan</p>
+                            <p>4) Distrito Cuarto de Colorado</p>
+                        </div>
+
+
                       <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
                           <p></p>
-                          <img src="img/avistamiento.jpg" class="rounded float-righ img-fluid" alt="...">
+                          <img src="img/Locomotora.jpeg" class="rounded float-righ img-fluid" alt="...">
+                          <div class="portfolio-info">
+                              <a href="img/Locomotora.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Locomotora"><i class="bx bx-plus"></i></a>
+                          </div>
 
                         </div>
                       </div>

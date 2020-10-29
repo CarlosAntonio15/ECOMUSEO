@@ -151,7 +151,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #topbar .social-links a {
-  color: rgba(189, 187, 74, 0.6);
+  color: rgb(235, 232, 228);
   padding-left: 15px;
   display: inline-block;
   line-height: 1px;
@@ -159,7 +159,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #topbar .social-links a:hover {
-  color: #fff;
+  color: rgb(235, 232, 228);
 }
 
 /*--------------------------------------------------------------
@@ -369,7 +369,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 15px;
   z-index: 9999;
   overflow-y: auto;
-  background:  #b0d4aa;   #e3f6d2
+  background:  #b0d4aa; 
   transition: ece7ase-in-out 0.2s;
   opacity: 0;
   visibility: hidden;

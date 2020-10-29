@@ -19,6 +19,15 @@
         <div class="col-md-12">
             <div class="card">
             <div class="container" data-aos="fade-up">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
               <div class="row mt-5">
                 <div class="col-sm-8 offset-sm-2">
@@ -91,7 +100,7 @@
 
                           <input type="radio" name="reservationHour" value="8:00 am"> 8:00 AM
                           <input type="radio" name="reservationHour" value="10:00 am"> 10:00 AM 
-                          <input type="radio" name="reservationHour" value="2:00 am"> 2:00 AM 
+                          <input type="radio" name="reservationHour" value="2:00 am"> 2:00 PM 
 
                         </div>
                     </div>
@@ -127,18 +136,12 @@
                                 <br/>
                                 <input type="tel" name = "phone" id = "phone" class="form-control" required>
                             </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="tourPrice">Precio:</label>
-                                <br/>
-                                <input type="text" name = "tourPrice" id = "tourPrice" class="form-control" >
-                            </div>
-                        </div>                        
+                        </div>                    
                 </div>
 
-                    <button type = "submit" class = "btn btn-primary">ENVIAR</button>
+                    <button type = "submit" class = "btn btn-success">ENVIAR</button>
+                    <input type="button" class = "btn btn-secondary" onclick="history.back()" name="Atrás" value="Atrás">
+                   
                   </form>
                 </div>
               </div>

@@ -19,6 +19,15 @@
         <div class="col-md-12">
             <div class="card">
             <div class="container" data-aos="fade-up">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
             <h2 style="color: rgba(3, 255, 16, 0.664)" align="center">Realizar Donaciones </h2>
 
               <div class="row mt-5">
@@ -76,7 +85,7 @@
 
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label for="phone">Telefono de contacto:</label>
+                          <label for="phone">Teléfono de contacto:</label>
                           <br/>
                           <input type="tel" name = "phone" id = "phone" class="form-control" required>
                         </div>
@@ -88,25 +97,24 @@
                     <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
-                            <label for="mail">Correo electronico (Opcional):</label>
+                            <label for="mail">Correo electrónico (Opcional):</label>
                             <br/>
                             <input type="email" name = "mail" id = "mail" class="form-control" >
                           </div>
                         </div>
+
                         <div class="col-md-8">
                           <div class="form-group">
-                            <label for="description">Descripcion:</label>
+                            <label for="description">Descripción:</label>
                             <br/>
-                            
-                            <textarea name="description" id="description"   required >
-
-                            </textarea>
+                             <input type="description" name = "description" id = "description" class="form-control" required>
                           </div>
                         </div>
                     </div>
 
                    
                     <button type = "submit" class = "btn btn-success">Guardar</button>
+                    <input type="button" class = "btn btn-secondary" onclick="history.back()" name="Atrás" value="Atrás">
                   </form>
                 </div>
               </div>
