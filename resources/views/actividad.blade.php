@@ -65,7 +65,7 @@
                   <p></p>
                     <h4>Tours y visitas guiadas</h4>
                     <img src="img/tour.jpg" class="rounded float-left img-fluid" alt="...">
-                    <p>Se brinda el servicio de guias(voluntarios) de cada uno de los atractivos que ofrece el Ecomuseo
+                    <p>Se brinda el servicio de guias de cada uno de los atractivos que ofrece el Ecomuseo
                       de Abangares.
                     </p>
                     <a href="img/tour.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Tours y visitas guiadas"><i class="bx bx-plus"></i></a>
