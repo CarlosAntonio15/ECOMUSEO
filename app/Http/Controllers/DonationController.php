@@ -42,6 +42,18 @@ class DonationController extends Controller
      */
     public function store(DonationRequest $request)
     {
+
+        $request->validate([
+            "name" => 'required|string|max:100',
+            "lastName" => 'required|max:200',
+            "donationType" =>'required|max:150',
+            "quantity" =>'required',
+            "description" =>'required|max:40',
+            "currentDate" =>'required',
+            "phone" =>'required|unique:donation',
+            "mail" =>'required|email|unique:donation'
+        ]);
+
         $DonationN= new donation;
         //$VoluntaryN->Id= $request->id;
         $DonationN->name= $request->name;

@@ -23,7 +23,6 @@ class CreateReservationTable extends Migration
             $table->integer ('adultQuantity');
             $table->integer ('childrenQuantity');
             $table->string ('tourType');
-            $table->integer ('tourPrice');
             $table->string ('email');
             $table->string ('phone');
 

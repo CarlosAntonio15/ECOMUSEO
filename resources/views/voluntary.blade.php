@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @extends('layouts.app')
 @section('content')
+
     <!-- Vendor CSS Files -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="vendor/icofont/icofont.min.css" rel="stylesheet">

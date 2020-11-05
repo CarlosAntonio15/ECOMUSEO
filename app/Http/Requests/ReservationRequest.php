@@ -33,7 +33,6 @@ class ReservationRequest extends FormRequest
             'adultQuantity'=>'required',
             'childrenQuantity'=>'required',
             'tourType'=>'required',
-            'tourPrice'=>'required', 
             'email'=> 'required',
             'phone'=> 'required'
         ];

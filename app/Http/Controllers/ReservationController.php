@@ -36,6 +36,20 @@ class ReservationController extends Controller
    
     public function store(ReservationRequest $request)
     {
+
+
+        $request->validate([
+            "identification" => 'required|max:100',
+            "name" => 'required|max:150|string',
+            "lastname" =>'required|max:200',
+            "reservationDate" =>'required',
+            "reservationHour" =>'required|max:40',
+            "adultQuantity" =>'required',
+            "tourType" =>'required',
+            "email" =>'required|email|unique:reservations',
+            "phone" =>'required|unique:reservations'
+        ]);
+
         $ReservationN= new reservation;
         //$ReservationN->Id= $request->id;
         $ReservationN->identification= $request->identification;
@@ -46,7 +60,6 @@ class ReservationController extends Controller
         $ReservationN->adultQuantity= $request->adultQuantity;
         $ReservationN->childrenQuantity= $request->childrenQuantity;
         $ReservationN->tourType= $request->tourType;
-        $ReservationN->tourPrice= $request->tourPrice;
         $ReservationN->email= $request->email;
         $ReservationN->phone= $request->phone;
 

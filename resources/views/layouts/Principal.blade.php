@@ -64,7 +64,7 @@
             <li><a href="#portfolio">Galeria</a></li>
             
 
-            <li class="drop-down"><a href="">Formularios</a>
+            <li class="drop-down"><a href="">Cooperar</a>
             <ul>
             <li class="<?php if($page  == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}">Voluntariado</a></li>
             <li class="<?php if($page  == 'realizarDonaciones'){echo 'active';} ?>"> <a href="{{route ('realizarDonaciones')}}">Donaciones</a></li>
@@ -119,11 +119,6 @@
                    <i class="fas fa-cog"></i>Gestión de donaciones</li></a>
                 <form action="" method="POST" class="d-inline">
 
-                <!--<div class="dropdown-divider"></div>
-                <li class="black">
-                  <a href="{{ route ('actividad')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i> Gestión actividades</li></a>
-                <form action="" method="POST" class="d-inline">-->
                 <div class="dropdown-divider"></div>
                 <li class="black">
                   <a href="{{ route ('reservation')}}" class="dropdown-item">
@@ -160,9 +155,10 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <h1>Bienvenidos al <span> Ecomuseo</spa>
+      <h1>
+        Bienvenidos al Ecomuseo
       </h1>
-      <h2>Minas de oro Abangares</h2>
+      <h3>Minas de oro Abangares</h3>
       <div class="d-flex">
         <a href="{{route('nosotros')}}" class="btn-get-started scrollto">Empecemos</a>
         <a href="https://www.youtube.com/watch?v=Uof7jmeYczU" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"> Ver Video <i class="icofont-play-alt-2"></i></a>
@@ -198,90 +194,63 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <img src="img/portfolio/corredorBiologicoMonoAullador.jpeg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Corredor Biologico del mono aullador</h4>
-              <p>Información</p>
-              <a href="img/portfolio/corredorBiologicoMonoAullador.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="img/portfolio/corredorBiologicoMonoAullador.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Corredor Biológico"><i class="bx bx-plus"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <img src="img/portfolio/Ecoantigua.jpeg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
               <a href="img/portfolio/Ecoantigua.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <img src="img/portfolio/EcoBosque.jpeg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
               <a href="img/portfolio/EcoBosque.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <img src="img/portfolio/Ecotrail.jpeg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
               <a href="img/portfolio/Ecotrail.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <img src="img/portfolio/MapaEcomuseo.jpeg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
               <a href="img/portfolio/MapaEcomuseo.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <img src="img/portfolio/TrenEco.jpeg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
               <a href="img/portfolio/TrenEco.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <img src="img/portfolio/EcoSendero.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
               <a href="img/portfolio/EcoSendero.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <img src="img/portfolio/EcoMaquina.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
               <a href="img/portfolio/EcoMaquina.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <img src="img/portfolio/EcoCarreta.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
               <a href="img/portfolio/EcoCarreta.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -372,7 +341,7 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
-    <div class="footer-newsletter">
+   <!-- <div class="footer-newsletter">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6">
@@ -384,7 +353,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 
     <div class="footer-top">
       <div class="container">
@@ -405,10 +374,7 @@
             <h4>Enlaces útiles</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Inicio</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre nosotros</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Servicios</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Termino de servicios</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Politica de privacidad</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="nosotros">Sobre nosotros</a></li>
             </ul>
           </div>
 
@@ -427,11 +393,8 @@
             <h4>Otras redes sociales</h4>
             <p>Siguenos en todas nuestras redes sociales</p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://www.facebook.com/ecomuseominero1991" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/ecomuseoabangares/?hl=es-la" class="instagram"><i class="bx bxl-instagram"></i></a>
             </div>
           </div>
 

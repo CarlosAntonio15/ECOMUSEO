@@ -24,7 +24,7 @@
                 <div class="col-sm-8 offset-sm-2">
                   <form action="{{route('voluntary.store')}}" method = "post">
                   @csrf
-                  <h2 style="color: rgba(14, 90, 20, 0.89)" align="center">Procesar voluntariado: </h2>
+                  <h2 style="color: rgba(14, 90, 20, 0.89)" align="center">Inscripción Voluntariado </h2>
 
 <div class="row">
   <div class="col-md-12">
@@ -39,6 +39,7 @@
         <div class="form-group">
           <label for="Nombre">Nombre completo:</label>
           <input type="text" name = "Nombre" id = "Nombre" class="form-control" required>
+        
         </div>
     </div>
 
@@ -104,11 +105,17 @@
     <div class="form-group">
       <label for="Descripcion">Ingrese el motivo por el cual desea ser parte del voluntariado del Ecomuseo:</label>
       <input type="text" name = "Descripcion" id = "Descripcion" class="form-control" required>
+   
+      
     </div>
   </div>
 </div>
 
+
 <button type = "submit" class = "btn btn-success">Procesar solicitud</button>
+<input type="button" class = "btn btn-secondary" onclick="history.back()" name="Atrás" value="Atrás">
+
+
                   </form>
                 </div>
               </div>

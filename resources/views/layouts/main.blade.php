@@ -62,16 +62,17 @@
             <li class="<?php if($page  == 'actividad'){echo 'active';} ?>"> <a href="{{route ('actividad')}}">Actividades</a></li>
 
             
-            <li class="drop-down"><a href="">Formularios</a>
+            <li class="drop-down"><a href="">Cooperar</a>
             <ul>
             <li class="<?php if($page  == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}">Voluntariado</a></li>
             <li class="<?php if($page  == 'realizarDonaciones'){echo 'active';} ?>"> <a href="{{route ('realizarDonaciones')}}">Donaciones</a></li>
             </ul>
           </li>
-
+        
           <li>
 
-            @if (Auth::guest())
+          
+          <!--  @if (Auth::guest())
           <li  class="dropdown <?php if($page =='login' || $page  =='register' || $page  =='edit' || $page =='home' ){echo 'active';} ?>">
             <a class="nav-link" data-toggle="dropdown" href="#">   Iniciar sesión  <i class="fas fa-caret-down"></i> </a>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -101,17 +102,22 @@
               @endforeach --}}
 
 
-                <div class="dropdown-divider"></div>
+              <div class="dropdown-divider"></div>
                   <li class="black">
                     <a href="{{ route ('voluntary')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i>Mostrar voluntarios</li></a>
+                   <i class="fas fa-cog"></i>Gestión de voluntarios</li></a>
                 <form action="" method="POST" class="d-inline">
 
+                <div class="dropdown-divider"></div>
+                  <li class="black">
+                    <a href="{{ route ('donation')}}" class="dropdown-item">
+                   <i class="fas fa-cog"></i>Gestión de donaciones</li></a>
+                <form action="" method="POST" class="d-inline">
 
                 <div class="dropdown-divider"></div>
                 <li class="black">
-                  <a href="{{ route ('actividad')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i> Mostrar actividades</li></a>
+                  <a href="{{ route ('reservation')}}" class="dropdown-item">
+                   <i class="fas fa-cog"></i> Gestión de reservaciones</li></a>
                 <form action="" method="POST" class="d-inline">
                 @method('PUT')
                 @csrf
@@ -128,7 +134,7 @@
                   </form>
               </ul>
             </li> 
-          @endif
+          @endif-->
         </ul>
       </nav><!-- .nav-menu -->
     </div>

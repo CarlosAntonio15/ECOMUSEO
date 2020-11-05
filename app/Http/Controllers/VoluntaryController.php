@@ -43,6 +43,19 @@ class VoluntaryController extends Controller
      */
     public function store(VoluntaryRequest $request)
     {
+
+        $request->validate([
+            "Nombre" => 'required|string|max:100',
+            "Apellido_1" => 'required|max:150',
+            "Apellido_2" =>'required|max:150',
+            "Edad" =>'required',
+            "Telefono" =>'required|max:40',
+            "Direccion" =>'required',
+            "Email" =>'required|email|unique:voluntaries',
+            "Cantidad" =>'required',
+            "Descripcion" =>'required'
+        ]);
+
         $VoluntaryN= new voluntary;
         //$VoluntaryN->Id= $request->id;
         $VoluntaryN->Nombre= $request->Nombre;
@@ -58,7 +71,6 @@ class VoluntaryController extends Controller
         $VoluntaryN->save();
         return redirect()->route('amigoReq');
     }
-
     /**
      * Display the specified resource.
      *
