@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\VoluntaryController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -61,22 +63,28 @@ Route::get('/voluntario', 'VoluntaryController@index')->name('voluntary');
 Route::get('/voluntario/create','VoluntaryController@create')->name('voluntary.create');
 Route::post('/voluntario/create','VoluntaryController@store')->name('voluntary.store');
 Route::get('/amigoReq', 'PrincipalController@amigoReq')->name('amigoReq');
-Route::get('/voluntario/edit', 'VoluntaryController@edit')->name('voluntary.edit');
-Route::post('/voluntario/edit','VoluntaryController@show')->name('voluntary.show');
-Route::post('/voluntario/update','VoluntaryController@update')->name('voluntary.update');
-Route::get('/voluntario/destroy', 'VoluntaryController@destroy')->name('voluntary.destroy');
+
+Route::get('/voluntario/index', 'VoluntaryController@indexGus')->name('voluntary.index');
+Route::get('/voluntario/createGus','VoluntaryController@createGus')->name('createGus');
+Route::post('/voluntario/createGus','VoluntaryController@storeGus')->name('voluntary.storeGus');
+Route::get('/voluntario/show/{id}', 'VoluntaryController@show')->name('voluntary.show');
+Route::get('/voluntario/edit/{id}', 'VoluntaryController@edit')->name('voluntary.edit');
+Route::put('/voluntario/update/{id}', 'VoluntaryController@update')->name('voluntary.update');
+Route::delete('/voluntario/delete/{id}', 'VoluntaryController@destroy')->name('voluntary.destroy');
+
 
 
 
 //Donaciones
-
 Route::get('/donaciones', 'DonationController@index')->name('donation');
+Route::get('/realizarDonaciones', 'PrincipalController@realizarDonaciones')->name('realizarDonaciones');
+
 Route::get('/donaciones/create','DonationController@create')->name('donation.create');
 Route::post('/donaciones/create','DonationController@store')->name('donation.store');
-Route::get('/realizarDonaciones', 'PrincipalController@realizarDonaciones')->name('realizarDonaciones');
-Route::post('/donaciones/edit','DonationController@show')->name('donation.show');
-Route::post('/donaciones/update','DonationController@update')->name('donation.update');
-Route::get('/donaciones/destroy', 'DonationController@destroy')->name('donation.destroy');
+Route::get('/donaciones/show/{​​​​id}​​​​','DonationController@show')->name('donation.show');
+Route::get('/donaciones/edit/{​​​​id}​​​​','DonationController@edit')->name('donation.edit');
+Route::put('/donaciones/{​​​​id}​​​​','DonationController@update')->name('donation.update');
+Route::delete('/donaciones/delete/{​​​​id}​​​​','DonationController@destroy')->name('donation.destroy');
 
 
 //Reservaciones
@@ -84,14 +92,27 @@ Route::get('/reservaciones', 'ReservationController@index')->name('reservation')
 Route::get('/reservaciones/create','ReservationController@create')->name('reservation.create');
 Route::post('/reservaciones/create','ReservationController@store')->name('reservation.store');
 
+Route::get('/reservaciones/index', 'ReservationController@index')->name('reservation.index');
+Route::get('/reservaciones/show/{id}','ReservationController@show')->name('reservation.show');
+Route::get('/reservaciones/edit/{id}','ReservationController@edit')->name('reservation.edit');
+Route::put('/reservaciones/{​​id}​​','ReservationController@update')->name('reservation.update');
+Route::delete('/reservaciones/delete/{id}', 'ReservationController@destroy')->name('reservation.destroy');
+
+
 
 //Income
 Route::get('/ingresos', 'IncomeController@index')->name('income');
 Route::get('/ingresos/create','IncomeController@create')->name('income.create');
 Route::post('/ingresos/create','IncomeController@store')->name('income.store');
 
+//Roles
+Route::get('/asignarRol', 'UsuarioController@asignarRol')->name('usuario.asignarol');
+Route::get('/showrol/{id}', 'UsuarioController@showrol')->name('usuario.showrol');
+Route::post('/saverol', 'UsuarioController@saveRol')->name('usuario.saverol');
 
+//Administracion
 
+Route::get('/administracion','PrincipalController@administration')->name('administracion');
 
 //SI FUNCIONA
 Route::get('hola', function(){

@@ -1,3 +1,4 @@
+<title>Formulario reservaciones</title>
 @extends('layouts.app')
 @section('title','Create Reservation')
 @section('content')
@@ -29,120 +30,133 @@
     </div>
 @endif
 
-              <div class="row mt-5">
-                <div class="col-sm-8 offset-sm-2">
-                  <form action="{{route('reservation.store')}}" method = "post">
-                    @csrf
-                    <h2 style="color: rgba(3, 255, 16, 0.664)" align="center">Agregar Reservacion: </h2>
 
-                
-                <div class="row">
-                      <div class="col-md-4">
+                    @if(!empty($reservation))
+            {!! Form::model($reservation, ['route' => ['reservation.update', $reservation->id], 'method'=>'put']) !!}
+        @else
+            {!! Form::open(['route' => 'reservation.store', 'method'=>'post']) !!}
+        @endif
+            <div class="row mt-5">
+                <div class="col-sm-8 offset-sm-2">          
+                    <h5 style="color: rgba(14, 90, 20, 0.89)" align="center">Formulario Reservar </h5>
 
+                    <div class="row">
+                        <div class="col-md-4">
                             <div class="form-group">
-                            <label for="identification">Identificación:</label>
-                            <br/>
-                            <input type="text" name = "identification" id = "identification" class="form-control" required>
-                            </div>
-                      </div>
 
-                      <div class="col-md-4">
-                            <div class="form-group">
-                            <label for="name">Nombre:</label>
-                            <br/>
-                            <input type="text" name = "name" id = "name" class="form-control" required>
+                                {!! Form::Label('identification', 'Identificación') !!}
+                                {!! Form::number('identification', null, ['placeholder' => 'Ingresa su Identificación', 'class' => 'form-control' ]) !!}
+                            
                             </div>
-                      </div>
+                        </div>
 
-                      <div class="col-md-4">
+                        <div class="col-md-4">
                             <div class="form-group">
-                            <label for="lastname">Apellidos:</label>
-                            <br/>
-                            <input type="text" name = "lastname" id = "lastname" class="form-control" required>
+                                {!! Form::Label('name', 'Nombre') !!}
+                                {!! Form::text('name', null, ['placeholder' => 'Ingresa su nombre', 'class' => 'form-control' ]) !!}
+                    
                             </div>
-                      </div>
-                </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {!! Form::Label('lastname', 'Apellidos') !!}
+                                {!! Form::text('lastname', null, ['placeholder' => 'Ingresa sus apellidos', 'class' => 'form-control' ]) !!}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                               {!! Form::Label('adultQuantity', 'Cantidad de adultos') !!}
+                                {!! Form::number('adultQuantity', null, ['placeholder' => 'Ingresa la cantidad de adultos', 'class' => 'form-control' ]) !!}
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {!! Form::Label('childrenQuantity', 'Cantidad de niños') !!}
+                                {!! Form::number('childrenQuantity', null, ['placeholder' => 'Ingresa la cantidad de niños', 'class' => 'form-control' ]) !!}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">   
+                        <div class="col-md-4">
+                            <div class="form-group">
+                            <label for="reservationDate"><h5>Fecha a reservar:</h5></label>
+                            <br/>
+                            <input type="date" name = "reservationDate" id = "reservationDate" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8">
+                            <div class="form-group">
+                            <label for="reservationHour"><h5>Hora de reservación:</h5></label>
+                            <br/>
+
+                            <input type="radio" name="reservationHour" value="8:00 am"> 8:00 am
+                            <input type="radio" name="reservationHour" value="10:00 am"> 10:00 am 
+                            <input type="radio" name="reservationHour" value="2:00 am"> 2:00 pm 
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                    <label for="tourType"><h5>Tipo de servicio en el que desea participar:</h5></label>
+                                    <br/>
+
+                                    <input type="radio" name="tourType" value="AvistamientoAves">Senderismo y hiking
+                                    <input type="radio" name="tourType" value="Senderismo">Avistamiento de aves
+                                    <input type="radio" name="tourType" value="MuseoAntiguedades">Museo con exhibición permanente
+                                    <br/>
+                                    <input type="radio" name="tourType" value="AvistamientoAves"> Auditorio de eventos
+                                    <input type="radio" name="tourType" value="Senderismo">Tours guiados
+                                    <input type="radio" name="tourType" value="MuseoAntiguedades">Galería de piezas históricas
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    {!! Form::Label('email', 'Correo electronico') !!}
+                                    {!! Form::text('email', null, ['placeholder' => 'Ingresa un correo electrónico', 'class' => 'form-control' ]) !!}
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    {!! Form::Label('phone', 'Teléfono') !!}
+                                    {!! Form::number('phone', null, ['placeholder' => 'Ingresa su teléfono', 'class' => 'form-control' ]) !!}
+                                </div>
+                            </div>                    
+                    </div>
 
                     
-
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                          <label for="adultQuantity">Cantidad Adultos:</label>
-                          <br/>
-                          <input type="number" min="0"name = "adultQuantity" id = "adultQuantity" class="form-control" required>
-                        </div>
+                    <div class="form-group">
+                        <button type="summit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> {{ !empty($reservation) ? 'Actualizar ' : 'Guardar ' }}
+                        </button>
+                        <a href="{{ route('reservation.index') }}" class="btn btn-secondary btn-sm">
+                            <i class="fas fa-undo"></i> Atras
+                        </a>
                     </div>
-
-                    <div class="col-md-4">
-                        <div class="form-group">
-                          <label for="childrenQuantity">Cantidad Niños:</label>
-                          <br/>
-                          <input type="number" min="0"name = "childrenQuantity" id = "childrenQuantity" class="form-control" required>
-                        </div>
-                    </div>
+                    
+                    <br/>
+               
                 </div>
+            </div>
 
-                <div class="row">   
-                    <div class="col-md-4">
-                        <div class="form-group">
-                          <label for="reservationDate">Fecha a reservar:</label>
-                          <br/>
-                          <input type="date" name = "reservationDate" id = "reservationDate" class="form-control" required>
-                        </div>
-                    </div>
-
-                    <div class="col-md-8">
-                        <div class="form-group">
-                          <label for="reservationHour">Hora de reservación:</label>
-                          <br/>
-
-                          <input type="radio" name="reservationHour" value="8:00 am"> 8:00 AM
-                          <input type="radio" name="reservationHour" value="10:00 am"> 10:00 AM 
-                          <input type="radio" name="reservationHour" value="2:00 am"> 2:00 PM 
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                                <label for="tourType">Tipo de de tour en el que desea participar:</label>
-                                <br/>
-
-                                <input type="radio" name="tourType" value="AvistamientoAves"> Avistamiento de fauna
-                                <input type="radio" name="tourType" value="Senderismo"> Senderismo 
-                                <input type="radio" name="tourType" value="MuseoAntiguedades"> Tour Histórico 
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="email">Correo electronico (Opcional):</label>
-                                <br/>
-                                <input type="email" name = "email" id = "email" class="form-control" >
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="phone">Telefono de contacto:</label>
-                                <br/>
-                                <input type="tel" name = "phone" id = "phone" class="form-control" required>
-                            </div>
-                        </div>                    
-                </div>
-
-                    <button type = "submit" class = "btn btn-success">ENVIAR</button>
-                    <input type="button" class = "btn btn-secondary" onclick="history.back()" name="Atrás" value="Atrás">
-                   
-                  </form>
+        {!! Form::close() !!}
+              
+                      
+<br/>
                 </div>
               </div>
             </div>

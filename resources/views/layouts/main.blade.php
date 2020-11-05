@@ -51,42 +51,43 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="{{route('welcome')}}">Ecomuseo<span>.</span></a></h1>
+      <h1 class="logo mr-auto"><a href="{{route('welcome')}}">Ecomuseo<span></span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-            <li class="<?php if($page =='welcome'){echo 'active';} ?>"> <a href="{{route('welcome')}}">Inicio</a></li>
-            <li class="<?php if($page  == 'nosotros'){echo 'active';} ?>"> <a href="{{route ('nosotros')}}">Sobre nosotros</a></li>
-            <li class="<?php if($page  == 'actividad'){echo 'active';} ?>"> <a href="{{route ('actividad')}}">Actividades</a></li>
+
+            <li class="<?php if($page ?? ''  =='welcome'){echo 'active';} ?>"> <a href="{{route('welcome')}}"><h6>Inicio</h6></a></li>
+            <li class="<?php if($page ?? ''   == 'nosotros'){echo 'active';} ?>"> <a href="{{route ('nosotros')}}"><h6>Sobre nosotros</h6></a></li>
+            <li class="<?php if($page ?? ''   == 'actividad'){echo 'active';} ?>"> <a href="{{route ('actividad')}}"><h6>Actividades</h6></a></li>
 
             
-            <li class="drop-down"><a href="">Cooperar</a>
+            <li class="drop-down"><a href=""><h6>Cooperar</h6></a>
             <ul>
-            <li class="<?php if($page  == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}">Voluntariado</a></li>
-            <li class="<?php if($page  == 'realizarDonaciones'){echo 'active';} ?>"> <a href="{{route ('realizarDonaciones')}}">Donaciones</a></li>
+            <li class="<?php if($page??''   == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}"><h6>Voluntariado</h6></a></li>
+            <li class="<?php if($page??''   == 'realizarDonaciones'){echo 'active';} ?>"> <a href="{{route ('realizarDonaciones')}}"><h6>Donaciones</h6></a></li>
             </ul>
           </li>
         
           <li>
 
           
-          <!--  @if (Auth::guest())
-          <li  class="dropdown <?php if($page =='login' || $page  =='register' || $page  =='edit' || $page =='home' ){echo 'active';} ?>">
+       <!--    @if (Auth::guest())
+          <li  class="dropdown <?php if($page ?? ''  =='login' || $page ?? ''   =='register' || $page ?? ''   =='edit' || $page ?? ''  =='home' ){echo 'active';} ?>">
             <a class="nav-link" data-toggle="dropdown" href="#">   Iniciar sesión  <i class="fas fa-caret-down"></i> </a>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <ul>           
-              <li class=" black <?php if($page  =='login'){echo 'active';} ?>">
+              <li class=" black <?php if($page ?? ''  =='login'){echo 'active';} ?>">
                 <a href="{{ route('login') }}" class="dropdown-item"> <i class="fas fa-user-circle"></i>   Ingresar</a></li>
               <div class="dropdown-divider"></div>
-              <li class=" black <?php if($page  =='register'){echo 'active';} ?>"  >
+              <li class=" black <?php if($page ?? ''  =='register'){echo 'active';} ?>"  >
 
                 <a href="{{route('register')}}" class="dropdown-item"><i class="fas fa-user-plus"></i>  Registrarse</a></li>
             </ul>     
         </li>
           @else
-            <li class="dropdown <?php if($page  =='home'){echo 'active';} ?>">
+            <li class="dropdown <?php if($page ?? ''   =='home'){echo 'active';} ?>">
 
               <a class="nav-link" data-toggle="dropdown" href="#">  {{ Auth::user()->name }} <i class="fas fa-caret-down"></i></a>
               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -99,25 +100,25 @@
 
               {{-- @foreach ($collection as $item)
                   
-              @endforeach --}}
+              @endforeach --}}-->
 
 
               <div class="dropdown-divider"></div>
                   <li class="black">
                     <a href="{{ route ('voluntary')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i>Gestión de voluntarios</li></a>
+                   <i class="fas fa-cog"></i>Voluntarios</li></a>
                 <form action="" method="POST" class="d-inline">
 
                 <div class="dropdown-divider"></div>
                   <li class="black">
                     <a href="{{ route ('donation')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i>Gestión de donaciones</li></a>
+                   <i class="fas fa-cog"></i>Donaciones</li></a>
                 <form action="" method="POST" class="d-inline">
 
                 <div class="dropdown-divider"></div>
                 <li class="black">
                   <a href="{{ route ('reservation')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i> Gestión de reservaciones</li></a>
+                   <i class="fas fa-cog"></i> Reservaciones</li></a>
                 <form action="" method="POST" class="d-inline">
                 @method('PUT')
                 @csrf
@@ -134,7 +135,7 @@
                   </form>
               </ul>
             </li> 
-          @endif-->
+          @endif
         </ul>
       </nav><!-- .nav-menu -->
     </div>

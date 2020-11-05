@@ -1,3 +1,4 @@
+<title>Formulario voluntariado</title>
 @extends('layouts.app')
 @section('title','Create Voluntary')
 @section('content')
@@ -24,12 +25,12 @@
                 <div class="col-sm-8 offset-sm-2">
                   <form action="{{route('voluntary.store')}}" method = "post">
                   @csrf
-                  <h2 style="color: rgba(14, 90, 20, 0.89)" align="center">Inscripción Voluntariado </h2>
+                  <h4 style="color: rgba(14, 90, 20, 0.89)" align="center">Formulario Voluntariado</h4>
 
 <div class="row">
   <div class="col-md-12">
     <div class="form-group">
-      <label for="Nombre">Ingrese los datos que se le sean solicitados para procesar su solicitud..</label>
+      <label for="Nombre"><h5>Ingrese los datos que se le sean solicitados para procesar su solicitud..</h5></label>
     </div>
 </div>
 </div>
@@ -37,7 +38,7 @@
 <div class="row">
     <div class="col-md-4">
         <div class="form-group">
-          <label for="Nombre">Nombre completo:</label>
+          <label for="Nombre"><h5>Nombre completo:</h5></label>
           <input type="text" name = "Nombre" id = "Nombre" class="form-control" required>
         
         </div>
@@ -45,14 +46,14 @@
 
     <div class="col-md-4">
       <div class="form-group">
-        <label for="Apellido_1">Primer Apellido:</label>
+        <label for="Apellido_1"><h5>Primer Apellido:</h5></label>
         <input type="text" name = "Apellido_1" id = "Apellido_1" class="form-control" required>
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="form-group">
-        <label for="Apellido_2">Segundo Apellido:</label>
+        <label for="Apellido_2"><h5>Segundo Apellido:</h5></label>
         <input type="text" name = "Apellido_2" id = "Apellido_2" class="form-control" required>
       </div>
     </div>
@@ -61,24 +62,18 @@
 <div class="row">
   <div class="col-md-4">
     <div class="form-group">
-      <label for="Edad">Edad:</label>
+      <label for="Edad"><h5>Edad:</h5></label>
       <input type="number" min="1"name = "Edad" id = "Edad" class="form-control" required>
     </div>
   </div>
 
   <div class="col-md-4">
     <div class="form-group">
-      <label for="Telefono">Telefono de contacto:</label>
+      <label for="Telefono"><h5>Teléfono de contacto:</h5></label>
       <input type="tel" name = "Telefono" id = "Telefono" class="form-control" required>
     </div>
   </div>
 
-  <div class="col-md-4">
-    <div class="form-group">
-      <label for="Cantidad">Cantidad de voluntarios:</label>
-       <input type="number" min="1"name = "Cantidad" id = "Cantidad" class="form-control" required>
-    </div>
-  </div>
 
 </div>
 
@@ -86,14 +81,14 @@
 <div class="row">
   <div class="col-md-6">
     <div class="form-group">
-      <label for="Direccion">Dirección:</label>
+      <label for="Direccion"><h5>Dirección:</h5></label>
       <input type="text" name = "Direccion" id = "Direccion" class="form-control" required>
     </div>
   </div>
 
   <div class="col-md-6">
     <div class="form-group">
-      <label for="Email">Email:</label>
+      <label for="Email"><h5>Email:</h5></label>
       <input type="text" name = "Email" id = "Email" class="form-control" required>
     </div>
   </div>
@@ -103,7 +98,7 @@
 <div class="row">
   <div class="col-md-12">
     <div class="form-group">
-      <label for="Descripcion">Ingrese el motivo por el cual desea ser parte del voluntariado del Ecomuseo:</label>
+      <label for="Descripcion"><h5>Ingrese la actividad en la que desea ser voluntario:</h5></label>
       <input type="text" name = "Descripcion" id = "Descripcion" class="form-control" required>
    
       
@@ -111,10 +106,11 @@
   </div>
 </div>
 
-
+<div>
 <button type = "submit" class = "btn btn-success">Procesar solicitud</button>
 <input type="button" class = "btn btn-secondary" onclick="history.back()" name="Atrás" value="Atrás">
-
+</div>
+<br/>
 
                   </form>
                 </div>

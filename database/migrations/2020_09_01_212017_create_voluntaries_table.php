@@ -22,7 +22,6 @@ class CreateVoluntariesTable extends Migration
             $table->string('Telefono');
             $table->string('Direccion');
             $table->string('Email');
-            $table->integer('Cantidad');
             $table->string('Descripcion');
             $table->timestamps();
         });

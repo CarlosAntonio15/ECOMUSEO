@@ -32,7 +32,6 @@ class VoluntaryRequest extends FormRequest
             'Telefono'=>'required',
             'Direccion'=>'required',
             'Email'=>'required',
-            'Cantidad'=>'required',
             'Descripcion'=>'required'
         ];
     }
