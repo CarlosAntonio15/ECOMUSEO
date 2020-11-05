@@ -1,3 +1,4 @@
+<title>Hazte amigo del Ecomuseo</title>
 @extends('layouts.main')
 @extends('layouts.app')
 @section('title','Information Voluntary')
@@ -24,17 +25,27 @@
   
                     
                         <div class="card text-center">
-                            <div class="card-header">
+                          <!--  <div class="card-header">
                                 Voluntariado
-                            </div>
+                            </div>-->
                             <div class="card-body">
-                                <h5 class="card-title">Hazte amigo del Ecomuseo</h5>
-                                <p class="card-text">Bienvenido a nuestra página del servicio de voluntariado del Ecomuseo minas de oro de Abangares, acá obtendrás más información sobre nuestra forma de trabajo en los voluntariados.</p>
-
+                            <div class="row">
+                                <h5 class="card-title">¡Hazte Amigo del ECOMUSEO de Abangares!</h5>
+                                <p class="text-justify">La Asociación Junta Administradora del Ecomuseo de Abangares ofrece el
+                                                    programa Amigos del ECOMUSEO de Abangares, mediante el cual toda
+                                                    persona que desee participar de las actividades que se desarrollen y poder gozar
+                                                    de privilegios, promociones y descuentos especiales.
+                                </p>
+                                <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                                            <div class="icon-box">
+                                                <img src="img/amigo.png" class="rounded float-right img-fluid" alt="...">
+                                                <a href="img/voluntariado.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Voluntariado"><i class="bx bx-plus"></i></a>
+                                            </div>
+                                        </div>
                             </div>
-                            <div class="card-footer text-muted">
+                           <!-- <div class="card-footer text-muted">
                                 ...
-                            </div>
+                            </div>-->
                         </div>
 
                     </div>
@@ -70,8 +81,27 @@
                         <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">¿Cómo ser parte de nuestros servicios de voluntariado en Ecomuseo de Abangares?</h5>
-                                    <p class="card-text">Para ser parte de nuestro voluntariado sólo debes de cumplir con los requisitos descritos en este documento y seleccionar el tipo de formulario que desea completar.</p>
+                                    <h5 class="card-title">¿Qué es “El Programa Amigos del ECOMUSEO”, de Asociación Junta
+                                                           Administradora del Ecomuseo de Abangares (AJADEMA)?
+                                                           </h5>
+                                    <p class="text-justify">Es una iniciativa comunal privada, sin ánimo de lucro, creada para apoyar todas
+                                                        las actividades y proyectos del ECOMUSEO, así como la conservación y el
+                                                        crecimiento de sus piezas y atractivos patrimoniales, representadas en las
+                                                        estaciones interpretativas y colecciones que se constituyen en una parte
+                                                        significativa de la memoria colectiva de la identidad abangareña.
+                                                        <br/>
+                                                        Al igual que en otras Organizaciones de Amigos, programa una serie de
+                                                        actividades tales como presentaciones culturales, seminarios, conferencias,
+                                                        exposiciones fotográficas, emprendedurismo, artesanía, turismo, música,
+                                                        ambiente, actividades deportivas, homenaje a ciudadanos visitas guiadas, talleres,
+                                                        promoción literaria, afiches, postales y objetos de arte que se pueden adquirir en
+                                                        el ECOMUSEO.
+                                                        <br/>
+                                                        Al afiliarse como Amigo del ECOMUSEO de Abangares, usted empezará a formar
+                                                        parte de este grupo especial de personas que conforman la Asociación y quienes
+                                                        apoyan los programas y proyectos del ECOMUSEO y a su vez, gozan de
+                                                        privilegios y descuentos especiales.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +109,7 @@
                             <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Requisitos para ser voluntario</h5>
-                                <p class="card-text">
+                                <p class="text-justify">
                                     1-	Ser mayor de edad para inscribirse en nuestro servicio de voluntariado.<br>
                                     2-	Si es menor de edad deberá inscribirlo una persona adulta encargado.<br>
                                     3-	Contar con transporte para asistir a nuestro complejo turístico ya que no se cuenta con medios suficientes para brindar dicho servicio.<br>
@@ -95,7 +125,7 @@
 
                 </div>
             </div>
-        </div>
+      </div>
     </div>
 
   <!-- Vendor JS Files -->

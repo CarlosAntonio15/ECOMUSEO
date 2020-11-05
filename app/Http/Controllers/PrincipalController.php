@@ -59,5 +59,13 @@ class PrincipalController extends Controller
     {
         return view('donation');
     }
+    public function roles()
+    {
+        return view('roles.asig');
+    }
+    public function administration()
+    {
+        return view('layouts.administration');
+    }
 
 }

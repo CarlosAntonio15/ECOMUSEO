@@ -1,3 +1,4 @@
+<title>Formulario donaciones</title>
 @extends('layouts.app')
 @section('title','Create Donation')
 @section('content')
@@ -28,7 +29,8 @@
         </ul>
     </div>
 @endif
-            <h2 style="color: rgba(3, 255, 16, 0.664)" align="center">Realizar Donaciones </h2>
+<br/><br/>
+            <h5 style="color: rgba(14, 90, 20, 0.89)" align="center">Formulario donaciones </h5>
 
               <div class="row mt-5">
                 <div class="col-sm-8 offset-sm-2">
@@ -37,7 +39,7 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="name">Nombre donador:</label>
+                          <label for="name"><h5>Nombre donador:</h5></label>
                           <br/>
                           <input type="text" name = "name" id = "name" class="form-control" required>
                         </div>
@@ -45,7 +47,7 @@
 
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="lastName">Apellidos:</label>
+                          <label for="lastName"><h5>Apellidos:</h5></label>
                           <br/>
                           <input type="text" name = "lastName" id = "lastName" class="form-control" required>
                         </div>
@@ -55,21 +57,21 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label for="donationType">Tipo de donación:</label>
+                          <label for="donationType"><h5>Tipo de donación:</h5></label>
                           <br/>
-
-                          <input type="radio" name="donationType" value="Dinero"> Contribucion Monetaria 
-                          <input type="radio" name="donationType" value="Material"> Material 
-                          <input type="radio" name="donationType" value="Alimento"> Alimento 
-
+                          <input type="radio" name="donationType" value="Dinero"> <h5>Contribución monetaria</h5> 
+                          <input type="radio" name="donationType" value="Material"> <h5>Material</h5> 
+                          <input type="radio" name="donationType" value="Alimento"> <h5>Alimento</h5> 
                         </div>
                       </div>
                     </div>
 
+                    <br/>
+
                     <div class="row">
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label for="quantity">Cantidad:</label>
+                          <label for="quantity"><h5>Cantidad:</h5></label>
                           <br/>
                           <input type="number" min="1"name = "quantity" id = "quantity" class="form-control" required>
                         </div>
@@ -77,7 +79,7 @@
 
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label for="currentDate">Fecha:</label>
+                          <label for="currentDate"><h5>Fecha:</h5></label>
                           <br/>
                           <input type="date" name = "currentDate" id = "currentDate" class="form-control" required>
                         </div>
@@ -85,7 +87,7 @@
 
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label for="phone">Teléfono de contacto:</label>
+                          <label for="phone"><h5>Teléfono de contacto:</h5></label>
                           <br/>
                           <input type="tel" name = "phone" id = "phone" class="form-control" required>
                         </div>
@@ -97,7 +99,7 @@
                     <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
-                            <label for="mail">Correo electrónico (Opcional):</label>
+                            <label for="mail"><h5>Correo electrónico:</h5></label>
                             <br/>
                             <input type="email" name = "mail" id = "mail" class="form-control" >
                           </div>
@@ -105,16 +107,23 @@
 
                         <div class="col-md-8">
                           <div class="form-group">
-                            <label for="description">Descripción:</label>
+                            <label for="description"><h5>Descripción:</h5></label>
                             <br/>
                              <input type="description" name = "description" id = "description" class="form-control" required>
                           </div>
                         </div>
                     </div>
 
-                   
+                <div>
                     <button type = "submit" class = "btn btn-success">Guardar</button>
                     <input type="button" class = "btn btn-secondary" onclick="history.back()" name="Atrás" value="Atrás">
+                </div>
+
+                <br/>
+
+
+          
+
                   </form>
                 </div>
               </div>

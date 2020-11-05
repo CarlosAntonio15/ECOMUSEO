@@ -14,7 +14,6 @@ class voluntary extends Model
         'Telefono',
         'Direccion', 
         'Email',
-        'Cantidad',
         'Descripcion',
         
     ]; 

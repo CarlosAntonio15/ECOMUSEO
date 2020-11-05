@@ -21,6 +21,8 @@
     <link href="vendor/venobox/venobox.css" rel="stylesheet">
     <link href="vendor/aos/aos.css" rel="stylesheet">
 
+    <!--iconos-->
+    <script src="https://kit.fontawesome.com/cb026a7b0d.js" crossorigin="anonymous"></script>
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

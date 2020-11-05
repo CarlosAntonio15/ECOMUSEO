@@ -35,7 +35,7 @@
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i> <a href="mailto:ecoavans@gmail.com">ecoavans@gmail.com</a>
+        <i class="icofont-envelope"></i> <a href="mailto:ecoavans@gmail.com">ecomuseominadeoroabangares@gmail.com</a>
         <i class="icofont-phone"></i> +506 2662 0004
       </div>
       <div class="social-links">
@@ -58,36 +58,35 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-            <li class="<?php if($page =='welcome'){echo 'active';} ?>"> <a href="{{route('welcome')}}">Inicio</a></li>
-            <li class="<?php if($page  == 'nosotros'){echo 'active';} ?>"> <a href="{{route ('nosotros')}}">Sobre nosotros</a></li>
-            <li class="<?php if($page  == 'actividad'){echo 'active';} ?>"> <a href="{{route ('actividad')}}">Actividades</a></li>
-            <li><a href="#portfolio">Galeria</a></li>
+            <li class="<?php if($page =='welcome'){echo 'active';} ?>"> <a href="{{route('welcome')}}"><h6>Inicio</h6></a></li>
+            <li class="<?php if($page  == 'nosotros'){echo 'active';} ?>"> <a href="{{route ('nosotros')}}"><h6>Sobre nosotros</h6></a></li>
+            <li class="<?php if($page  == 'actividad'){echo 'active';} ?>"> <a href="{{route ('actividad')}}"><h6>Actividades</h6></a></li>
+            <li><a href="#portfolio"><h6>Galería</h6></a></li>
             
-
-            <li class="drop-down"><a href="">Cooperar</a>
+            <li class="drop-down"><a href=""><h6>Cooperar</h6></a>
             <ul>
-            <li class="<?php if($page  == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}">Voluntariado</a></li>
-            <li class="<?php if($page  == 'realizarDonaciones'){echo 'active';} ?>"> <a href="{{route ('realizarDonaciones')}}">Donaciones</a></li>
+            <li class="<?php if($page  == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}"><h6>Voluntariado</h6></a></li>
+            <li class="<?php if($page  == 'realizarDonaciones'){echo 'active';} ?>"> <a href="{{route ('realizarDonaciones')}}"><h6>Donaciones</h6></a></li>
             </ul>
           </li>
 
            
-          <li><a href="#contact">Contactos</a></li>
+          <li><a href="#contact"><h6>Contactos</h6></a></li>
 
           <li>
   
 
             @if (Auth::guest())
           <li  class="dropdown <?php if($page =='login' || $page  =='register' || $page  =='edit' || $page =='home' ){echo 'active';} ?>">
-            <a class="nav-link" data-toggle="dropdown" href="#">   Iniciar sesión  <i class="fas fa-caret-down"></i> </a>
+            <a class="nav-link" data-toggle="dropdown" href="#"> <h6>  Iniciar sesión</h6>  <i class="fas fa-caret-down"></i> </a>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <ul>           
               <li class=" black <?php if($page  =='login'){echo 'active';} ?>">
-                <a href="{{ route('login') }}" class="dropdown-item"> <i class="fas fa-user-circle"></i>   Ingresar</a></li>
+                <a href="{{ route('login') }}" class="dropdown-item"> <i class="fas fa-user-circle"></i> <h6>  Ingresar</h6></a></li>
               <div class="dropdown-divider"></div>
               <li class=" black <?php if($page  =='register'){echo 'active';} ?>"  >
 
-                <a href="{{route('register')}}" class="dropdown-item"><i class="fas fa-user-plus"></i>  Registrarse</a></li>
+                <a href="{{route('register')}}" class="dropdown-item"><i class="fas fa-user-plus"></i><h6>  Registrarse</h6></a></li>
             </ul>     
         </li>
           @else
@@ -106,23 +105,28 @@
                   
               @endforeach --}}
 
+              <div class="dropdown-divider"></div>
+                  <li class="black">
+                    <a href="{{ url ('administracion')}}" class="dropdown-item">
+                   <i class="fas fa-cog"></i>Administración</li></a>
+                <form action="" method="POST" class="d-inline">
 
-                <div class="dropdown-divider"></div>
+              <!--  <div class="dropdown-divider"></div>
                   <li class="black">
                     <a href="{{ route ('voluntary')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i>Gestión de voluntarios</li></a>
+                   <i class="fas fa-cog"></i>Voluntarios</li></a>
                 <form action="" method="POST" class="d-inline">
 
                 <div class="dropdown-divider"></div>
                   <li class="black">
                     <a href="{{ route ('donation')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i>Gestión de donaciones</li></a>
+                   <i class="fas fa-cog"></i>Donaciones</li></a>
                 <form action="" method="POST" class="d-inline">
 
                 <div class="dropdown-divider"></div>
                 <li class="black">
                   <a href="{{ route ('reservation')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i> Gestión de reservaciones</li></a>
+                   <i class="fas fa-cog"></i>Reservaciones</li></a>-->
                 <form action="" method="POST" class="d-inline">
                 @method('PUT')
                 @csrf
@@ -155,36 +159,87 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <h1>
-        Bienvenidos al Ecomuseo
+      <br/><br/><br/><br/><br/><br/><br/><br/>
+     <!--<h1>
+        Bienvenidos al ecomuseo
       </h1>
-      <h3>Minas de oro Abangares</h3>
+      <h1>
+        minas de oro Abangares
+      </h1>-->
+      <br/><br/><br/><br/><br/>
       <div class="d-flex">
         <a href="{{route('nosotros')}}" class="btn-get-started scrollto">Empecemos</a>
-        <a href="https://www.youtube.com/watch?v=Uof7jmeYczU" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"> Ver Video <i class="icofont-play-alt-2"></i></a>
+        <a href="https://youtu.be/jYan7RMA-Ck" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"><h5>Ver vídeo</h5><i class="icofont-play-alt-2"></i></a>
       </div>
     </div>
   </section><!-- End Hero -->
 
   <main id="main">
 
-<!-- ======= portfolio Section ======= -->
+
+  <!--Nosotros-->
+  <section id="about" class="about section-bg">
+  <div class="container" data-aos="fade-up">
+  <div class="section-title">
+                       <!-- <h2>Sobre Nosotros</h2>-->
+                        <h3>Descubre más sobre nosotros</h3>
+                        <!--<p>DISPONIBLE PARA AGREGAR INFORMACION1</p>-->
+                      </div>
+                      <div>
+                                <h5>¿Quiénes somos?</h5>
+                                <p class="text-justify">
+                                El Ecomuseo de las Minas de Abangares se fundó en 1991, y se encuentra localizado
+                                precisamente donde existió la planta de procesamiento de oro, rescatando así edificaciones y
+                                maquinaria que se utilizó en la época de la “fiebre del oro”. Además, posee gran diversidad
+                                que albergan 38 hectáreas del Ecomuseo, a su vez impresionantes atractivos históricos que
+                                se encuentran en él; como evidencia del desarrollo que hubo durante el periodo de
+                                industrialización de la actividad minera de Abangares. Aunque en años anteriores, el
+                                Ecomuseo había caído en el abandono; la situación se revirtió gracias a la colaboración de
+                                las Municipalidad de Abangares, junto con el trabajo y esfuerzo de La Junta Administradora
+                                del Ecomuseo y de las Universidades Públicas de la Región.
+                                </p>
+                            </div>
+                            <br>
+                              
+                            <div>
+                                <h5>Misión:</h5>
+                                <p class="text-justify">
+                                Somos un espacio de protección y resguardo del patrimonio histórico-cultural minero
+                              de Costa Rica donde se fortalece la economía e identidad del cantón de Abangares.
+                                </p>
+                            </div>
+                            <br>
+                            <!--<i class="bx bx-images"></i>-->
+                              <div>
+                                <h5>Visión:</h5>
+                                <p class="text-justify">Ser el motor socioeconómico y cultural del cantón de Abangares, una organización
+                                  autosustentable que promueve el turismo histórico-cultural de Guanacaste a nivel nacional e
+                                  internacional, por medio de la excelencia y la mejora continua.</p>
+                                  <a href="{{route ('nosotros')}}" class="btn btn-primary" >Ver más</a>
+                              </div>
+                              </div>
+                              <br/>
+
+
+                          
+  <!-- ======= portfolio Section ======= -->
   <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Galeria</h2>
-          <h3>Consulte nuestra galeria</h3>
-          <p> Atractivos del Ecomuseo mina de oro de Abangares </p>
+          <h3>Consulte nuestra galería</h3>
+          <p>
+            Atractivos del ecomuseo mina de oro Abangares
+          </p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100"> 
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              <li data-filter="*" class="filter-active">Todas</li>
+              <li data-filter=".filter-app">Info</li>
+              <li data-filter=".filter-card">Recorrido</li>
+              <li data-filter=".filter-web">Historia</li>
             </ul>
           </div>
         </div>
@@ -219,17 +274,19 @@
             </div>
           </div>
 
+
+
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="img/portfolio/MapaEcomuseo.jpeg" class="img-fluid" alt="">
+            <img src="img/portfolio/TrenEco.jpeg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <a href="img/portfolio/MapaEcomuseo.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="img/portfolio/TrenEco.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="img/portfolio/TrenEco.jpeg" class="img-fluid" alt="">
+            <img src="img/portfolio/MapaEcomuseo.jpeg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <a href="img/portfolio/TrenEco.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+              <a href="img/portfolio/MapaEcomuseo.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
             </div>
           </div>
 
@@ -261,13 +318,13 @@
 
 
   <!-- ======= Contact Section ======= -->
+
   <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
+  <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Contactos</h2>
-          <h3><span>Contactenos</span></h3>
-          <p> Con gusto antenderemos tus consultas </p>
+          <h3><span>Contáctenos</span></h3>
+          <p> Con gusto antenderemos sus consultas </p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -283,14 +340,14 @@
             <div class="info-box  mb-4">
               <i class="bx bx-envelope"></i>
               <h3>Email</h3>
-              <p>ecoavans@gmail.com</p>
+              <p>ecomuseominadeoroabangares@gmail.com</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6">
             <div class="info-box  mb-4">
               <i class="bx bx-phone-call"></i>
-              <h3>Contactanos</h3>
+              <h3>Contáctanos</h3>
               <p>+506 2662 0004</p>
             </div>
           </div>
@@ -306,7 +363,7 @@
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="col form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Nombre Completo" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Nombre completo" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                   <div class="validate"></div>
                 </div>
                 <div class="col form-group">
@@ -325,9 +382,9 @@
               <div class="mb-3">
                 <div class="loading">Cargando</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Su mensage se ha enviado. Gracias!</div>
+                <div class="sent-message">Su mensaje se ha enviado. Gracias!</div>
               </div>
-              <div class="text-center"><button type="submit">Enviar Mensage</button></div>
+              <div class="text-center"><button type="submit">Enviar mensaje</button></div>
             </form>
           </div>
 
@@ -360,13 +417,13 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Ecomuseo de las minas de Abangares<span>.</span></h3>
+            <h4>Ecomuseo de las minas de Abangares</h4>
             <p>
               Ubicación <br>
               La Sierra, Abangares<br>
               Guanacaste, Costa Rica <br><br>
               <strong>Telefono:</strong>+506 2662 0004<br>
-              <strong>Email:</strong> ecoavans@gmail.com<br>
+              <strong>Email:</strong>ecomuseominadeoroabangares@gmail.com<br>
             </p>
           </div>
 
@@ -378,16 +435,6 @@
             </ul>
           </div>
 
- <!--         <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div> -->
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Otras redes sociales</h4>
@@ -397,7 +444,17 @@
               <a href="https://www.instagram.com/ecomuseoabangares/?hl=es-la" class="instagram"><i class="bx bxl-instagram"></i></a>
             </div>
           </div>
-
+          
+        <!-- <div class="col-lg-12 col-md-12 footer-links">
+          <div class="row">
+                <div class="col-lg-20 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon-box">
+                        <img src="img/teesperamos.jpeg" class="rounded float-right img-fluid" alt="...">
+                    </div>
+                </div>
+            </div>   
+            </div>-->
+        <br>
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
+<title>Login</title>
+<div style="background-image: url('img/ecomuseo-minero.jpg'); " > 
 @extends('layouts.app')
 
 @section('content')
@@ -13,7 +15,7 @@
     <!-- Template Main CSS File -->
     <link href="css/style.css" rel="stylesheet">
 
-
+<br/><br/><br/><br/><br/><br/>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -75,7 +77,9 @@
                                         {{ __('¿Olvidaste tu contraseña?') }}
                                     </a>
                                 @endif
+                                
                             </div>
+                            
                         </div>
                     </form>
                 </div>
@@ -83,7 +87,8 @@
         </div>
     </div>
 </div>
-
+</div>
+<br/><br/><br/><br/><br/>
 <!-- Vendor JS Files -->
 <script src="vendor/jquery/jquery.min.js" asp-append-version="true"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" asp-append-version="true"></script>

@@ -1,3 +1,4 @@
+<title>Realizar donaciones</title>
 @extends('layouts.main')
 @extends('layouts.app')
 @section('title','Information Donation')
@@ -23,17 +24,17 @@
                     <div class="container" data-aos="fade-up">
 
                         <div class="card text-center">
-                            <div class="card-header">
+                            <!--<div class="card-header">
                                 Donaciones
-                            </div>
+                            </div>-->
                             <div class="card-body">
                                 <h5 class="card-title">Realizando donaciones a Ecomuseo de Abangares</h5>
-                                <p class="card-text">Bienvenido a nuestra página de donaciones del Ecomuseo minas de oro de Abangares, acá obtendrás más información sobre las diferentes formas de realizar una donación a nuestro complejo turístico.</p>
+                                <p class="text-justify">Bienvenido a nuestra página de donaciones del Ecomuseo minas de oro de Abangares, acá obtendrás más información sobre las diferentes formas de realizar una donación a nuestro complejo turístico.</p>
 
                             </div>
-                            <div class="card-footer text-muted">
+                           <!-- <div class="card-footer text-muted">
                                 ...
-                            </div>
+                            </div>-->
                         </div>
 
                     </div>
@@ -64,8 +65,10 @@
                         <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">¿Cómo ser parte de nuestros servicios de voluntariado en Ecomuseo de Abangares?</h5>
-                                    <p class="card-text">...........</p>
+                                    <h5 class="card-title">¿Cómo realizar donaciones al Ecomuseo de Abangares?</h5>
+                                    <p class="text-justify">Las donaciones las podrás realizar por medio de la plataforma web, si es monetaria mediante la cuenta
+                                                        y si es tipo material o alimentos, deberás asistir al ecomuseo y realizar la entrega personalmente.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -73,7 +76,7 @@
                             <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Tipo de donaciones</h5>
-                                <p class="card-text">
+                                <p class="text-justify">
                                 Se cuenta con diversos tipos de donaciones, entre ellas tenemos las siguientes:<br>
                                     1-	Monetaria (Por medio de esta página o presencial)<br>
                                     2-	Material (Materiales de construcción, entre otras…)<br>

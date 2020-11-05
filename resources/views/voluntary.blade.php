@@ -1,3 +1,5 @@
+<title>Formulario voluntario</title>
+@if( Auth::user()->rol==1 or Auth::user()->rol==2)
 @extends('layouts.main')
 @extends('layouts.app')
 @section('content')
@@ -31,7 +33,6 @@
                                 <th >Teléfono</th>
                                 <th >Dirección</th>
                                 <th >Email</th>
-                                <th >Cantidad</th>
                                 <th >Descripción</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
@@ -46,15 +47,12 @@
                                 <td>{{ $voluntary->Telefono }}</td>
                                 <td>{{ $voluntary->Direccion }}</td>
                                 <td>{{ $voluntary->Email }}</td>
-                                <td>{{ $voluntary->Cantidad }}</td>
                                 <td>{{ $voluntary->Descripcion }}</td>
                                 
                                
                              
-                                <td> 
-                              
+                                <td>   
                                     <a href="{​​{​​ route('voluntary.show', $Voluntary->id) }​​}​​" class="btn btn-success">Ver</a>
-                                 
                                 </td>
                                 <td> 
                                 <a href="{​​{​​ route('voluntary.edit', $Voluntary->id) }​​}​​"class="btn btn-warning">Editar</a>
@@ -66,8 +64,6 @@
                                     </form>
                                 </td> 
                             </tr>
-
-
                         @endforeach
                         </table>
                 </div>
@@ -92,3 +88,42 @@
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
 @endsection
+
+@endif
+@if( Auth::user()->rol==3 )
+
+
+<br><br><br><br><br><br>
+
+
+
+    <div class="card">
+
+        <div class="card-content">
+
+            <div class="card-body">
+
+                <div class="form-body">
+
+                    <div class="col-12">
+
+                        <div class="form-group">
+                            <br>
+                            <h2 style="color: red" class="card-title">Acceso denegado, comuníquese con el administrador. </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+@endif
+

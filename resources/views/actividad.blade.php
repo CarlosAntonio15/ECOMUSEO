@@ -1,3 +1,4 @@
+<title>Actividades</title>
 @extends('layouts.main')
 @extends('layouts.app')
   @section('content')
@@ -13,12 +14,12 @@
     <link href="css/style.css" rel="stylesheet">
 
     <?php $page='actividad';?>
-    <br><br><br>
+    <br>
   <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
           <div class="card">
-            <div class="container" data-aos="fade-up">
+           <div class="container" data-aos="fade-up">
             <br/><br/>
               <div class="card-header">
                 <div class="section-title">
@@ -28,12 +29,12 @@
                 </div>
               </div>
               <div class="row">  
-              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
                   <div class="icon-box">
                   <p></p>
-                    <h4>Auditorio de eventos</h4>
+                    <h5>Auditorio de eventos</h5>
                     <img src="img/eventos.jpg" class="rounded float-right img-fluid" alt="...">
-                    <p>Se brindan charlas edicativas sobre la historia de la fiebre del oro, entre otro temas.</p>
+                    <!--<p>Se brindan charlas edicativas sobre la historia de la fiebre del oro, entre otro temas.</p>-->
                     <a href="img/eventos.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Audiotorio"><i class="bx bx-plus"></i></a>
                   </div>
                 </div>
@@ -41,9 +42,9 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
                   <div class="icon-box">
                   <p></p>
-                    <h4>Exhibición permanente</h4>
+                    <h5>Exhibición permanente</h5>
                     <img src="img/auditorio.jpg" class="rounded float-right img-fluid" alt="...">
-                    <p>Acá se muestran viejas fotografías y objetos mineros como crisoles, carburas, poleas, un horno, entre otras.</p>
+                   <!-- <p>Acá se muestran viejas fotografías y objetos mineros como crisoles, carburas, poleas, un horno, entre otras.</p>-->
                     <a href="img/auditorio.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Audiotorio"><i class="bx bx-plus"></i></a>
                   </div>
                 </div>
@@ -51,11 +52,11 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
                   <div class="icon-box">
                     <p></p>
-                    <h4>Galería piezas históricas</h4>
-                    <img src="img/piezas.jpeg" class="rounded float-right img-fluid" alt="...">
-                    <p>Se brindan exhibiciones a visitantes donde se muestran todas las piezas históricas
+                    <h5>Galería piezas históricas</h5>
+                    <img src="img/piezash.jpeg" class="rounded float-right img-fluid" alt="...">
+                    <!--<p>Se brindan exhibiciones a visitantes donde se muestran todas las piezas históricas
                       que tiene el Ecomuseo, junto con la historia que estas abarcan.
-                    </p>
+                    </p>-->
                     <a href="img/piezas.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Galería de piezas históricas"><i class="bx bx-plus"></i></a>
                   </div>
                 </div>
@@ -63,11 +64,11 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
                   <div class="icon-box">
                   <p></p>
-                    <h4>Tours y visitas guiadas</h4>
+                    <h5>Tours y visitas guiadas</h5>
                     <img src="img/tour.jpg" class="rounded float-left img-fluid" alt="...">
-                    <p>Se brinda el servicio de guias de cada uno de los atractivos que ofrece el Ecomuseo
+                   <!-- <p>Se brinda el servicio de guias de cada uno de los atractivos que ofrece el Ecomuseo
                       de Abangares.
-                    </p>
+                    </p>-->
                     <a href="img/tour.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Tours y visitas guiadas"><i class="bx bx-plus"></i></a>
                   </div>
                 </div>
@@ -75,40 +76,50 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
                   <div class="icon-box">
                   <p></p>
-                    <h4>Senderismo y Hiking</h4>
+                    <h5>Senderismo</h5>
                     <img src="img/senderismo.jpg" class="rounded float-center img-fluid" alt="...">
-                    <p>Esta actividad consiste en ofrecer caminatas por los direfentes senderos que eran rutas de 
-                      los mineros años atrás.
-                    </p>
+                    <!--<p class="text-justify">
+                      El recorrido por los senderos del EM, consiste en un maravilloso recorrido de tres horas entre la biodiversidad
+                      que albergan treinta y ocho hectáreas (38 ha) de bosque secundario, acercando al visitante al medio natural y al 
+                      conocimiento histórico y cultural no solo de Abangares, si no, también del país, a través de elementos patrimoniales y etnográficos distribuidos
+                      a través de cinco kilómetros de senderos que combinan, jardines, miradores con impresionantes vistas, variedad escénica,
+                      pendientes medianas o hasta fuertes escalones y puentes, requieren de esfuerzo y demanda física pero no ofrecen peligro extremo y son
+                      accesibles a todo tipo de público en un espacio muy natural y auténtico.
+                    </p>-->
                     <a href="img/senderismo.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Senderismo"><i class="bx bx-plus"></i></a>
                   </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
                   <div class="icon-box">
-                  <p></p>
-                    <h4>Avistamiento de aves</h4>
+                    <p></p>
+                    <h5>Avistamiento de aves</h5>
                     <img src="img/avistamiento.jpg" class="rounded float-right img-fluid" alt="...">
-                    <p>Se realizan caminatas por los senderos para la observación específica de aves.</p>
+                   <!-- <p>Se realizan caminatas por los senderos para la observación específica de aves.</p>-->
                         <a href="img/avistamiento.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Avistamiento"><i class="bx bx-plus"></i></a>
-                        <br/>   
-                        <a href="{{ route('reservation.create')}}" class="btn btn-success">Reserve aquí</a>
-                      </div>
+                        <br/> 
+                       
                 </div>
-                <br>
+                <br/> <br/>
 
-                   <!-- {{-- <div class="btn-group"> --}}
-                            <td> <a <?php if($page =='reservation.create'){echo 'active';} ?>">
-                             <a href="{{route('reservation.create')}}" class="btn btn-primary" >Reserve aquí</a></td>
-                    {{-- </div> --}}-->
+                
+                
                 <br>
                 <br>
 
               </div>    
-            </div>      
+            </div> 
+              <div>
+                <div class="col-lg-4"> 
+                  <div class="form-group">
+                    <a href="{{ route('reservation.create')}}" class="btn btn-success">Reserve aquí</a>
+                  </div>
+                  </div>
+              </div>
           </div>
         </div>
       </div>
+    </div>
 
       <!-- Vendor JS Files -->
   <script src="vendor/jquery/jquery.min.js" asp-append-version="true"></script>
