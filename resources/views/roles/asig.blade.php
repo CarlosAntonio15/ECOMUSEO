@@ -1,4 +1,4 @@
-@extends('layouts.main')
+
 @extends('layouts.app')
 @section('content')
 
@@ -8,7 +8,7 @@
         <br>
         
         <div class="card-header">
-            <h1 class="card-title">@yield('title'): {{ $usuario->name }} </h1>
+            <h1 class="card-title">@yield('title') {{ $usuario->name }} </h1>
         </div>
         <div class="card-content">
             <div class="card-body">
