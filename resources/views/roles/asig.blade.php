@@ -1,4 +1,5 @@
-@extends('layouts.main')
+<title>Asignar rol</title>
+@if( Auth::user()->rol==1 or Auth::user()->rol==2)
 @extends('layouts.app')
 @section('content')
 
@@ -8,14 +9,14 @@
         <br>
         
         <div class="card-header">
-            <h1 class="card-title">@yield('title'): {{ $usuario->name }} </h1>
+            <h1 class="card-title">@yield('title') {{ $usuario->name }} </h1>
         </div>
         <div class="card-content">
             <div class="card-body">
                 <form class="form form-vertical" action="{{ route('usuario.saverol') }}" method="POST">
                     @csrf
                     <div class="col-4">
-                        <label>Seleccionar permiso:
+                        <label>Seleccionar rol:
                         </label>
                         <div class="form-group">
                         <input type="hidden" name="id" value="{{ $usuario->id }}" />
@@ -26,18 +27,43 @@
                             </select>
                         </div>
                     </div>
+
                     <div class="form-body">
                         <div class="row">
-                            <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
-                                <button type="submit" class="btn bg-gradient-primary mr-1 mb-1 waves-effect waves-light">Guardar
-                                    cambios</button>
+                            <div class="col-sm-6">
+                            <button type="submit" class="btn btn-success">Guardar cambios</button>
+                            <a href="{{ url('asignarRol') }}" class="btn btn-primary float-right">Regresar</a>
                             </div>
                         </div>
+                       
                     </div>
                 </form>
+           
             </div>
         </div>
     </div>
     
 </section>
 @endsection
+
+@endif
+
+@if( Auth::user()->rol==3 )
+
+
+<br><br><br><br><br><br>
+    <div class="card">
+        <div class="card-content">
+            <div class="card-body">
+                <div class="form-body">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <br>
+                            <h2 style="color: red" class="card-title">Acceso denegado, comuniquese con el administrador. </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endif

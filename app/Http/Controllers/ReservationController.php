@@ -146,6 +146,6 @@ class ReservationController extends Controller
     {
         Reservation::find($id)->delete();
         Session()->flash('message', 'Voluntario eliminado correctamente');
-        return redirect()->route('voluntary.index');
+        return redirect()->route('reservation.index');
     }
 }

@@ -10,7 +10,7 @@
 --------------------------------------------------------------*/
  .maps{
    height: 350px;
-   width: 550px;
+   width: 1110px;
 }
 
 body {
@@ -1829,7 +1829,7 @@ section {
 
 @media screen and (max-width: 800px){
   body {
-    background: #b3d1fa;
+    background: #4fe07f;
   }
 }
 
@@ -1867,3 +1867,69 @@ margin: 25px;
 margin-bottom: 0px;
 }
 
+
+/**Alerta de Rechazo**/
+.redAlert{
+  width: 80%;
+  max-width: 100%;
+  margin:0 auto;
+  background: rgb(105, 107, 105);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+/*Parte de actividades*/
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body
+    {
+background-color: #f5f7f9; 
+font-family: Open Sans, sans-serif;
+    }
+    img{
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+ .unico {
+    width:29.5%;
+    float: left;
+    margin: 20px 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 0px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.15);
+  } 
+  .unico h5{
+    margin-bottom: 10 px;
+  }
+  .unico p{
+    font-size: 16px;
+    line-height: 28px;
+    height: 78px;
+    overflow: hidden;
+  }
+  .unico a{
+    display: inline-block;
+    color: #fff;
+    background-color: #2196f3;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+  .unico a:hover{
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  }
+ 
+  .act{
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+
+/*Volun*/

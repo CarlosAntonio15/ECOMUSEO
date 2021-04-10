@@ -7,7 +7,14 @@
 <div class="col-sm-12">
 <div class="card">
 <div class="card-header">Lista voluntarios</div>
+<div class="col-sm-12">
+</br>
+                        <a href="{{route('createGus')}}" class="btn btn-info">Nuevo voluntario</a>
+                        <a href="{{route('administracion')}}" class="btn btn-secondary">Atrás</a>
+                        
+                    </div>
 <div class="card-body">
+
 
     <div class="row">
         @forelse($Volun as $voluntary)
@@ -40,7 +47,7 @@
                                 <a href="{{ route('voluntary.edit', [$voluntary->id]) }}" class="btn btn-warning"><i class="fas fa-edit"></i>&nbsp;Editar</a>
                                 <form action="/voluntario/delete/{{ $voluntary->id }}" method="POST">
                                 @csrf
-                                @method('DELETE')
+                                @method('DELETE')</br>
                                     <button class="btn btn-danger"><i class="fas fa-trash"></i>&nbsp;Eliminar</button>
                                 </form>
                                 

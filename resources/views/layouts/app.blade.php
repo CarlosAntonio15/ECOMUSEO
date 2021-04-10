@@ -45,7 +45,6 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
-
                     
 
                     <!-- Right Side Of Navbar -->
@@ -53,11 +52,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
+                               <h5> <a class="nav-link" href="{{ route('login') }}" style="color: rgba(0, 68, 40, 0.664)" >{{ __('Iniciar sesión') }}</a></h5>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                                   <h5> <a class="nav-link" href="{{ route('register') }}" style="color: rgba(0, 68, 40, 0.664)">{{ __('Registrarse') }}</a></h5>
                                 </li>
                             @endif
                         @else

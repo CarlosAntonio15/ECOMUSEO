@@ -1,4 +1,5 @@
 <title>Formulario donaciones</title>
+<div style="background-image: url('/img/rueda.jpg'); " >
 @extends('layouts.app')
 @section('title','Create Donation')
 @section('content')
@@ -17,8 +18,8 @@
 <!--< ?php $page = 'createVol'; ?>-->
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
+        <div class="col-md-7">
+            <!--<div class="card">-->
             <div class="container" data-aos="fade-up">
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -30,24 +31,24 @@
     </div>
 @endif
 <br/><br/>
-            <h5 style="color: rgba(14, 90, 20, 0.89)" align="center">Formulario donaciones </h5>
+<div class="card-header"><h5 style="color: rgb(243, 236, 236)" align="center">Formulario donaciones </h5></div>
 
-              <div class="row mt-5">
-                <div class="col-sm-8 offset-sm-2">
+              <div class="row mt-8">
+                <div class="col-sm-12 offset-sm-0">
                   <form action="{{route('donation.store')}}" method = "post">
                     @csrf
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <div class="form-group">
-                          <label for="name"><h5>Nombre donador:</h5></label>
+                          <label for="name"><h5 style="color:  rgb(243, 236, 236)" align="center">Nombre donador:</h5></label>
                           <br/>
                           <input type="text" name = "name" id = "name" class="form-control" required>
                         </div>
                       </div>
 
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <div class="form-group">
-                          <label for="lastName"><h5>Apellidos:</h5></label>
+                          <label for="lastName"><h5 style="color:  rgb(243, 236, 236)" align="center">Apellidos:</h5></label>
                           <br/>
                           <input type="text" name = "lastName" id = "lastName" class="form-control" required>
                         </div>
@@ -55,13 +56,13 @@
                     </div>
 
                     <div class="row">
-                      <div class="col-md-12">
+                      <div class="col-md-4">
                         <div class="form-group">
-                          <label for="donationType"><h5>Tipo de donación:</h5></label>
+                          <label for="donationType"><h5 style="color:  rgb(243, 236, 236)" align="center">Tipo de donación:</h5></label>
                           <br/>
-                          <input type="radio" name="donationType" value="Dinero"> <h5>Contribución monetaria</h5> 
-                          <input type="radio" name="donationType" value="Material"> <h5>Material</h5> 
-                          <input type="radio" name="donationType" value="Alimento"> <h5>Alimento</h5> 
+                          <input type="" name="donationType" value=""> <!--<h5>Contribución monetaria</h5>
+                          <input type="" name="donationType" value="Material"> <h5>Material</h5> 
+                          <input type="" name="donationType" value="Alimento"> <h5>Alimento</h5>--> 
                         </div>
                       </div>
                     </div>
@@ -71,7 +72,7 @@
                     <div class="row">
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label for="quantity"><h5>Cantidad:</h5></label>
+                          <label for="quantity"><h5 style="color:  rgb(243, 236, 236)" align="center">Cantidad:</h5></label>
                           <br/>
                           <input type="number" min="1"name = "quantity" id = "quantity" class="form-control" required>
                         </div>
@@ -79,7 +80,7 @@
 
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label for="currentDate"><h5>Fecha:</h5></label>
+                          <label for="currentDate"><h5 style="color:  rgb(243, 236, 236)" align="center">Fecha:</h5></label>
                           <br/>
                           <input type="date" name = "currentDate" id = "currentDate" class="form-control" required>
                         </div>
@@ -87,7 +88,7 @@
 
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label for="phone"><h5>Teléfono de contacto:</h5></label>
+                          <label for="phone"><h5 style="color:  rgb(243, 236, 236)" align="center">Teléfono de contacto:</h5></label>
                           <br/>
                           <input type="tel" name = "phone" id = "phone" class="form-control" required>
                         </div>
@@ -99,7 +100,7 @@
                     <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
-                            <label for="mail"><h5>Correo electrónico:</h5></label>
+                            <label for="mail"><h5 style="color:  rgb(243, 236, 236)" align="center">Correo electrónico:</h5></label>
                             <br/>
                             <input type="email" name = "mail" id = "mail" class="form-control" >
                           </div>
@@ -107,7 +108,7 @@
 
                         <div class="col-md-8">
                           <div class="form-group">
-                            <label for="description"><h5>Descripción:</h5></label>
+                            <label for="description"><h5 style="color:  rgb(243, 236, 236)" align="center">Descripción:</h5></label>
                             <br/>
                              <input type="description" name = "description" id = "description" class="form-control" required>
                           </div>
@@ -127,7 +128,7 @@
                   </form>
                 </div>
               </div>
-            </div>
+            <!--</div>-->
           </div>
         </div>
       </div>

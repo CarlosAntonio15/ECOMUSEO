@@ -39,11 +39,8 @@
         <i class="icofont-phone"></i> +506 2662 0004
       </div>
       <div class="social-links">
-        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
         <a href="https://www.facebook.com/ecomuseominero1991" class="facebook"><i class="icofont-facebook"></i></a>
         <a href="https://www.instagram.com/ecomuseoabangares/?hl=es-la" class="instagram"><i class="icofont-instagram"></i></a>
-        <a href="#" class="skype"><i class="icofont-skype"></i></a>
-        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
       </div>
     </div>
   </div>
@@ -63,7 +60,7 @@
             <li class="<?php if($page  == 'actividad'){echo 'active';} ?>"> <a href="{{route ('actividad')}}"><h6>Actividades</h6></a></li>
             <li><a href="#portfolio"><h6>Galería</h6></a></li>
             
-            <li class="drop-down"><a href=""><h6>Cooperar</h6></a>
+            <li class="drop-down"><h6>Cooperar</h6>
             <ul>
             <li class="<?php if($page  == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}"><h6>Voluntariado</h6></a></li>
             <li class="<?php if($page  == 'realizarDonaciones'){echo 'active';} ?>"> <a href="{{route ('realizarDonaciones')}}"><h6>Donaciones</h6></a></li>
@@ -356,11 +353,11 @@
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-          <div class="col-lg-6 " >
-          <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251255.89784848035!2d-85.34835049027099!3d10.271782895348275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa01e3c298e75bb%3A0xc1f9da3951795615!2sEcomuseo%20de%20las%20Minas%20de%20Abangares!5e0!3m2!1ses-419!2scr!4v1600228907172!5m2!1ses-419!2scr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          <div class="col-lg-6" >
+            <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251255.89784848035!2d-85.34835049027099!3d10.271782895348275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa01e3c298e75bb%3A0xc1f9da3951795615!2sEcomuseo%20de%20las%20Minas%20de%20Abangares!5e0!3m2!1ses-419!2scr!4v1600228907172!5m2!1ses-419!2scr" width="800" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
-          <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+         <!-- <div class="col-lg-6">
+           <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="col form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Nombre completo" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -386,7 +383,7 @@
               </div>
               <div class="text-center"><button type="submit">Enviar mensaje</button></div>
             </form>
-          </div>
+          </div>-->
 
         </div>
 

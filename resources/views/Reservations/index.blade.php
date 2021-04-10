@@ -8,6 +8,7 @@
 <div class="card">
 <div class="card-header"><h4>Lista reservaciones</h4>
 <a href="{{route('reservation.create')}}" class="btn btn-info">Nueva reservación</a>
+<a href="{{route('administracion')}}" class="btn btn-secondary">Atrás</a>
 </div>
 
 <div class="card-body">
@@ -46,9 +47,9 @@
                                 <div class="card-footer">
                                      <a href="{{route('reservation.show',[$reservation->id])}}" class="btn btn-primary">Ver más</a>
                                      <a href="{{route('reservation.edit',[$reservation->id])}}" class="btn btn-warning" class="margin:25px;">Editar</a>
-                                <form action="/reservaciones/delete/{{$reservation->id}}" method="POST">
+                                     <form action="/reservaciones/delete/{{$reservation->id}}" method="POST">
                                 @csrf
-                                 @method('DELETE')
+                                 @method('DELETE')</br>
                                  <button class='btn btn-danger'><i class="fas fa-trash" class="margin:25px;"></i>&nbsp;Eliminar</button>  
                                 </form>
                                     
