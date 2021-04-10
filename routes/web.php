@@ -114,6 +114,22 @@ Route::post('/saverol', 'UsuarioController@saveRol')->name('usuario.saverol');
 
 Route::get('/administracion','PrincipalController@administration')->name('administracion');
 
+
+//Tiquete
+Route::get('/tiquete/create','EntradaController@create')->name('tiquete.create');
+Route::post('/tiquete/create','EntradaController@store')->name('tiquete.store');
+
+Route::get('/tiquete/index', 'EntradaController@index')->name('tiquete.index');
+Route::get('/tiquete/show/{id}', 'tiqueteController@show')->name('tiquete.show');
+Route::get('/tiquete/edit/{id}', 'tiqueteController@edit')->name('tiquete.edit');
+Route::put('/tiquete/update/{id}', 'tiqueteController@update')->name('tiquete.update');
+Route::delete('/tiquete/delete/{id}', 'tiqueteController@destroy')->name('tiquete.destroy');
+
+
+
+
+
+
 //SI FUNCIONA
 Route::get('hola', function(){
     return view('layout');

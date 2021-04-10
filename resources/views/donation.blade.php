@@ -14,7 +14,7 @@
                         <a href="{{ route('donation.create') }}" class="btn btn-info float-rigth">
                             <i class="fas fa-plus"></i>Nueva donación
                         </a>
-                        
+                        <a href="{{route('administracion')}}" class="btn btn-secondary">Atrás</a>
                     </div>
 
                     <div class="row">
@@ -41,12 +41,12 @@
 
                             <div class="card-footer">
                                 <a href="{{ route('donation.show', [$donation->id]) }}" 
-                                    class="btn btn-info btn-sm"><i class="fas fa-info-circle"></i></a>
+                                    class="btn btn-info btn-sm"><i class="fas fa-info-circle"></i>&nbsp;Ver más</a>
                                 <a href="{{ route('donation.edit', [$donation->id]) }}" 
-                                    class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                                    class="btn btn-warning btn-sm"><i class="fas fa-edit"></i>&nbsp;Editar</a>
                                 <form action="/donaciones/delete/{{ $donation->id }}" method="POST">
                                     @csrf
-                                    @method('DELETE')
+                                    @method('DELETE')</br>
                                         <button class="btn btn-danger">
                                             <i class="fas fa-trash"></i>&nbsp;Eliminar
                                         </button>

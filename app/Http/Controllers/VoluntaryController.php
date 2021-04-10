@@ -117,9 +117,6 @@ class VoluntaryController extends Controller
         $voluntary = $voluntary[0];
         return view('Volun.show')->with('Voluntary', $voluntary);
     }
-
-    
-
    
     /**
      * Show the form for editing the specified resource.

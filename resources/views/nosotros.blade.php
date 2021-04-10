@@ -62,12 +62,6 @@
                                 </p>
                             </div>
                             <br>
-                            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                            <img src="img/portfolio/Ecotrail.jpeg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                              <a href="img/portfolio/Ecotrail.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title=""><i class="bx bx-plus"></i></a>
-                            </div>
-                          </div>
 
                             <div>
                                 <h5>Objetivo principal:</h5>
@@ -82,7 +76,7 @@
                             <br>
                       <div class="row">
                         <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="100">
-                          <img src="img/EcoAbangares.jpeg" class="img-fluid" alt="">
+                          <img src="img/portfolio/Ecotrail.jpeg" class="img-fluid" alt="">
                         </div>
                         <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
                           <!-- <h3>DISPONIBLE PARA INFORMACION SUBTITULO2.</h3>

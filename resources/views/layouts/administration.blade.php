@@ -56,7 +56,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="{{route('welcome')}}">Administración Ecomuseo</a></h1>
+      <h1 class="logo mr-auto"><a>Administración Ecomuseo</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>-->
 
@@ -136,14 +136,21 @@
   <form action="" method="POST" class="d-lg-inline-flex">
 
 
+  <a href="{{ route ('tiquete.index')}}"> <i class="fas fa-resistance"></i> 
+      <p>
+        <strong>Entrada</strong>
+      </p>
+      </a>
+  <form action="" method="POST" class="d-lg-inline-flex">
+
+
   @method('PUT')
   </a>
       </div>
     </div>
 </div>
-  
+<a href="{{route('welcome')}}" class="btn btn-secondary">Atrás</a>
   </section>
-
 </body>
 </div>
 </html>
