@@ -146,7 +146,7 @@
       <br/><br/><br/><br/><br/>
       <div class="d-flex">
         <a href="{{route('nosotros')}}" class="btn-get-started scrollto">Empecemos</a>
-        <a href="https://youtu.be/jYan7RMA-Ck" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"><h5>Ver vídeo</h5><i class="icofont-play-alt-2"></i></a>
+        <a href="https://youtu.be/jYan7RMA-Ck" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"><h5>Vídeo</h5><i class="icofont-play-alt-1"></i></a>
       </div>
     </div>
   </section><!-- End Hero -->

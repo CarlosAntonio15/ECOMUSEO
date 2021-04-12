@@ -159,7 +159,7 @@
                     <div>
                       <div class="col-lg-4"> 
                         <div class="form-group">
-                          <a href="{{ route('reservation.create')}}" class="btn btn-success">Reserve aquí</a>
+                          <a href="{{ route('reservation.create')}}" class="btn btn-success">Reservar</a>
                         </div>
                         </div>
                     <!--</div>-->
