@@ -29,3 +29,5 @@ class EntradaController extends Controller
         return redirect()->route('tiquete.index');
     }
 }
+
+

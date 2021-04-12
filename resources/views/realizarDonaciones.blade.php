@@ -115,7 +115,7 @@
                            <!-- </div>-->
                         </div>
                         </p>
-                                <a href="{{ route('donation.create')}}" class="btn btn-primary">Realizar donación</a>
+                                <a href="{{ route('donation.create')}}" class="btn btn-primary">Donación</a>
                                 
                             </div>
                             <!--</div>-->

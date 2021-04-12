@@ -108,22 +108,7 @@
                    <i class="fas fa-cog"></i>Administración</li></a>
                 <form action="" method="POST" class="d-inline">
 
-              <!--  <div class="dropdown-divider"></div>
-                  <li class="black">
-                    <a href="{{ route ('voluntary')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i>Voluntarios</li></a>
-                <form action="" method="POST" class="d-inline">
-
-                <div class="dropdown-divider"></div>
-                  <li class="black">
-                    <a href="{{ route ('donation')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i>Donaciones</li></a>
-                <form action="" method="POST" class="d-inline">
-
-                <div class="dropdown-divider"></div>
-                <li class="black">
-                  <a href="{{ route ('reservation')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i>Reservaciones</li></a>-->
+   
                 <form action="" method="POST" class="d-inline">
                 @method('PUT')
                 @csrf
@@ -157,16 +142,11 @@
   <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
       <br/><br/><br/><br/><br/><br/><br/><br/>
-     <!--<h1>
-        Bienvenidos al ecomuseo
-      </h1>
-      <h1>
-        minas de oro Abangares
-      </h1>-->
+
       <br/><br/><br/><br/><br/>
       <div class="d-flex">
         <a href="{{route('nosotros')}}" class="btn-get-started scrollto">Empecemos</a>
-        <a href="https://youtu.be/jYan7RMA-Ck" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"><h5>Ver vídeo</h5><i class="icofont-play-alt-2"></i></a>
+        <a href="https://youtu.be/jYan7RMA-Ck" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"><h5>Vídeo</h5><i class="icofont-play-alt-1"></i></a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -178,9 +158,9 @@
   <section id="about" class="about section-bg">
   <div class="container" data-aos="fade-up">
   <div class="section-title">
-                       <!-- <h2>Sobre Nosotros</h2>-->
+                      
                         <h3>Descubre más sobre nosotros</h3>
-                        <!--<p>DISPONIBLE PARA AGREGAR INFORMACION1</p>-->
+                        
                       </div>
                       <div>
                                 <h5>¿Quiénes somos?</h5>
@@ -442,15 +422,6 @@
             </div>
           </div>
           
-        <!-- <div class="col-lg-12 col-md-12 footer-links">
-          <div class="row">
-                <div class="col-lg-20 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="icon-box">
-                        <img src="img/teesperamos.jpeg" class="rounded float-right img-fluid" alt="...">
-                    </div>
-                </div>
-            </div>   
-            </div>-->
         <br>
         </div>
       </div>

@@ -132,7 +132,7 @@
                                     4-	Traer alimentación propia debido a que el Ecomuseo no cuenta con un lugar adecuado para brindar alimentación.<br>
                                     5-	Asistir con ropa cómoda.<br>
                                 </p>
-                                <a href="{{ route('voluntary.create')}}" class="btn btn-primary">Ser voluntario</a>
+                                <a href="{{ route('voluntary.create')}}" class="btn btn-primary">Voluntariado</a>
                                 
                             </div>
                             </div>
