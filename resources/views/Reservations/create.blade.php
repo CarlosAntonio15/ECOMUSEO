@@ -80,7 +80,7 @@
                         <div class="form-group">
                           <label for="reservationDate">Fecha a reservar:</label>
                           <br/>
-                          <input type="date" name = "reservationDate" id = "reservationDate" class="form-control" required>
+                          <input type="date" name = "reservationDate"  id = "reservationDate" class="form-control" required>
                         </div>
                     </div>
 

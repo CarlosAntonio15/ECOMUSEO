@@ -66,6 +66,10 @@ Route::post('/voluntario/edit','VoluntaryController@show')->name('voluntary.show
 Route::post('/voluntario/update','VoluntaryController@update')->name('voluntary.update');
 Route::get('/voluntario/destroy', 'VoluntaryController@destroy')->name('voluntary.destroy');
 
+//Give
+Route::get('/give/index','giveController@index')->name('give.index');
+Route::get('/give/create','giveController@create')->name('give.create');
+Route::post('/give/create','giveController@store')->name('give.store');
 
 
 //Donaciones
