@@ -1,3 +1,4 @@
+<title>Hazte amigo del Ecomuseo</title>
 @extends('layouts.main')
 @extends('layouts.app')
 @section('title','Information Voluntary')
@@ -15,72 +16,165 @@
   <link href="css/style.css" rel="stylesheet">
 
 <?php $page = 'amigo'; ?>
+<br><br><br>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-14">
-                <div class="card">
-                    <div class="container" data-aos="fade-up">
-
-                        <div class="card text-center">
-                            <div class="card-header">
+               <!-- <div class="card">-->
+                   <!-- <div class="container" data-aos="fade-up">-->
+                   <br>  <br>
+                    
+                       <!-- <div class="card text-center">-->
+                          <!--  <div class="card-header">
                                 Voluntariado
+                            </div>-->
+
+                            <div class="section-title">
+                                <h4>¡Hazte Amigo del ECOMUSEO de Abangares!</h4>
                             </div>
+                            <div class="container" data-aos="fade-up">
+
+<!--<div class="section-title">
+  <h4>Voluntariado</h4>
+</div>-->
+
+<!--<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+    <img src="img/volun.jpeg" class="img-fluid" alt="">
+    <div class="portfolio-info">
+      <a href="img/volun.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Corredor Biológico"><i class="bx bx-plus"></i></a>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+    <img src="img/volun1.jpeg" class="img-fluid" alt="">
+    <div class="portfolio-info">
+      <a href="volun1.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+    <img src="img/volun2.jpeg" class="img-fluid" alt="">
+    <div class="portfolio-info">
+      <a href="img/volun2.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+    </div>
+  </div>
+
+</div>-->
                             <div class="card-body">
-                                <h5 class="card-title">Hazte amigo del Ecomuseo</h5>
-                                <p class="card-text">Bienvenido a nuestra página del servicio de voluntariado del Ecomuseo minas de oro de Abangares, acá obtendrás más información sobre nuestra forma de trabajo en los voluntariados.</p>
-
+                            <div class="row">
+                                <p class="text-justify">La Asociación Junta Administradora del Ecomuseo de Abangares ofrece el
+                                                    programa Amigos del ECOMUSEO de Abangares, mediante el cual toda
+                                                    persona que desee participar de las actividades que se desarrollen y poder gozar
+                                                    de privilegios, promociones y descuentos especiales.
+                                </p>
+                               <!-- <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                                            <div class="icon-box">
+                                                <img src="img/amigo.png" class="rounded float-right img-fluid" alt="...">
+                                                <a href="img/voluntariado.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Voluntariado"><i class="bx bx-plus"></i></a>
+                                            </div>
+                                        </div>-->
                             </div>
-                            <div class="card-footer text-muted">
+                           <!-- <div class="card-footer text-muted">
                                 ...
-                            </div>
+                            </div>-->
                         </div>
 
-                    </div>
+                   <!-- </div>-->
                     <br>
-                    <div class="container" data-aos="fade-up">
-                        <div class="card text-center">
-                        <br>
-                        <div class="icon-box">
-                            <div class="col-lg-6 col-md-9 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                                <img src="img/voluntariado.jpeg" class="rounded float-right img-fluid col-md-12" alt="...">
-                                <img src="img/voluntariogrupo.jpeg" class="rounded float-left img-fluid col-md-12 col-md-offset-12"alt="..." >
-                            </div>
-                            <br>
-                            </div>
-                            <div class="card-footer text-muted"></div>
-                        </div>
+                  
+                        <!--<div class="container" data-aos="fade-up">-->
+
+                        <!--<div class="card text-center">-->
+                              
+                            <!--</div>-->
+                           <!-- <div class="card-footer text-muted"></div>-->
+                       <!-- </div>-->
                     </div>
-                    <br>
+                   
                     <div class="row" data-aos="fade-up">
                         <div class="col-sm-6">
-                            <div class="card">
+                            <!--<div class="card">-->
                                 <div class="card-body">
-                                    <h5 class="card-title">¿Cómo ser parte de nuestros servicios de voluntariado en Ecomuseo de Abangares?</h5>
-                                    <p class="card-text">Para ser parte de nuestro voluntariado sólo debes de cumplir con los requisitos descritos en este documento y seleccionar el tipo de formulario que desea completar.</p>
-                                </div>
+                                    <h5 class="card-title">¿Qué es “El Programa Amigos del ECOMUSEO”, de Asociación Junta
+                                                           Administradora del Ecomuseo de Abangares (AJADEMA)?
+                                                           </h5>
+                                    <p class="text-justify">Es una iniciativa comunal privada, sin ánimo de lucro, creada para apoyar todas
+                                                        las actividades y proyectos del ECOMUSEO, así como la conservación y el
+                                                        crecimiento de sus piezas y atractivos patrimoniales, representadas en las
+                                                        estaciones interpretativas y colecciones que se constituyen en una parte
+                                                        significativa de la memoria colectiva de la identidad abangareña.
+                                                        <br/>
+                                                        Al igual que en otras Organizaciones de Amigos, programa una serie de
+                                                        actividades tales como presentaciones culturales, seminarios, conferencias,
+                                                        exposiciones fotográficas, emprendedurismo, artesanía, turismo, música,
+                                                        ambiente, actividades deportivas, homenaje a ciudadanos visitas guiadas, talleres,
+                                                        promoción literaria, afiches, postales y objetos de arte que se pueden adquirir en
+                                                        el ECOMUSEO.
+                                                        <br/>
+                                                        Al afiliarse como Amigo del ECOMUSEO de Abangares, usted empezará a formar
+                                                        parte de este grupo especial de personas que conforman la Asociación y quienes
+                                                        apoyan los programas y proyectos del ECOMUSEO y a su vez, gozan de
+                                                        privilegios y descuentos especiales.
+                                    </p>
+                               <!-- </div>-->
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="card">
-                            <div class="card-body">
+                          <!--  <div class="card">-->
+                           <div class="card-body">
                                 <h5 class="card-title">Requisitos para ser voluntario</h5>
-                                <p class="card-text">
+                                <p class="text-justify">
                                     1-	Ser mayor de edad para inscribirse en nuestro servicio de voluntariado.<br>
                                     2-	Si es menor de edad deberá inscribirlo una persona adulta encargado.<br>
                                     3-	Contar con transporte para asistir a nuestro complejo turístico ya que no se cuenta con medios suficientes para brindar dicho servicio.<br>
                                     4-	Traer alimentación propia debido a que el Ecomuseo no cuenta con un lugar adecuado para brindar alimentación.<br>
                                     5-	Asistir con ropa cómoda.<br>
                                 </p>
-                                <a href="{{ route('voluntary.create')}}" class="btn btn-primary">Ser voluntario</a>
+                                <a href="{{ route('voluntary.create')}}" class="btn btn-primary">Voluntariado</a>
                                 
                             </div>
                             </div>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-        </div>
+<div class="container" data-aos="fade-up">
+
+<!--<div class="section-title">
+  <h4>Voluntariado</h4>
+</div>-->
+
+<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+    <img src="img/volun.jpeg" class="img-fluid" alt="">
+    <div class="portfolio-info">
+      <a href="img/volun.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Corredor Biológico"><i class="bx bx-plus"></i></a>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+    <img src="img/volun1.jpeg" class="img-fluid" alt="">
+    <div class="portfolio-info">
+      <a href="volun1.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+    <img src="img/volun2.jpeg" class="img-fluid" alt="">
+    <div class="portfolio-info">
+      <a href="img/volun2.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+    </div>
+  </div>
+
+</div>
+
+</div>
+                        </div>
+                    <!--</div>-->
+
+               <!-- </div>-->
+            <!--</div>-->
+      </div>
     </div>
 
   <!-- Vendor JS Files -->

@@ -21,6 +21,7 @@ class DonationController extends Controller
         return view('donation')->with('donationN', $donationC);
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -42,6 +43,18 @@ class DonationController extends Controller
      */
     public function store(DonationRequest $request)
     {
+
+        $request->validate([
+            "name" => 'required|string|max:100',
+            "lastName" => 'required|max:200',
+            "donationType" =>'required|max:150',
+            "quantity" =>'required',
+            "description" =>'required|max:40',
+            "currentDate" =>'required',
+            "phone" =>'required|unique:donation',
+            "mail" =>'required|email|unique:donation'
+        ]);
+
         $DonationN= new donation;
         //$VoluntaryN->Id= $request->id;
         $DonationN->name= $request->name;
@@ -54,6 +67,7 @@ class DonationController extends Controller
         $DonationN->mail= $request->mail;
 
         $DonationN->save();
+        $request->session()->flash('message', 'Donación creada correctamente.');
         return redirect()->route('realizarDonaciones');
     }
 
@@ -66,9 +80,11 @@ class DonationController extends Controller
      */
     public function show(Donation $id)
     {
-        $DonationB = Donation::find($id); 
-        return view('Donations.show',compact('DonationB'));
-        //Donation
+        $donation = Donation::find($id); 
+        dd($donation);
+        $donation = $donation[0];
+        return view('Donations.show')->with('Donation', $donation);
+        
     }
 
     /**
@@ -77,12 +93,17 @@ class DonationController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function edit(Donation $id)
+    public function edit($id)
     {
 
-    $DonationE = Donation::find($id);
-    return view('Donations.edit', compact('DonationE'));
+        $donation = Donation::find($id);
 
+        //dd($donation);
+
+        if (is_null($donation)) {
+            return redirect()->route('donation'); 
+        }
+        return view('Donations.create')->with('donation', $donation);
     }
 
     /**
@@ -92,22 +113,20 @@ class DonationController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Donation $id)
+    public function update(DonationRequest $request,$id)
     {
-        $DonationU = Donation::find($id);
-        $DonationU->id= $request->id;
-        $DonationU->name= $request->name;
-        $DonationU->lastName= $request->lastName;
-        $DonationU->donationType= $request->donationType;
-        $DonationU->quantity= $request->quantity;
-        $DonationU->description= $request->description;
-        $DonationU->currentDate= $request->currentDate;
-        $DonationU->phone= $request->phone;
-        $DonationU->mail= $request->mail;
-
-        $DonationU->save();
-
-        return redirect()->route('Donations.donation');
+        $Donation = Donation::find($id);
+        $Donation->name= $request->name;
+        $Donation->lastName= $request->lastName;
+        $Donation->donationType= $request->donationType;
+        $Donation->quantity= $request->quantity;
+        $Donation->description= $request->description;
+        $Donation->currentDate= $request->currentDate;
+        $Donation->phone= $request->phone;
+        $Donation->mail= $request->mail;
+        $Donation->save();
+        $request->session()->flash('message', 'Donación actualizada correctamente.');
+        return redirect()->route('donation');
     }
 
     /**
@@ -116,8 +135,10 @@ class DonationController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Donation $id)
+    public function destroy($id)
     {
-        $DonationE = Donation::find($id); $DonationE->delete();
+        Donation::find($id)->delete();
+        Session()->flash('message', 'Donación eliminada correctamente');
+        return redirect()->route('donation');
     }
 }

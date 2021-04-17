@@ -16,9 +16,8 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        $reservationC = Reservation::all();
-        //dd($voluntaryC);
-        return view('reservation')->with('reservationN', $reservationC);
+        $reservation = Reservation::all();
+        return view('Reservations.index')->with('reservation', $reservation);
     }
 
     /**
@@ -28,15 +27,27 @@ class ReservationController extends Controller
      */
     public function create()
     {
-
-        
         return view('Reservations.create');
     }
 
    
     public function store(ReservationRequest $request)
     {
-        $ReservationN= new reservation;
+
+
+        $request->validate([
+            "identification" => 'required|max:100',
+            "name" => 'required|max:150|string',
+            "lastname" =>'required|max:200',
+            "reservationDate" =>'required',
+            "reservationHour" =>'required|max:40',
+            "adultQuantity" =>'required',
+            "tourType" =>'required',
+            "email" =>'required|email|unique:reservations',
+            "phone" =>'required|unique:reservations'
+        ]);
+
+        $ReservationN= new Reservation;
         //$ReservationN->Id= $request->id;
         $ReservationN->identification= $request->identification;
         $ReservationN->name= $request->name;
@@ -46,11 +57,11 @@ class ReservationController extends Controller
         $ReservationN->adultQuantity= $request->adultQuantity;
         $ReservationN->childrenQuantity= $request->childrenQuantity;
         $ReservationN->tourType= $request->tourType;
-        $ReservationN->tourPrice= $request->tourPrice;
         $ReservationN->email= $request->email;
         $ReservationN->phone= $request->phone;
 
         $ReservationN->save();
+        $request->session()->flash('message', 'Reservación creada correctamente.');
         return redirect()->route('welcome');
     }
 
@@ -64,8 +75,11 @@ class ReservationController extends Controller
      */
     public function show(Reservation $id)
     {
-        $DonationB = Reservation::find($id); 
-        return view('Reservation.show',compact('ReservationB'));
+        
+        $reservation = Reservation::find($id); 
+        //dd($reservation);
+        $reservation = $reservation[0];
+        return view('Reservations.show')->with('Reservation', $reservation);
     }
 
     /**
@@ -77,9 +91,15 @@ class ReservationController extends Controller
     public function edit(Reservation $id)
     {
 
-    $ReservationE = Reservation::find($id);
-    return view('Reservation.edit', compact('ReservationE'));
+        $reservation = Reservation::find($id);
 
+        //dd($reservation);
+
+        if (is_null($reservation)){
+            return redirect()->route('reservation.index');
+        }
+      
+        return view('Reservations.create')-> with('Reservation', $reservation);
     }
 
     /**
@@ -91,21 +111,27 @@ class ReservationController extends Controller
      */
     public function update(Request $request, Reservation $id)
     {
-        $ReservationU = Reservation::find($id);
-        $ReservationU->identification= $request->identification;
-        $ReservationU->name= $request->name;
-        $ReservationU->lastname= $request->lastname;
-        $ReservationU->reservationDate= $request->reservationDate;
-        $ReservationU->reservationHour= $request->reservationHour;
-        $ReservationU->adultQuantity= $request->adultQuantity;
-        $ReservationU->childrenQuantity= $request->childrenQuantity;
-        $ReservationU->tourType= $request->tourType;
-        $ReservationU->tourPrice= $request->tourPrice;
-        $ReservationU->email= $request->email;
-        $ReservationU->phone= $request->phone;
-        $ReservationU->save();
+        $reservation = Reservation::find($id);
 
-        return redirect()->route('Reservation.reservation');
+
+
+        //$reservation->id = $request->id;
+
+
+
+        $reservation->identification= $request->identification;
+        $reservation->name= $request->name;
+        $reservation->lastname= $request->lastname;
+        $reservation->reservationDate= $request->reservationDate;
+        $reservation->reservationHour= $request->reservationHour;
+        $reservation->adultQuantity= $request->adultQuantity;
+        $reservation->childrenQuantity= $request->childrenQuantity;
+        $reservation->tourType= $request->tourType;
+        $reservation->email= $request->email;
+        $reservation->phone= $request->phone;
+        $reservation->save();
+        $request->session()->flash('message', 'Reservación actualizada correctamente.');
+        return redirect()->route('Reservations.index');
     }
 
 
@@ -115,8 +141,11 @@ class ReservationController extends Controller
      * @param  \App\Voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reservation $id)
+
+    public function destroy($id)
     {
-        $ReservationE = Reservation::find($id); $ReservationE->delete();
+        Reservation::find($id)->delete();
+        Session()->flash('message', 'Voluntario eliminado correctamente');
+        return redirect()->route('reservation.index');
     }
 }

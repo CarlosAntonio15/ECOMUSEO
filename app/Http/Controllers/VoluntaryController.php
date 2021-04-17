@@ -21,6 +21,12 @@ class VoluntaryController extends Controller
         //dd($voluntaryC);
         return view('voluntary')->with('voluntaryN', $voluntaryC);
     }
+    public function indexGus()
+    {
+        $voluntaryC = voluntary::all();
+        //dd($voluntaryC);
+        return view('Volun.index')->with('Volun', $voluntaryC);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -29,11 +35,17 @@ class VoluntaryController extends Controller
      */
     public function create()
     {
-
-        //$voluntary= Voluntary
-        
         return view('Volun.create');
     }
+
+
+    public function createGus()
+    {
+        return view('Volun.createGus');
+    }
+
+
+  
 
     /**
      * Store a newly created resource in storage.
@@ -43,6 +55,18 @@ class VoluntaryController extends Controller
      */
     public function store(VoluntaryRequest $request)
     {
+
+        $request->validate([
+            "Nombre" => 'required|string|max:100',
+            "Apellido_1" => 'required|max:150',
+            "Apellido_2" =>'required|max:150',
+            "Edad" =>'required',
+            "Telefono" =>'required|max:40',
+            "Direccion" =>'required',
+            "Email" =>'required|email|unique:voluntaries',
+            "Descripcion" =>'required'
+        ]);
+
         $VoluntaryN= new voluntary;
         //$VoluntaryN->Id= $request->id;
         $VoluntaryN->Nombre= $request->Nombre;
@@ -52,12 +76,34 @@ class VoluntaryController extends Controller
         $VoluntaryN->Telefono= $request->Telefono;
         $VoluntaryN->Direccion= $request->Direccion;
         $VoluntaryN->Email= $request->Email;
-        $VoluntaryN->Cantidad= $request->Cantidad ?$request->Cantidad :null;
         $VoluntaryN->Descripcion= $request->Descripcion;
 
         $VoluntaryN->save();
         return redirect()->route('amigoReq');
     }
+
+
+    public function storeGus(VoluntaryRequest $request)
+    {
+        $data = [
+            //'Id'=>$request->Id,
+            'Nombre'=>$request->Nombre,
+            'Apellido_1'=>$request->Apellido_1,
+            'Apellido_2'=>$request->Apellido_2,
+            'Edad'=>$request->Edad,
+            'Telefono'=>$request->Telefono,
+            'Direccion'=>$request->Direccion,
+            'Email'=>$request->Email,
+            'Descripcion' =>$request->Descripcion,
+        ];
+        $voluntary = Voluntary::create($data);
+        $request->session()->flash('message', 'Voluntario creado correctamente.');
+        return redirect()->route('voluntary.index');
+    }
+    
+
+
+
 
     /**
      * Display the specified resource.
@@ -67,23 +113,25 @@ class VoluntaryController extends Controller
      */
     public function show(Voluntary $id)
     {
-        $VoluntaryB = voluntary::find($id); 
-        return view('Volun.show',compact('VoluntaryB'));
+        $voluntary = Voluntary::find($id);
+        $voluntary = $voluntary[0];
+        return view('Volun.show')->with('Voluntary', $voluntary);
     }
-
+   
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function edit(Voluntary $id)
-    {
-     
-       
-    $VoluntaryE = voluntary::find($id);
-    return view('Volun.edit', compact('VoluntaryE'));
-
+    public function edit($id)
+    {  
+        $voluntary = Voluntary::find($id);
+        //dd($voluntary);
+        if (is_null($voluntary)) {
+            return redirect()->route('index'); 
+        }
+        return view('Volun.createGus')-> with('voluntary', $voluntary);
     }
 
     /**
@@ -93,20 +141,20 @@ class VoluntaryController extends Controller
      * @param  \App\voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Voluntary $id)
+    public function update(VoluntaryRequest $request, $id)
     {
-        $VoluntaryU = voluntary::find($id);
-        $VoluntaryU->id = $request->id;
-        $VoluntaryU->nombre = $request->nombre;
-        $VoluntaryU->apellido1 = $request->apellido1;
-        $VoluntaryU->apellido2 = $request->apellido2;
-        $VoluntaryU->telefono = $request->telefono;
-        $VoluntaryU->direccion = $request->direccion;
-        $VoluntaryU->email = $request->email;
-        $VoluntaryU->descriocion = $request->descripcion;
-        
-        $VoluntaryU->save();
-        return redirect()->route('Voluntary.index');
+        $voluntary = Voluntary::find($id);
+        $voluntary->Nombre= $request->Nombre;
+        $voluntary->Apellido_1= $request->Apellido_1;
+        $voluntary->Apellido_2= $request->Apellido_2;
+        $voluntary->Edad= $request->Edad;
+        $voluntary->Telefono= $request->Telefono;
+        $voluntary->Direccion= $request->Direccion;
+        $voluntary->Email= $request->Email;
+        $voluntary->Descripcion= $request->Descripcion;
+        $voluntary->save();
+        $request->session()->flash('message', 'Voluntario actualizado correctamente.');
+        return redirect()->route('voluntary.index');
     }
 
     /**
@@ -115,14 +163,10 @@ class VoluntaryController extends Controller
      * @param  \App\voluntary  $voluntary
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Voluntary $id)
+    public function destroy($id)
     {
-        //try{
-        $VoluntaryE = voluntary::find($id);
-        $VoluntaryE->delete();
-        return redirect()->route('Voluntary.index');
-        //} //catch ('Exception $e'){
-           // return "fatal error".$e->getMessage();
-       // }
+        Voluntary::find($id)->delete();
+        Session()->flash('message', 'Voluntario eliminado correctamente');
+        return redirect()->route('voluntary.index');
     }
 }

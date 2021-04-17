@@ -21,6 +21,8 @@
     <link href="vendor/venobox/venobox.css" rel="stylesheet">
     <link href="vendor/aos/aos.css" rel="stylesheet">
 
+    <!--iconos-->
+    <script src="https://kit.fontawesome.com/cb026a7b0d.js" crossorigin="anonymous"></script>
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -33,9 +35,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Ecomuseo') }}
-                </a>
+            <h1 class="logo mr-auto"><a href="{{route('welcome')}}" style="color: rgba(0, 68, 40, 0.664)">Ecomuseo</a></h1>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -45,7 +45,6 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
-
                     
 
                     <!-- Right Side Of Navbar -->
@@ -53,11 +52,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
+                               <h5> <a class="nav-link" href="{{ route('login') }}" style="color: rgba(0, 68, 40, 0.664)" >{{ __('Iniciar sesión') }}</a></h5>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                                   <h5> <a class="nav-link" href="{{ route('register') }}" style="color: rgba(0, 68, 40, 0.664)">{{ __('Registrarse') }}</a></h5>
                                 </li>
                             @endif
                         @else

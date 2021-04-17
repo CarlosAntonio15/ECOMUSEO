@@ -1,3 +1,5 @@
+<title>Formulario reservaciones</title>
+@if( Auth::user()->rol==1 or Auth::user()->rol==2)
 @extends('layouts.main')
 @extends('layouts.app')
 @section('content')
@@ -31,7 +33,6 @@
                                 <th >Cantidad_Adultos</th>
                                 <th >Cantidad_niños</th>
                                 <th >Tipo_Tour</th>
-                                <th >Precio</th>
                                 <th >Correo</th>
                                 <th >Telefono</th>
 
@@ -50,7 +51,6 @@
                                 <td>{{ $reservation->adultQuantity }}</td>
                                 <td>{{ $reservation->childrenQuantity }}</td>
                                 <td>{{ $reservation->tourType }}</td>
-                                <td>{{ $reservation->tourPrice }}</td>
                                 <td>{{ $reservation->email }}</td>
                                 <td>{{ $reservation->phone }}</td>
 
@@ -82,69 +82,41 @@
   <script src="js/main.js"></script>
 @endsection
 
-
-<!--<div class="form-group">
- {!! Form::label('id', 'ID')!!}
- {!! Form::text('id', null, ['class' => 'form-control']) !!}
-</div>
+@endif
+@if( Auth::user()->rol==3 )
 
 
-        <div class="form-group">
-             {!! Form::label('identification', 'identification')!!}
-             {!! Form::text('identification', null, ['class' => 'form-control']) !!}
+<br><br><br><br><br><br>
+
+
+
+    <div class="card">
+
+        <div class="card-content">
+
+            <div class="card-body">
+
+                <div class="form-body">
+
+                    <div class="col-12">
+
+                        <div class="form-group">
+                            <br>
+                            <h2 style="color: red" class="card-title">Acceso denegado, comuníquese con el administrador. </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="form-group">
-             {!! Form::label('name', 'name')!!}
-             {!! Form::text('name', null, ['class' => 'form-control']) !!}
-        </div>
-
-        <div class="form-group">
-             {!! Form::label('lastname', 'lastname')!!}
-             {!! Form::text('lastname', null, ['class' => 'form-control']) !!}
-        </div>
-
-        <div class="form-group">
-             {!! Form::label('reservationDate', 'reservationDate')!!}
-             {!! Form::text('reservationDate', null, ['class' => 'form-control']) !!}
-        </div>
-
-        <div class="form-group">
-             {!! Form::label('reservationHour', 'reservationHour')!!}
-             {!! Form::text('reservationHour', null, ['class' => 'form-control']) !!}
-        </div>
-
-        <div class="form-group">
-             {!! Form::label('adultQuantity', 'adultQuantity')!!}
-             {!! Form::text('adultQuantity', null, ['class' => 'form-control']) !!}
-        </div>
-
-        <div class="form-group">
-             {!! Form::label('childrenQuantity', 'childrenQuantity')!!}
-             {!! Form::text('childrenQuantity', null, ['class' => 'form-control']) !!}
-        </div>
-
-        <div class="form-group">
-             {!! Form::label('tourType', 'tourType')!!}
-             {!! Form::text('tourType', null, ['class' => 'form-control']) !!}
-        </div>
-
-        <div class="form-group">
-             {!! Form::label('tourPrice', 'tourPrice')!!}
-             {!! Form::text('tourPrice', null, ['class' => 'form-control']) !!}
-        </div>
-
-        <div class="form-group">
-             {!! Form::label('email', 'email')!!}
-             {!! Form::text('email', null, ['class' => 'form-control']) !!}
-        </div>
-
-        <div class="form-group">
-             {!! Form::label('phone', 'phone')!!}
-             {!! Form::text('phone', null, ['class' => 'form-control']) !!}
-        </div>
+    </div>
 
 
-        <div class="form-group">
-             {!! Form::submit('ENVIAR', ['class'=>'btn btn-primary'])!!}
-        </div>
+
+@endif
+
