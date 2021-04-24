@@ -99,6 +99,7 @@
       <div class="dashboard">
 
         <div class="row">
+          <div class="col-sm-6">
       <a href="{{ route ('voluntary.index')}}" ><i class="fas fa-registered"></i> 
           <p>
           <strong> Voluntarios</strong><br>
@@ -146,10 +147,17 @@
 
   @method('PUT')
   </a>
+      
       </div>
     </div>
 </div>
-<a href="{{route('welcome')}}" class="btn btn-secondary">Atrás</a>
+
+<div class="card-footer">
+  <button class="btn btn-warning">
+      <h1 class="logo mr-auto"><a href="{{route('welcome')}}">Atras<span></span></a></h1>
+  </button>
+</div>
+
   </section>
 </body>
 </div>
@@ -159,20 +167,32 @@
 
 @if( Auth::user()->rol==3 )
 
+@extends('layouts.main')
+<!DOCTYPE html>
+<html lang="en">
 
-<br><br><br><br><br><br>
-    <div class="card">
-        <div class="card-content">
-            <div class="card-body">
-                <div class="form-body">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <br>
-                            <h2 style="color: red" class="card-title">Acceso denegado, comuniquese con el administrador. </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <br><br><br><br><br><br>
+    <div class="contenedor">
+        <div class="redAlert">
+          <section>
+            <h1 style="color: rgb(0, 0, 0)" class="card-title">*Acceso restringido, solo personal autorizado* </h1>
+        </section>
+        <div class="card-footer">
+          <button class="btn btn-warning">
+              <h1 class="logo mr-auto"><a href="{{route('welcome')}}">Atras<span></span></a></h1>
+          </button>
         </div>
-    </div>
+        </div>
+      </div>
+</body>
+
+</html>
+
 @endif

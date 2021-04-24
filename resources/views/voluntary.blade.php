@@ -1,4 +1,5 @@
 <title>Formulario voluntario</title>
+<div style="background-image: url('/img/collage.jpeg'); " >
 @if( Auth::user()->rol==1 or Auth::user()->rol==2)
 @extends('layouts.main')
 @extends('layouts.app')
@@ -18,9 +19,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-20">
-            <div class="card">
+            <div class="card">          
                 <div class="card-header">Voluntariado</div>
-
                 <div class="card-body">
                     <table class="table table-hover table-striped">
                         <thead>
@@ -93,36 +93,33 @@
 @if( Auth::user()->rol==3 )
 
 
-<br><br><br><br><br><br>
+@extends('layouts.main')
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
 
-
-    <div class="card">
-
-        <div class="card-content">
-
-            <div class="card-body">
-
-                <div class="form-body">
-
-                    <div class="col-12">
-
-                        <div class="form-group">
-                            <br>
-                            <h2 style="color: red" class="card-title">Acceso denegado, comuníquese con el administrador. </h2>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+<body>
+  <br><br><br><br><br><br>
+    <div class="contenedor">
+        <div class="redAlert">
+          <section>
+            <h1 style="color: rgb(0, 0, 0)" class="card-title">*Acceso restringido, solo personal autorizado* </h1>
+        </section>
+        <div class="card-footer">
+          <button class="btn btn-warning">
+              <h1 class="logo mr-auto"><a href="{{route('welcome')}}">Atras<span></span></a></h1>
+          </button>
         </div>
+        </div>
+      </div>
+</body>
 
-    </div>
-
+</html>
 
 
 @endif

@@ -1,10 +1,15 @@
+<title>Información detallada</title>
 @extends('layouts.app')
 @section('content')
+<div style="background-image: url('/img/rueda.jpg'); " >
 <div class = "container">
+</br></br>
 <div class="row justify-content-center">
-<div class="col-sm-12">
+<div class="col-sm-9">
 <div class="card">
-<div class="card-header"><h4>Información detallada</h4></div>
+<div class="card-header"><h4 >Información detallada</h4></div>
+<div style="background-image: url('/img/rueda.jpg'); " >
+</br>
 <div class="card-body">
 
     <div class="row">
@@ -26,15 +31,15 @@
                     <table class="table table-bordered table-hover">
                         <tbody>
                             <tr>
-                                <th>Nombre del Voluntario</th>
-                                <td> {{ $Voluntary->Nombre }} 
+                            <th style="color:  rgb(243, 236, 236)" align="center">Nombre del Voluntario</th>
+                              <td style="color:  rgb(243, 236, 236)" align="center"> {{ $Voluntary->Nombre }} 
                                     &nbsp;{{ $Voluntary-> Apellido_1 }}
                                     &nbsp;{{ $Voluntary-> Apellido_2 }}
                                 </td>
                             </tr>
                             <tr>
-                                <th>Edad</th>
-                                <td> {{ $Voluntary->Edad }} </td>
+                            <th style="color:  rgb(243, 236, 236)" align="center">Edad</th>
+                                <td style="color:  rgb(243, 236, 236)" align="center"> {{ $Voluntary->Edad }} </td>
                             </tr>
                         </tbody>
                     </table>
@@ -44,16 +49,16 @@
                     <table class="table table-bordered table-hover">
                         <tbody>
                             <tr>
-                                <th>Teléfono</th>
-                                <td>{{ $Voluntary->Telefono }}</td>
+                                <th style="color:  rgb(243, 236, 236)" align="center">Teléfono</th>
+                                <td style="color:  rgb(243, 236, 236)" align="center">{{ $Voluntary->Telefono }}</td>
                             </tr>
                             <tr>
-                                <th>Dirección</th>
-                                <td>{{ $Voluntary->Direccion }}</td>
+                                <th style="color:  rgb(243, 236, 236)" align="center">Dirección</th>
+                                <td style="color:  rgb(243, 236, 236)" align="center">{{ $Voluntary->Direccion }}</td>
                             </tr>
                             <tr>
-                                <th>Correo Electrónico</th>
-                                <td> {{ $Voluntary->Email }}</td>
+                                <th style="color:  rgb(243, 236, 236)" align="center">Correo Electrónico</th>
+                                <td style="color:  rgb(243, 236, 236)" align="center"> {{ $Voluntary->Email }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -62,8 +67,8 @@
                     <table class="table table-bordered table-hover">
                         <tbody>
                             <tr>
-                                <th>Descripción</th>
-                                <td>{{ $Voluntary->Descripcion }}</td>
+                                <th style="color:  rgb(243, 236, 236)" align="center">Descripción</th>
+                                <td style="color:  rgb(243, 236, 236)" align="center">{{ $Voluntary->Descripcion }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -75,6 +80,7 @@
    </div>
     </div>
     </div>
+    </br></br></br></br></br></br></br></br></br></br></br></br>
     </div>
     </div>
 @endsection
