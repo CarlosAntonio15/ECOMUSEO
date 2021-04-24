@@ -1,3 +1,4 @@
+<title>Información detallada reservación</title>
 @extends('layouts.app')
 @section('content')
 <div class = "container">
