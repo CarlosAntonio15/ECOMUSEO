@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use App\Entrada;
 use Illuminate\Http\Request;
 use App\Http\Requests\EntradaRequest;
+use PDF;
+use Response;
 
 class EntradaController extends Controller
 {
     public function index()
     {
-        $entrada = Entrada::All();
-        return view('tiquete.index')->with('entrada', $entrada);
+        $entradas = Entrada::orderBy('id', 'desc')->paginate(3);
+       
+        return view('tiquete.index')->with('entradas', $entradas);
     }
     public function create()
     {
@@ -24,10 +27,30 @@ class EntradaController extends Controller
             'childrenQuantity'=>$request->childrenQuantity, 
             'tourType'=>$request->tourType,
         ];
+        
         $entrada= Entrada::create($data);
         $request->session()->flash('message','Tiquete comprado');
+        $request->session()->flash('id',$entrada->id);
         return redirect()->route('tiquete.index');
+        
     }
+    public function createPDF() {
+    
+        $data= Entrada::all();
+        view()->share('tiquete',$data );
+        $pdf = PDF::loadView('tiquete.allTiquete', $data);
+        return $pdf->download('Tiquetes.pdf');
+         
+    }
+
+    public function download($id){
+
+        $entrada = Entrada::find($id);
+        view()->share('tiquete', $entrada );
+        
+        return PDF::loadView('tiquete.tiquetePDF', $entrada)->download("Entrada-$entrada->id, Nombre-$entrada->nombre, Tour-$entrada->tourType.pdf");
+    }
+
 }
 
 

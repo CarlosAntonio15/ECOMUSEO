@@ -21,5 +21,4 @@ class Donation extends Model
     //  return $this->belongsTo('App\Income');
     // }
 
-    protected $table = 'donation';
 }

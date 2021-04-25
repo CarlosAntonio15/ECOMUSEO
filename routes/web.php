@@ -128,7 +128,8 @@ Route::get('/tiquete/show/{id}', 'tiqueteController@show')->name('tiquete.show')
 Route::get('/tiquete/edit/{id}', 'tiqueteController@edit')->name('tiquete.edit');
 Route::put('/tiquete/update/{id}', 'tiqueteController@update')->name('tiquete.update');
 Route::delete('/tiquete/delete/{id}', 'tiqueteController@destroy')->name('tiquete.destroy');
-
+Route::get('/tiquete/PDF','EntradaController@createPDF');
+Route::get('/tiquete/PDF/{id}','EntradaController@download');
 
 
 
