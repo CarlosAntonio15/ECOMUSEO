@@ -120,8 +120,7 @@
 
       <a href="{{ route ('donation')}}"><i class="fas fa-donate"></i>
     <p>
-      <strong>  Donaciones </strong><br>
-      <span>Administrar</span>
+      <strong>Donaciones</strong><br>
     </p>
       </a>
             <form action="" method="POST" class="d-lg-inline-flex">
@@ -131,7 +130,6 @@
     <a href="{{ route ('reservation.index')}}"> <i class="fas fa-resistance"></i> 
       <p>
         <strong>Reservaciones </strong>
-        <span>Administrar</span>
       </p>
       </a>
   <form action="" method="POST" class="d-lg-inline-flex">
@@ -147,7 +145,7 @@
 
   @method('PUT')
   </a>
-      
+    
       </div>
     </div>
 </div>
