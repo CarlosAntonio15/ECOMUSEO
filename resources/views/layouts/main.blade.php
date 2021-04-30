@@ -91,43 +91,44 @@
                     {{-- @foreach ($collection as $item)
                         
                     @endforeach --}}-->
+                    @if( Auth::user()->rol==2 )
+                    <li class="drop-down"><h6>Administración</h6>
+                      <ul>
+                        <li class="black">
+                          <a href="{{ route ('voluntary.index')}}" class="dropdown-item">
+                            <i class="fas fa-cog"></i> Voluntarios
+                          </a>
+                        </li>  
+                        <form action="" method="POST" class="d-inline">
+                          @method('PUT')
+                          @csrf
+                        </form>
 
-              <li class="drop-down"><h6>Administración</h6>
-                <ul>
-                  <li class="black">
-                    <a href="{{ route ('voluntary.index')}}" class="dropdown-item">
-                      <i class="fas fa-cog"></i> Voluntarios
-                    </a>
-                  </li>  
-                  <form action="" method="POST" class="d-inline">
-                    @method('PUT')
-                    @csrf
-                  </form>
+                        <div class="dropdown-divider"></div>
+                        <li class="black">
+                          <a href="{{ route ('donation')}}" class="dropdown-item">
+                            <i class="fas fa-cog"></i> Donaciones
+                          </a>
+                        </li>
+                        <form action="" method="POST" class="d-inline">
+                          @method('PUT')
+                          @csrf
+                        </form>
 
-                  <div class="dropdown-divider"></div>
-                  <li class="black">
-                    <a href="{{ route ('donation')}}" class="dropdown-item">
-                      <i class="fas fa-cog"></i> Donaciones
-                    </a>
-                  </li>
-                  <form action="" method="POST" class="d-inline">
-                    @method('PUT')
-                    @csrf
-                  </form>
-
-                  <div class="dropdown-divider"></div>
-                  <li class="black">
-                    <a href="{{ route ('reservation')}}" class="dropdown-item">
-                      <i class="fas fa-cog"></i> Reservaciones
-                    </a>
-                  </li>
-                  <form action="" method="POST" class="d-inline">
-                    @method('PUT')
-                    @csrf
-                  </form>
-                </ul>
-              </li>
-
+                        <div class="dropdown-divider"></div>
+                        <li class="black">
+                          <a href="{{ route ('reservation')}}" class="dropdown-item">
+                            <i class="fas fa-cog"></i> Reservaciones
+                          </a>
+                        </li>
+                        <form action="" method="POST" class="d-inline">
+                          @method('PUT')
+                          @csrf
+                        </form>
+                      </ul>
+                    </li>
+                  @endif
+                  
                 <div class="dropdown-divider"></div>
                 <li class=" black" > 
                   <a  href="{{ route('logout') }}"  class="dropdown-item"

@@ -13,7 +13,7 @@
                         <h4>Donaciones</h4>
                         
                         <a href="{{ route('donation.create') }}" class="btn btn-info float-rigth">
-                            <i class="fas fa-plus"></i>Nueva donación
+                            <i class="fas fa-plus"></i>Nueva sacada de plata
                         </a>
                         <a href="{{route('administracion')}}" class="btn btn-secondary">Atrás</a>
                     </div>
@@ -58,7 +58,7 @@
                 </div> 
             </div>
         @empty
-            <h4>No existen donaciones agregadas.</h4> 
+            <h4>No hay plata dijo la lora.</h4> 
         @endforelse
                        </div>
                     </div>

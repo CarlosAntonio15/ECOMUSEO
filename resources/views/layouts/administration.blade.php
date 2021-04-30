@@ -44,8 +44,8 @@
       </div>
       <div class="social-links">
         <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-        <a href="https://www.facebook.com/ecomuseominero1991" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="https://www.instagram.com/ecomuseoabangares/?hl=es-la" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="https://www.facebook.com/ecomuseominero1991" class="facebook" target="_blank"><i class="icofont-facebook"></i></a>
+        <a href="https://www.instagram.com/ecomuseoabangares/?hl=es-la" class="instagram" target="_blank"><i class="icofont-instagram"></i></a>
         <a href="#" class="skype"><i class="icofont-skype"></i></a>
         <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
       </div>

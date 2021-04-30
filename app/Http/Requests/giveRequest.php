@@ -24,7 +24,16 @@ class giveRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id'=>'required', 
+            'name'=>'required',
+            'lastname'=>'required', 
+            'donationType'=>'required',
+            'quantity'=>'required', 
+            'description'=>'required',
+            'currentDate'=>'required',
+            'phone'=>'required', 
+            'mail'=>'required'
+
         ];
     }
 }

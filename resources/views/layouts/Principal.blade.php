@@ -39,8 +39,8 @@
         <i class="icofont-phone"></i> +506 2662 0004
       </div>
       <div class="social-links">
-        <a href="https://www.facebook.com/ecomuseominero1991" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="https://www.instagram.com/ecomuseoabangares/?hl=es-la" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="https://www.facebook.com/ecomuseominero1991" class="facebook" target="_blank"><i class="icofont-facebook"></i></a>
+        <a href="https://www.instagram.com/ecomuseoabangares/?hl=es-la" class="instagram" target="_blank"><i class="icofont-instagram"></i></a>
       </div>
     </div>
   </div>
@@ -98,31 +98,36 @@
                 @csrf
                 </form>
 
-              {{-- @foreach ($collection as $item)
-                  
-              @endforeach --}}
+                  {{-- @foreach ($collection as $item)
+                      
+                  @endforeach --}}
 
-              <div class="dropdown-divider"></div>
-                  <li class="black">
-                    <a href="{{ url ('administracion')}}" class="dropdown-item">
-                   <i class="fas fa-cog"></i>Administración</li></a>
-                <form action="" method="POST" class="d-inline">
+                  @if( Auth::user()->rol==2 )
+                    <li class="black">
+
+                        <a href="{{ url ('administracion')}}" class="dropdown-item">
+                          <i class="fas fa-cog"></i>Administración
+                        </a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                    @endif
+                      <form action="" method="POST" class="d-inline">
 
    
-                <form action="" method="POST" class="d-inline">
-                @method('PUT')
-                @csrf
-                </form>
+                      <form action="" method="POST" class="d-inline">
+                        @method('PUT')
+                        @csrf
+                      </form>
 
 
-                <div class="dropdown-divider"></div>
-                <li class=" black" > <a  href="{{ route('logout') }}"  class="dropdown-item"
-                  onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();">
-                  <i class="fas fa-sign-out-alt"></i>  {{ __('Cerrar sesión') }}</a>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                  </form>
+                      
+                      <li class=" black" > <a  href="{{ route('logout') }}"  class="dropdown-item"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt"></i>  {{ __('Cerrar sesión') }}</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                    </form>
               </ul>
             </li> 
           @endif

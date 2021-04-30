@@ -76,7 +76,10 @@ Route::delete('/voluntario/delete/{id}', 'VoluntaryController@destroy')->name('v
 Route::get('/give/index','giveController@index')->name('give.index');
 Route::get('/give/create','giveController@create')->name('give.create');
 Route::post('/give/create','giveController@store')->name('give.store');
-
+Route::get('/give/show/{id}', 'giveController@show')->name('give.show');
+Route::get('/give/edit/{id}','giveController@edit')->name('give.edit');
+Route::put('/give/update/{id}','giveController@update')->name('give.update');
+Route::delete('/give/delete/{id}','giveController@destroy')->name('give.destroy');
 
 
 //Donaciones
