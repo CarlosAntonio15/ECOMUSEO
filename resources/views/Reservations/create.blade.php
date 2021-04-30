@@ -64,23 +64,21 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                     <h5 style="color:  rgb(243, 236, 236)" align="center">{!! Form::Label('adultQuantity', 'Cantidad de adultos') !!}</h5>
-                                        {!! Form::number('adultQuantity', null, ['placeholder' => 'Ingresa la cantidad de adultos', 'class' => 'form-control', 'id' => 'Adult' ]) !!}
+                                        {!! Form::number('adultQuantity', 0, ['placeholder' => 'Ingresa la cantidad de adultos', 'class' => 'form-control', 'id' => 'Adult', 'onkeyup'=>"suma();" ]) !!}
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
                                     <h5 style="color:  rgb(243, 236, 236)" align="center">{!! Form::Label('childrenQuantity', 'Cantidad de niños') !!}</h5>
-                                        {!! Form::number('childrenQuantity', null, ['placeholder' => 'Ingresa la cantidad de niños', 'class' => 'form-control', 'id' => 'Childrent' ]) !!}
+                                        {!! Form::number('childrenQuantity', 0, ['placeholder' => 'Ingresa la cantidad de niños', 'class' => 'form-control', 'id' => 'Childrent', 'onkeyup'=>"suma();" ]) !!}
                                     </div>
                                 </div>
+
                                 <div class="col-md-4">
                                     <div class="form-group">
-
-                                         {!! Form::Label('Calcular') !!}
-                                         <br>
-                                        <input type="button" value="Calcular precio" class="btn btn-success" onclick="alert(suma());">
-                                    
+                                    <h5 style="color:  rgb(243, 236, 236)" align="center">{!! Form::Label('total', 'Total(Colones)') !!}</h5>
+                                        {!! Form::number('total', 0, [ 'class' => 'form-control', 'id' => 'total'  ]) !!}
                                     </div>
                                 </div>
                             </div>
@@ -112,13 +110,13 @@
 
                                     <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::Label('tourType', 'Tipo de tour') !!}</h5>
                                         <br>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::radio('tourType', 'Senderismo') !!} Senderismo y hiking</h5>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::radio('tourType', 'AvistamientoAves') !!} Avistamiento de ave</h5>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::radio('tourType', 'MuseoAntiguedades') !!} Museo con exhibición permanente</h5>
+                                        <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::checkbox('tourType', 'Senderismo') !!} Senderismo y hiking</h5>
+                                        <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::checkbox('tourType', 'AvistamientoAves') !!} Avistamiento de ave</h5>
+                                        <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::checkbox('tourType', 'MuseoAntiguedades') !!} Museo con exhibición permanente</h5>
                                         <br>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::radio('tourType', 'AuditorioEventos') !!} Auditorio de eventos</h5>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center">{!! Form::radio('tourType', 'ToursGuiados') !!} Tours guiados</h5>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center">{!! Form::radio('tourType', 'GaleríaPH') !!} Galería de piezas históricas</h5>
+                                        <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::checkbox('tourType', 'AuditorioEventos') !!} Auditorio de eventos</h5>
+                                        <h5 style="color:  rgb(243, 236, 236)" align="center">{!! Form::checkbox('tourType', 'ToursGuiados') !!} Tours guiados</h5>
+                                        <h5 style="color:  rgb(243, 236, 236)" align="center">{!! Form::checkbox('tourType', 'GaleríaPH') !!} Galería de piezas históricas</h5>
 
                                     </div>
                                 </div>
@@ -158,13 +156,37 @@
         </div>
     </div>
 </div>
+
+
+
 <script>
-    var suma = function(Adult, Childrent){
-        var Adult = parseInt(document.getElementById("Adult").value);
-        var Childrent = parseInt(document.getElementById("Childrent").value);
+    var suma = function(){
+        var inputAdulto = document.getElementById("Adult")
+        var inputChildrent = document.getElementById("Childrent")
+        if(!inputAdulto)return
+        if(!inputChildrent)return
+        var Adult = parseInt(inputAdulto.value);
+        var Childrent = parseInt(inputChildrent.value);
+        var Resultado = Adult * 1000 + Childrent * 500;
         
-        var resultado = Adult * 1000 + Childrent * 500;
-        return resultado;
+
+        document.getElementById('total').value = Resultado;
+
+    }
+</script>
+
+<script>
+    function sumar(){
+        var inputAdulto = document.getElementById("Adult")
+        var inputChildrent = document.getElementById("Childrent")
+        if(!inputAdulto)return
+        if(!inputChildrent)return
+        var Adult = parseInt(inputAdulto.value);
+        var Childrent = parseInt(inputChildrent.value);
+        var Resultado = Adult * 1000 + Childrent * 500;
+        
+        document.getElementById('total').value = Resultado;
+
     }
 </script>
 

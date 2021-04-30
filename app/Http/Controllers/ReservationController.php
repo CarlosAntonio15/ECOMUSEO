@@ -42,6 +42,7 @@ class ReservationController extends Controller
             "reservationDate" =>'required',
             "reservationHour" =>'required|max:40',
             "adultQuantity" =>'required',
+            "total" =>'required',
             "tourType" =>'required',
             "email" =>'required|email|unique:reservations',
             "phone" =>'required|unique:reservations'
@@ -56,6 +57,7 @@ class ReservationController extends Controller
         $ReservationN->reservationHour= $request->reservationHour;
         $ReservationN->adultQuantity= $request->adultQuantity;
         $ReservationN->childrenQuantity= $request->childrenQuantity;
+        $ReservationN->total= $request->total;
         $ReservationN->tourType= $request->tourType;
         $ReservationN->email= $request->email;
         $ReservationN->phone= $request->phone;
@@ -126,6 +128,7 @@ class ReservationController extends Controller
         $reservation->reservationHour= $request->reservationHour;
         $reservation->adultQuantity= $request->adultQuantity;
         $reservation->childrenQuantity= $request->childrenQuantity;
+        $reservation->total= $request->total;
         $reservation->tourType= $request->tourType;
         $reservation->email= $request->email;
         $reservation->phone= $request->phone;

@@ -1235,7 +1235,7 @@ section {
 
 .contenedor {
   width: 80%;
-  max-width: 1000px;
+  max-width: 100%;
   margin:0 auto;
   background: #3c3c3c;
   overflow: hidden;
@@ -1288,7 +1288,7 @@ margin-bottom: 0px;
   width: 80%;
   max-width: 100%;
   margin:0 auto;
-  background: rgb(105, 107, 105);
+  background: rgb(185, 14, 14);
   overflow: hidden;
   box-sizing: border-box;
 }

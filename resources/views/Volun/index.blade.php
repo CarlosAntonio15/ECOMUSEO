@@ -5,8 +5,8 @@
 <div class = "container">
 <div class="row justify-content-center">
 <div class="col-sm-12">
-<div class="card">
-<div class="card-header">Lista voluntarios</div>
+<!--<div class="card">-->
+<div class="card-header"><h4>Lista voluntarios</div></h4>
 <div class="col-sm-12">
 </br>
                         <a href="{{route('createGus')}}" class="btn btn-info">Nuevo voluntario</a>
@@ -14,7 +14,6 @@
                         
                     </div>
 <div class="card-body">
-
 
     <div class="row">
         @forelse($Volun as $voluntary)
@@ -24,6 +23,7 @@
                     <div class="col-dm-4 col-voluntary" >
                         <div class="card voluntary" style="min-width: 18rem; max-width: 18rem;">
                             <div class="card-body">
+                            <div style="background-image: url('/img/collage.jpeg'); " >
                                 <h5 class="card-footer">
                                     <i class="fas fa-user-circle"></i>
                                     &nbsp;{{ $voluntary-> Nombre }}
@@ -61,7 +61,7 @@
         @endforelse
     </div>
     </div>
-    </div>
+    <!--</div>-->
     </div>
     </div>
 @endsection
