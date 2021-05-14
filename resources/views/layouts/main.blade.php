@@ -55,7 +55,7 @@
           <li class="<?php if($page ?? '' ?? ''   == 'nosotros'){echo 'active';} ?>"> <a href="{{route ('nosotros')}}"><h6>Sobre nosotros</h6></a></li>
           <li class="<?php if($page ?? '' ?? ''   == 'actividad'){echo 'active';} ?>"> <a href="{{route ('actividad')}}"><h6>Actividades</h6></a></li>
 
-          <li class="drop-down"><h6>Cooperar</h6>
+          <li class="drop-down"><a href="">Cooperar</a>
             <ul>
               <li class="<?php if($page ?? ''??''   == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}">Voluntariado</a></li>
               <div class="dropdown-divider"></div>
@@ -91,7 +91,7 @@
                     {{-- @foreach ($collection as $item)
                         
                     @endforeach --}}-->
-
+                    @if( Auth::user()->rol==2 )
               <li class="drop-down"><h6>Administración</h6>
                 <ul>
                   <li class="black">
@@ -127,7 +127,7 @@
                   </form>
                 </ul>
               </li>
-
+              @endif
                 <div class="dropdown-divider"></div>
                 <li class=" black" > 
                   <a  href="{{ route('logout') }}"  class="dropdown-item"

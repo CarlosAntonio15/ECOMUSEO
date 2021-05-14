@@ -29,13 +29,15 @@
                   <!--<img src="img/act2.jpeg" width="100px" height="200px"/>
                     <h5>Te invitamos a conocernos por medio de las actividades que se realizan en el Ecomuseo de las minas de Abangares.</h5><br>-->
                 </div>
-                </div>
+             </div>
 
+
+                
               <div class="row">  
                 <div class="unico">
                   <div class="icon-box">
                     <h5>Auditorio de eventos</h5>
-                    <img src="img/eventos.jpg"/>
+                    <img src="img/eventos.jpg" width="100" height="200"/>
                     <p class="text-justify">
                           Un excelente lugar para aprender y para reunirse. Si tienes necesidad 
                           de un lugar para organizar una reunión, una clase...<details> <summary>Leer más/menos</summary> Tienen excelentes precios 
@@ -54,7 +56,7 @@
              <div class="unico">
                   <div class="icon-box">
                     <h5>Exhibición permanente</h5>
-                    <img src="img/auditorio.jpg"/>
+                    <img src="img/auditorio.jpg" width="100" height="200"/>
                    <p class="text-justify">
                             La exposición incluye objetos que usaron los mineros para extraer el mineral y obtener el oro 
                             mediante diferentes<details> <summary>Leer más/menos</summary> técnicas, lámparas de canfín,
@@ -69,7 +71,7 @@
                 <div class="unico">
                   <div class="icon-box">
                     <h5>Galería piezas históricas</h5>
-                    <img src="img/piezash.jpeg"/>
+                    <img src="img/piezash.jpeg" width="100" height="200"/>
                     <p class="text-justify">
                           Se brindan exhibiciones a visitantes donde se muestran todas las piezas históricas
                           que tiene el Ecomuseo, junto<details> <summary>Leer más/menos</summary> con la historia que estas abarcan.</details>
@@ -82,7 +84,7 @@
                 <div class="unico">
                   <div class="icon-box">
                     <h5>Tours y visitas guiadas</h5>
-                    <img src="img/tour.jpg"/>
+                    <img src="img/tour.jpg" width="100" height="200"/>
                     <!--<img src="img/tour.jpg" class="rounded float-left img-fluid" alt="...">-->
                    <p class="text-justify">
                           El tour iniciará su recorrido primeramente por parte del área de jardines y 
@@ -118,7 +120,7 @@
                 <div class="unico">
                   <div class="icon-box">
                     <h5>Senderismo</h5>
-                    <img src="img/senderismo.jpg"/>
+                    <img src="img/senderismo.jpg" width="100" height="200"/>
                     <p class="text-justify">
                           El recorrido por los senderos del EM, consiste en un maravilloso recorrido de tres 
                           horas entre la biodiversidad que<details> <summary>Leer más/menos</summary> albergan treinta y ocho hectáreas (38 ha) 
@@ -137,7 +139,7 @@
                 <div class="unico">
                   <div class="icon-box">
                     <h5>Avistamiento de aves</h5>
-                    <img src="img/avistamiento.jpg" />
+                    <img src="img/avistamiento.jpg" width="100" height="200" />
                    <p class="text-justify">
                          La Sierra de Abangares puede ser un Paraíso para los amantes de las aves, 
                          de las 900 especies confirmadas que<details><summary>Leer más/menos</summary> hay en Costa Rica, en los alrededores del en
@@ -152,18 +154,27 @@
                         <!--<a href="img/avistamiento.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Avistamiento"><i class="bx bx-plus"></i></a>-->
                       </div>
 
-                  
+                    </div> 
 
-                    </div>    
-                  </div> 
+                  <div class="unico">
+                  <div class="icon-box">
+                    <h5>Precios</h5>
+                        <p class="text-justify">
+                           1- Adultos: 1000 colones.<br>
+                           2-	Niños: 500 colones<br>
+                        </p>
+                        <!--<a href="img/avistamiento.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Avistamiento"><i class="bx bx-plus"></i></a>-->
+                      </div>
                     <div>
                       <div class="col-lg-4"> 
                         <div class="form-group">
                           <a href="{{ route('reservation.create')}}" class="btn btn-success">Reservar</a>
                         </div>
-                        </div>
+                      </div>
                     <!--</div>-->
                 </div>
+                    </div>   
+                  </div> 
               </div>
             </div>
           </div>

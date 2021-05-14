@@ -57,9 +57,9 @@ class VoluntaryController extends Controller
     {
 
         $request->validate([
-            "Nombre" => 'required|string|max:100',
-            "Apellido_1" => 'required|max:150',
-            "Apellido_2" =>'required|max:150',
+            "Nombre" => 'required|alpha|max:100',
+            "Apellido_1" => 'required|max:150|alpha',
+            "Apellido_2" =>'required|max:150|alpha',
             "Edad" =>'required',
             "Telefono" =>'required|max:40',
             "Direccion" =>'required',

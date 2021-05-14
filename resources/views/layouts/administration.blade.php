@@ -176,11 +176,11 @@
 </head>
 
 <body>
-  <br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br>
     <div class="contenedor">
-        <div class="redAlert">
+        <div style="background-image: url('/img/acceso.jpg'); " >
           <section>
-            <h1 style="color: rgb(0, 0, 0)" class="card-title">*Acceso restringido, solo personal autorizado* </h1>
+            <h1 style="color:  rgb(230, 210, 210)" class="card-title">Acceso restringido</h1>
         </section>
         <div class="card-footer">
           <button class="btn btn-warning">
@@ -188,6 +188,7 @@
           </button>
         </div>
         </div>
+     
       </div>
 </body>
 

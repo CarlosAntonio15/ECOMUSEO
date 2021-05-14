@@ -1237,7 +1237,7 @@ section {
   width: 80%;
   max-width: 100%;
   margin:0 auto;
-  background: #3c3c3c;
+  background: #0c0808;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -1285,10 +1285,10 @@ margin-bottom: 0px;
 
 /**Alerta de Rechazo**/
 .redAlert{
-  width: 80%;
+  width: 100%;
   max-width: 100%;
   margin:0 auto;
-  background: rgb(185, 14, 14);
+  background: rgb(230, 210, 210);
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -1303,8 +1303,9 @@ margin-bottom: 0px;
   }
   body
     {
-background-color: #f5f7f9; 
-font-family: Open Sans, sans-serif;
+      
+      background-color: #f5f7f9; 
+      font-family: Open Sans, sans-serif;
     }
     img{
       width: 100%;
@@ -1312,12 +1313,12 @@ font-family: Open Sans, sans-serif;
       margin-bottom: 10px;
     }
  .unico {
-    width:29.5%;
+    width: 28%;
     float: left;
     margin: 20px 20px;
     background-color: #fff;
     padding: 15px;
-    border-radius: 0px;
+    border-radius: 8px;
     box-shadow: 0 5px 5px rgba(0,0,0,0.15);
   } 
   .unico h5{
