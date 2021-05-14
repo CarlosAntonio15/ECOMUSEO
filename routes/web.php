@@ -129,6 +129,14 @@ Route::get('/tiquete/PDF','EntradaController@createPDF');
 Route::get('/tiquete/PDF/{id}','EntradaController@download');
 
 
+//RUTA EGRESOS
+Route::get('/egresos', 'ExpenseController@index')->name('expense');
+Route::get('/egresos/create','ExpenseController@create')->name('expense.create');
+Route::post('/egresos/create','ExpenseController@store')->name('expense.store');
+Route::get('/egresos/index', 'ExpenseController@index')->name('expense.index');
+
+
+
 
 //SI FUNCIONA
 Route::get('hola', function(){

@@ -36,16 +36,16 @@ class ReservationController extends Controller
 
 
         $request->validate([
-            "identification" => 'required|max:100',
-            "name" => 'required|max:150|string',
-            "lastname" =>'required|max:200',
-            "reservationDate" =>'required',
+            "identification" => 'required|max:15|min:7',
+            "name" => 'required|alpha|max:150',
+            "lastname" =>'required|alpha|max:200',
+            "reservationDate" =>'required|date|after_or_equal:date',
             "reservationHour" =>'required|max:40',
             "adultQuantity" =>'required',
             "total" =>'required',
             "tourType" =>'required',
             "email" =>'required|email|unique:reservations',
-            "phone" =>'required|unique:reservations'
+            "phone" =>'required|unique:reservations|max:8|string'
         ]);
 
         $ReservationN= new Reservation;

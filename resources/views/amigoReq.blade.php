@@ -20,48 +20,12 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-14">
-               <!-- <div class="card">-->
-                   <!-- <div class="container" data-aos="fade-up">-->
-                   <br>  <br>
-                    
-                       <!-- <div class="card text-center">-->
-                          <!--  <div class="card-header">
-                                Voluntariado
-                            </div>-->
-
                             <div class="section-title">
                                 <h4>¡Hazte Amigo del ECOMUSEO de Abangares!</h4>
                             </div>
                             <div class="container" data-aos="fade-up">
 
-<!--<div class="section-title">
-  <h4>Voluntariado</h4>
-</div>-->
 
-<!--<div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    <img src="img/volun.jpeg" class="img-fluid" alt="">
-    <div class="portfolio-info">
-      <a href="img/volun.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Corredor Biológico"><i class="bx bx-plus"></i></a>
-    </div>
-  </div>
-
-  <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-    <img src="img/volun1.jpeg" class="img-fluid" alt="">
-    <div class="portfolio-info">
-      <a href="volun1.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-    </div>
-  </div>
-
-  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-    <img src="img/volun2.jpeg" class="img-fluid" alt="">
-    <div class="portfolio-info">
-      <a href="img/volun2.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-    </div>
-  </div>
-
-</div>-->
                             <div class="card-body">
                             <div class="row">
                                 <p class="text-justify">La Asociación Junta Administradora del Ecomuseo de Abangares ofrece el
@@ -69,33 +33,13 @@
                                                     persona que desee participar de las actividades que se desarrollen y poder gozar
                                                     de privilegios, promociones y descuentos especiales.
                                 </p>
-                               <!-- <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                                            <div class="icon-box">
-                                                <img src="img/amigo.png" class="rounded float-right img-fluid" alt="...">
-                                                <a href="img/voluntariado.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Voluntariado"><i class="bx bx-plus"></i></a>
-                                            </div>
-                                        </div>-->
+
                             </div>
-                           <!-- <div class="card-footer text-muted">
-                                ...
-                            </div>-->
                         </div>
-
-                   <!-- </div>-->
-                    <br>
-                  
-                        <!--<div class="container" data-aos="fade-up">-->
-
-                        <!--<div class="card text-center">-->
-                              
-                            <!--</div>-->
-                           <!-- <div class="card-footer text-muted"></div>-->
-                       <!-- </div>-->
                     </div>
                    
                     <div class="row" data-aos="fade-up">
                         <div class="col-sm-6">
-                            <!--<div class="card">-->
                                 <div class="card-body">
                                     <h5 class="card-title">¿Qué es “El Programa Amigos del ECOMUSEO”, de Asociación Junta
                                                            Administradora del Ecomuseo de Abangares (AJADEMA)?
@@ -118,11 +62,9 @@
                                                         apoyan los programas y proyectos del ECOMUSEO y a su vez, gozan de
                                                         privilegios y descuentos especiales.
                                     </p>
-                               <!-- </div>-->
                             </div>
                         </div>
                         <div class="col-sm-6">
-                          <!--  <div class="card">-->
                            <div class="card-body">
                                 <h5 class="card-title">Requisitos para ser voluntario</h5>
                                 <p class="text-justify">
@@ -138,10 +80,6 @@
                             </div>
 
 <div class="container" data-aos="fade-up">
-
-<!--<div class="section-title">
-  <h4>Voluntariado</h4>
-</div>-->
 
 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
@@ -170,10 +108,7 @@
 
 </div>
                         </div>
-                    <!--</div>-->
 
-               <!-- </div>-->
-            <!--</div>-->
       </div>
     </div>
 

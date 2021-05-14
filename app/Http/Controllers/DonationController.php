@@ -45,13 +45,13 @@ class DonationController extends Controller
     {
 
         $request->validate([
-            "name" => 'required|string|max:100',
-            "lastName" => 'required|max:200',
+            "name" => 'required|alpha|max:50',
+            "lastName" => 'required|max:100|alpha',
             "donationType" =>'required|max:150',
             "quantity" =>'required',
             "description" =>'required|max:40',
             "currentDate" =>'required',
-            "phone" =>'required|unique:donation',
+            "phone" =>'required|unique:donation|integer',
             "mail" =>'required|email|unique:donation'
         ]);
 

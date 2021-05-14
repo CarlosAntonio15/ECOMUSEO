@@ -94,11 +94,11 @@
                                 <div class="col-md-8">
                                     <div class="form-group">
 
-                                    <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::Label('reservationHour', 'Hora del tour') !!}</h5>
+                                    <h5 style="color:  rgb(243, 236, 236)" align=""> {!! Form::Label('reservationHour', 'Hora del tour') !!}</h5>
                                         <br>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center">   {!! Form::radio('reservationHour', '8:00 am') !!} 8:00 am</h5>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::radio('reservationHour', '10:00 am') !!} 10:00 am</h5>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center">{!! Form::radio('reservationHour', '2:00 am') !!} 2:00 am</h5>
+                                        <h5 style="color:  rgb(243, 236, 236)" align="">   {!! Form::radio('reservationHour', '8:00 am') !!} 8:00 am</h5>
+                                        <h5 style="color:  rgb(243, 236, 236)" align=""> {!! Form::radio('reservationHour', '10:00 am') !!} 10:00 am</h5>
+                                        <h5 style="color:  rgb(243, 236, 236)" align="">{!! Form::radio('reservationHour', '2:00 am') !!} 2:00 am</h5>
                                     
                                     </div>
                                 </div>
@@ -108,15 +108,16 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
 
-                                    <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::Label('tourType', 'Tipo de tour') !!}</h5>
+                                    <h5 style="color:  rgb(243, 236, 236)" align=""> {!! Form::Label('tourType', 'Tipo de tour') !!}</h5>
                                         <br>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::checkbox('tourType', 'Senderismo') !!} Senderismo y hiking</h5>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::checkbox('tourType', 'AvistamientoAves') !!} Avistamiento de ave</h5>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::checkbox('tourType', 'MuseoAntiguedades') !!} Museo con exhibición permanente</h5>
-                                        <br>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::checkbox('tourType', 'AuditorioEventos') !!} Auditorio de eventos</h5>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center">{!! Form::checkbox('tourType', 'ToursGuiados') !!} Tours guiados</h5>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center">{!! Form::checkbox('tourType', 'GaleríaPH') !!} Galería de piezas históricas</h5>
+                                        <h5 style="color:  rgb(243, 236, 236)" align=""> {!! Form::checkbox('tourType', 'Senderismo') !!} Senderismo y hiking  
+                                        {!! Form::checkbox('tourType', 'AvistamientoAves') !!} Avistamiento de ave {!! Form::checkbox('tourType', 'MuseoAntiguedades') !!} Museo con exhibición permanente</h5>
+                                      <!-- <h5 style="color:  rgb(243, 236, 236)" align=""> {!! Form::checkbox('tourType', 'AvistamientoAves') !!} Avistamiento de ave</h5>
+                                        <h5 style="color:  rgb(243, 236, 236)" align=""> {!! Form::checkbox('tourType', 'MuseoAntiguedades') !!} Museo con exhibición permanente</h5>-->
+                                        <h5 style="color:  rgb(243, 236, 236)" align=""> {!! Form::checkbox('tourType', 'AuditorioEventos') !!} Auditorio de eventos
+                                        {!! Form::checkbox('tourType', 'ToursGuiados') !!} Tours guiados {!! Form::checkbox('tourType', 'GaleríaPH') !!} Galería de piezas históricas </h5>
+                                        <!-- <h5 style="color:  rgb(243, 236, 236)" align="">{!! Form::checkbox('tourType', 'ToursGuiados') !!} Tours guiados</h5>
+                                        <h5 style="color:  rgb(243, 236, 236)" align="">{!! Form::checkbox('tourType', 'GaleríaPH') !!} Galería de piezas históricas</h5>-->
 
                                     </div>
                                 </div>

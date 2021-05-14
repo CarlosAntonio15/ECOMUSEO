@@ -20,7 +20,16 @@ class EntradaController extends Controller
     {
         return view('Tiquete.create');
     }
-    public function store(EntradaRequest $request){
+    public function store(EntradaRequest $request)
+    {
+        $request->validate([
+            "nombre" => 'required|alpha|max:100',
+            "adultQuantity" => 'required',
+            "childrenQuantity" =>'required',
+            "tourType" =>'required'
+        ]);
+        
+        
         $data=[
             'nombre'=> $request->nombre,
             'adultQuantity'=>$request->adultQuantity, 

@@ -8,6 +8,17 @@
                 <div class="card-header">Entrada</div>
                 <div class="container" data-aos="fade-up">
 
+
+                    @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                    @endif
+
                     @if(!empty($tiquete))
                         {!! Form::model($tiquete, ['route' => ['tiquete.update', $tiquete->id], 'method'=>'put']) !!}
                     @else
