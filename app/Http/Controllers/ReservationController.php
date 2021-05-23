@@ -33,12 +33,23 @@ class ReservationController extends Controller
    
     public function store(ReservationRequest $request)
     {
+  
 
+        $messages =[
+            'required' => 'El campo :attribute es obligatorio ',
+            'alpha' => 'El campo :attribute sólo puede contener letras',
+            'max:100' => 'El campo :attribute tiene un máximo de 100 letras',
+            'email' => 'El campo :attribute debe ser tipo email',
+            'unique:reservations' => 'El campo :attribute debe ser único',
+            'max:8' => 'El campo :attribute debe contener máximo 8 caracteres',     
+            'max:15' => 'El campo :attribute debe contener máximo 15 caracteres',
+            'min:7'  => 'El campo :attribute debe contener mínimo 7 caracteres'
+        ];
 
         $request->validate([
             "identification" => 'required|max:15|min:7',
-            "name" => 'required|alpha|max:150',
-            "lastname" =>'required|alpha|max:200',
+            "name" => 'required|alpha|max:100',
+            "lastname" =>'required|alpha|max:100',
             "reservationDate" =>'required|date|after_or_equal:date',
             "reservationHour" =>'required|max:40',
             "adultQuantity" =>'required',
@@ -46,7 +57,7 @@ class ReservationController extends Controller
             "tourType" =>'required',
             "email" =>'required|email|unique:reservations',
             "phone" =>'required|unique:reservations|max:8|string'
-        ]);
+        ], $messages);
 
         $ReservationN= new Reservation;
         //$ReservationN->Id= $request->id;
@@ -66,6 +77,8 @@ class ReservationController extends Controller
         $request->session()->flash('message', 'Reservación creada correctamente.');
         return redirect()->route('welcome');
     }
+
+
 
     //
 

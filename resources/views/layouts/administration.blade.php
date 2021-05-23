@@ -118,7 +118,7 @@
             <form action="" method="POST" class="d-lg-inline-flex">
   
 
-      <a href="{{ route ('donation')}}"><i class="fas fa-donate"></i>
+      <a href="{{ route ('give.index')}}"><i class="fas fa-donate"></i>
     <p>
       <strong>Donaciones</strong><br>
     </p>
