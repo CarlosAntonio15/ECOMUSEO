@@ -102,7 +102,7 @@
                   
               @endforeach --}}
               
-              @if( Auth::user()->rol==2 )
+              @if( Auth::user()->rol==1 or Auth::user()->rol==2)
                 <li class="black">
 
                     <a href="{{ url ('administracion')}}" class="dropdown-item">

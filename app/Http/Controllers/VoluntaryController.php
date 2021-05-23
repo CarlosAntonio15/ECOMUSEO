@@ -55,17 +55,26 @@ class VoluntaryController extends Controller
      */
     public function store(VoluntaryRequest $request)
     {
+ 
+        $messages =[
+            'required' => 'El campo :attribute es obligatorio ',
+            'alpha' => 'El campo :attribute sólo puede contener letras',
+            'max:100' => 'El campo :attribute tiene un máximo de 100 letras',
+            'email' => 'El campo :attribute debe ser tipo email',
+            'unique:voluntaries' => 'El campo :attribute debe ser único',
+            'max:8' => 'El campo :attribute debe contener máximo 8 caracteres'      
+        ];
 
         $request->validate([
             "Nombre" => 'required|alpha|max:100',
-            "Apellido_1" => 'required|max:150|alpha',
-            "Apellido_2" =>'required|max:150|alpha',
+            "Apellido_1" => 'required|max:100|alpha',
+            "Apellido_2" =>'required|max:100|alpha',
             "Edad" =>'required',
-            "Telefono" =>'required|max:40',
+            "Telefono" =>'required|max:8',
             "Direccion" =>'required',
             "Email" =>'required|email|unique:voluntaries',
             "Descripcion" =>'required'
-        ]);
+        ],$messages);
 
         $VoluntaryN= new voluntary;
         //$VoluntaryN->Id= $request->id;
