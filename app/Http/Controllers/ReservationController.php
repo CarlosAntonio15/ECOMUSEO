@@ -37,26 +37,27 @@ class ReservationController extends Controller
 
         $messages =[
             'required' => 'El campo :attribute es obligatorio ',
-            'alpha' => 'El campo :attribute sólo puede contener letras',
             'max:100' => 'El campo :attribute tiene un máximo de 100 letras',
             'email' => 'El campo :attribute debe ser tipo email',
             'unique:reservations' => 'El campo :attribute debe ser único',
             'max:8' => 'El campo :attribute debe contener máximo 8 caracteres',     
             'max:15' => 'El campo :attribute debe contener máximo 15 caracteres',
-            'min:7'  => 'El campo :attribute debe contener mínimo 7 caracteres'
+            'min:7'  => 'El campo :attribute debe contener mínimo 7 caracteres',
+            'min:3'  => 'El campo :attribute debe contener mínimo 3 caracteres',
+            'regex:/^[\pL\s\-]+$/u' => 'El campo :attribute no puede contener números'
         ];
 
         $request->validate([
             "identification" => 'required|max:15|min:7',
-            "name" => 'required|alpha|max:100',
-            "lastname" =>'required|alpha|max:100',
-            "reservationDate" =>'required|date|after_or_equal:date',
+            "name" => 'required|max:100|regex:/^[\pL\s\-]+$/u|min:3',
+            "lastname" =>'required|regex:/^[\pL\s\-]+$/u|max:100|min:4',
+            "reservationDate" =>'required|date|after:equal',
             "reservationHour" =>'required|max:40',
             "adultQuantity" =>'required',
             "total" =>'required',
             "tourType" =>'required',
             "email" =>'required|email|unique:reservations',
-            "phone" =>'required|unique:reservations|max:8|string'
+            "phone" =>'required|unique:reservations|max:8|string|min:8'
         ], $messages);
 
         $ReservationN= new Reservation;
