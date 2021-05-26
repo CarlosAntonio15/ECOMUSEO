@@ -54,11 +54,11 @@ class DonationController extends Controller
         ];
 
         $request->validate([
-            "name" => 'required|alpha|max:100',
-            "lastName" => 'required|max:100|alpha',
-            "donationType" =>'required|max:50',
-            "quantity" =>'required',
-            "description" =>'required|max:100',
+            "name" => 'required|max:50|regex:/^[\pL\s\-]+$/u|min:3',
+            "lastName" => 'required|max:100|min:4|regex:/^[\pL\s\-]+$/u',
+            "donationType" =>'required|max:9|min:8',
+            "quantity" =>'required|min:4',
+            "description" =>'required|max:300|min:30',
             "currentDate" =>'required',
             "phone" =>'required|unique:donation|integer',
             "mail" =>'required|email|unique:donation'

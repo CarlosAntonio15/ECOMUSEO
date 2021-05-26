@@ -59,21 +59,21 @@ class VoluntaryController extends Controller
         $messages =[
             'required' => 'El campo :attribute es obligatorio ',
             'alpha' => 'El campo :attribute sólo puede contener letras',
-            'max:100' => 'El campo :attribute tiene un máximo de 100 letras',
+            'max:100' => 'El campo :attribute tiene un máximo de 50 letras',
             'email' => 'El campo :attribute debe ser tipo email',
             'unique:voluntaries' => 'El campo :attribute debe ser único',
             'max:8' => 'El campo :attribute debe contener máximo 8 caracteres'      
         ];
 
         $request->validate([
-            "Nombre" => 'required|alpha|max:100',
-            "Apellido_1" => 'required|max:100|alpha',
-            "Apellido_2" =>'required|max:100|alpha',
+            "Nombre" => 'required|regex:/^[\pL\s\-]+$/u|max:50|min:3',
+            "Apellido_1" => 'required|max:50|regex:/^[\pL\s\-]+$/u|min:4',
+            "Apellido_2" =>'required|max:50|regex:/^[\pL\s\-]+$/u|min:4',
             "Edad" =>'required',
-            "Telefono" =>'required|max:8',
-            "Direccion" =>'required',
+            "Telefono" =>'required|max:8|min:8|',
+            "Direccion" =>'required|min:5|max:50',
             "Email" =>'required|email|unique:voluntaries',
-            "Descripcion" =>'required'
+            "Descripcion" =>'required|min:20|max:300'
         ],$messages);
 
         $VoluntaryN= new voluntary;
