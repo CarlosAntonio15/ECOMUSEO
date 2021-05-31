@@ -36,6 +36,7 @@
                                 <th >Tipo_Tour</th>
                                 <th >Correo</th>
                                 <th >Telefono</th>
+                                <th >Estado_de_pago</th>
 
                                 <th colspan="3">&nbsp;</th>
                             </tr>
@@ -54,6 +55,7 @@
                                 <td>{{ $reservation->tourType }}</td>
                                 <td>{{ $reservation->email }}</td>
                                 <td>{{ $reservation->phone }}</td>
+                                <td>{{ $reservation->status }}</td>
 
                             </tr>
                         @endforeach

@@ -26,6 +26,7 @@ class CreateReservationTable extends Migration
             $table->string ('tourType');
             $table->string ('email');
             $table->string ('phone');
+            $table->string ('status');
 
 
             //$table->bigInteger('user_id')->unsigned()->index();

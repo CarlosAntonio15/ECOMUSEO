@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Entrada;
 use Illuminate\Http\Request;
 use App\Http\Requests\EntradaRequest;
@@ -28,7 +26,6 @@ class EntradaController extends Controller
             "childrenQuantity" =>'required',
             "tourType" =>'required'
         ]);
-        
         
         $data=[
             'nombre'=> $request->nombre,

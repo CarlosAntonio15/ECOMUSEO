@@ -139,6 +139,14 @@
                                 </div>                    
                             </div>
 
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                    <h5 style="color:  rgb(243, 236, 236)" > {!! Form::Label('status', 'Estado de pago:') !!}</h5>
+                                        {!! Form::select('status', ['Espera' => 'En espera']) !!}
+                                    </div>
+                                </div>
+                                
                             <div class="form-group">
                                 <button type="summit" class="btn btn-primary">
                                     <i class="fas fa-save"></i> {{ !empty($reservation) ? 'Actualizar ' : 'Guardar ' }}

@@ -1,40 +1,24 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Reservation;
 use Illuminate\Http\Request;
-
 use App\Http\Requests\ReservationRequest;
 
 class ReservationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $reservation = Reservation::all();
         return view('Reservations.index')->with('reservation', $reservation);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('Reservations.create');
     }
 
-   
     public function store(ReservationRequest $request)
     {
-  
-
         $messages =[
             'required' => 'El campo :attribute es obligatorio ',
             'max:100' => 'El campo :attribute tiene un máximo de 100 letras',
@@ -57,11 +41,11 @@ class ReservationController extends Controller
             "total" =>'required',
             "tourType" =>'required',
             "email" =>'required|email|unique:reservations',
-            "phone" =>'required|unique:reservations|max:8|string|min:8'
+            "phone" =>'required|unique:reservations|max:8|string|min:8',
+            "status" =>'required'
         ], $messages);
 
         $ReservationN= new Reservation;
-        //$ReservationN->Id= $request->id;
         $ReservationN->identification= $request->identification;
         $ReservationN->name= $request->name;
         $ReservationN->lastname= $request->lastname;
@@ -73,68 +57,35 @@ class ReservationController extends Controller
         $ReservationN->tourType= $request->tourType;
         $ReservationN->email= $request->email;
         $ReservationN->phone= $request->phone;
-
+        $ReservationN->status= $request->status;
         $ReservationN->save();
         $request->session()->flash('message', 'Reservación creada correctamente.');
         return redirect()->route('welcome');
     }
 
-
-
-    //
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Voluntary  $voluntary
-     * @return \Illuminate\Http\Response
-     */
     public function show(Reservation $id)
-    {
-        
+    {      
         $reservation = Reservation::find($id); 
-        //dd($reservation);
         $reservation = $reservation[0];
         return view('Reservations.show')->with('Reservation', $reservation);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Voluntary  $voluntary
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Reservation $id)
+    public function edit($id)
     {
 
         $reservation = Reservation::find($id);
 
-        //dd($reservation);
-
+    
         if (is_null($reservation)){
             return redirect()->route('reservation.index');
         }
       
-        return view('Reservations.create')-> with('Reservation', $reservation);
+        return view('Reservations.edit')-> with('reservation', $reservation);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Voluntary  $voluntary
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Reservation $id)
     {
         $reservation = Reservation::find($id);
-
-
-
-        //$reservation->id = $request->id;
-
-
-
         $reservation->identification= $request->identification;
         $reservation->name= $request->name;
         $reservation->lastname= $request->lastname;
@@ -146,18 +97,11 @@ class ReservationController extends Controller
         $reservation->tourType= $request->tourType;
         $reservation->email= $request->email;
         $reservation->phone= $request->phone;
+        $reservation->status= $request->status;
         $reservation->save();
         $request->session()->flash('message', 'Reservación actualizada correctamente.');
         return redirect()->route('Reservations.index');
     }
-
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Voluntary  $voluntary
-     * @return \Illuminate\Http\Response
-     */
 
     public function destroy($id)
     {
