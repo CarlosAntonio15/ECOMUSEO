@@ -42,6 +42,7 @@
                                     <li class="list-group-item"><i class="fas fa-users"></i>&nbsp;{{ $reservation->tourType }}</li>
                                     <li class="list-group-item"><i class="far fa-address-card"></i> &nbsp;{{ $reservation->email }}</li>
                                     <li class="list-group-item"><i class="far fa-address-card"></i> &nbsp;{{ $reservation->phone }}</li>
+                                    <li class="list-group-item"><i class="fas fa-donate"></i> &nbsp;{{ $reservation->status }}</li>
                                 </ul>
 
                                 <div class="card-footer">

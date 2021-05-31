@@ -1,58 +1,33 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\voluntary;
 use Illuminate\Http\Request;
 use App\Http\Requests\VoluntaryRequest;
 
-
-
 class VoluntaryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $voluntaryC = voluntary::all();
-        //dd($voluntaryC);
         return view('voluntary')->with('voluntaryN', $voluntaryC);
     }
     public function indexGus()
     {
         $voluntaryC = voluntary::all();
-        //dd($voluntaryC);
         return view('Volun.index')->with('Volun', $voluntaryC);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('Volun.create');
     }
-
 
     public function createGus()
     {
         return view('Volun.createGus');
     }
 
-
-  
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(VoluntaryRequest $request)
     {
  
@@ -77,7 +52,6 @@ class VoluntaryController extends Controller
         ],$messages);
 
         $VoluntaryN= new voluntary;
-        //$VoluntaryN->Id= $request->id;
         $VoluntaryN->Nombre= $request->Nombre;
         $VoluntaryN->Apellido_1= $request->Apellido_1;
         $VoluntaryN->Apellido_2= $request->Apellido_2;
@@ -91,11 +65,9 @@ class VoluntaryController extends Controller
         return redirect()->route('amigoReq');
     }
 
-
     public function storeGus(VoluntaryRequest $request)
     {
         $data = [
-            //'Id'=>$request->Id,
             'Nombre'=>$request->Nombre,
             'Apellido_1'=>$request->Apellido_1,
             'Apellido_2'=>$request->Apellido_2,
@@ -110,16 +82,6 @@ class VoluntaryController extends Controller
         return redirect()->route('voluntary.index');
     }
     
-
-
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\voluntary  $voluntary
-     * @return \Illuminate\Http\Response
-     */
     public function show(Voluntary $id)
     {
         $voluntary = Voluntary::find($id);
@@ -127,29 +89,15 @@ class VoluntaryController extends Controller
         return view('Volun.show')->with('Voluntary', $voluntary);
     }
    
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\voluntary  $voluntary
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {  
         $voluntary = Voluntary::find($id);
-        //dd($voluntary);
         if (is_null($voluntary)) {
             return redirect()->route('index'); 
         }
         return view('Volun.createGus')-> with('voluntary', $voluntary);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\voluntary  $voluntary
-     * @return \Illuminate\Http\Response
-     */
     public function update(VoluntaryRequest $request, $id)
     {
         $voluntary = Voluntary::find($id);
@@ -166,12 +114,6 @@ class VoluntaryController extends Controller
         return redirect()->route('voluntary.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\voluntary  $voluntary
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Voluntary::find($id)->delete();

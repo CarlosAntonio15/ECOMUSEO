@@ -19,6 +19,18 @@ Route::get('/nosotros', 'PrincipalController@nosotros')->name('nosotros');
 Route::get('/actividad', 'PrincipalController@actividad')->name('actividad');
 
 
+  Route::middleware(['isSuperAdmin', 'isAdmin'])->group(function () {
+  Route::get('/asignarRol', 'UsuarioController@asignarRol')->name('usuario.asignarol');
+  Route::get('/showrol/{id}', 'UsuarioController@showrol')->name('usuario.showrol');
+  Route::post('/saverol', 'UsuarioController@saveRol')->name('usuario.saverol');
+});
+
+
+  Route::name('admin')->group(function () {
+  Route::get('inventario','AdminController@inventario')->name('Admin.inventario');
+
+});
+
 
 Auth::routes();
 
@@ -148,10 +160,7 @@ Route::delete('/give/delete/{id}','giveController@destroy')->name('give.destroy'
 
 
 
-//SI FUNCIONA
-Route::get('hola', function(){
-    return view('layout');
-});
+
 
 
 //Route::post('/', );
