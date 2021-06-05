@@ -27,7 +27,6 @@
 <body class="cuerpo">
 @php
 $page = Route::current();
-
 @endphp
 
  <!-- ======= Top Bar ======= -->
@@ -136,8 +135,6 @@ $page = Route::current();
   </header><!-- End Header -->
 
     <div id="app">
-       
-
         <main class="py-4">
             @include('partial.alerts')
             @yield('content')
