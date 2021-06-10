@@ -1,5 +1,5 @@
 <title>Tiquete</title>
-@extends('layouts.app')
+@extends('layouts.adminlayout')
 @section('content')
 
 <div class = "container">
