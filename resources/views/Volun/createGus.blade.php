@@ -1,6 +1,6 @@
 <title>Formulario voluntariado</title>
 <div style="background-image: url('/img/rueda.jpg'); " >
-@extends('layouts.app')
+@extends('layouts.adminlayout')
 @section('content')
 <div class = "container">
     <div class="row justify-content-center">
@@ -94,10 +94,10 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <button type="summit" class="btn btn-primary">
-                                        <i class="fas fa-save"></i> {{ !empty($voluntary) ? 'Actualizar ' : 'Guardar ' }}
+                                        <i class="fa fa-save"></i> {{ !empty($voluntary) ? 'Actualizar ' : 'Guardar ' }}
                                     </button>
                                     <a href="{{ route('voluntary.index') }}" class="btn btn-secondary btn-sm">
-                                        <i class="fas fa-undo"></i> Atras
+                                        <i class="fa fa-undo"></i> Atras
                                     </a>
                                 </div>
                             </div>

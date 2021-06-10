@@ -118,31 +118,31 @@
             <form action="" method="POST" class="d-lg-inline-flex">
   
 
-      <a href="{{ route ('donation')}}"><i class="fas fa-donate"></i>
-    <p>
-      <strong>  Donaciones </strong><br>
-      <span>Administrar</span>
-    </p>
+      <a href="{{ route ('give.index')}}"><i class="fas fa-donate"></i>
+        <p>
+          <strong>  Donaciones </strong><br>
+          <span>Administrar</span>
+        </p>
       </a>
-            <form action="" method="POST" class="d-lg-inline-flex">
+      <form action="" method="POST" class="d-lg-inline-flex">
   
     
 
-    <a href="{{ route ('reservation.index')}}"> <i class="fas fa-resistance"></i> 
-      <p>
-        <strong>Reservaciones </strong>
-        <span>Administrar</span>
-      </p>
+      <a href="{{ route ('reservation.index')}}"> <i class="fas fa-resistance"></i> 
+        <p>
+          <strong>Reservaciones </strong>
+          <span>Administrar</span>
+        </p>
       </a>
-  <form action="" method="POST" class="d-lg-inline-flex">
+      <form action="" method="POST" class="d-lg-inline-flex">
 
 
-  <a href="{{ route ('tiquete.index')}}"> <i class="fas fa-resistance"></i> 
-      <p>
-        <strong>Entrada</strong>
-      </p>
+      <a href="{{ route ('tiquete.index')}}"> <i class="fas fa-resistance"></i> 
+        <p>
+          <strong>Entrada</strong>
+        </p>
       </a>
-  <form action="" method="POST" class="d-lg-inline-flex">
+      <form action="" method="POST" class="d-lg-inline-flex">
 
 
   @method('PUT')

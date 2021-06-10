@@ -67,5 +67,9 @@ class PrincipalController extends Controller
     {
         return view('layouts.administration');
     }
+    public function adminlayout()
+    {
+        return view('layouts.adminlayout');
+    }
 
 }

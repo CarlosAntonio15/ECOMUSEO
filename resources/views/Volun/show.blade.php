@@ -1,14 +1,12 @@
 <title>Información detallada</title>
-@extends('layouts.app')
+@extends('layouts.adminlayout')
 @section('content')
-<div style="background-image: url('/img/rueda.jpg'); " >
 <div class = "container">
 </br></br>
 <div class="row justify-content-center">
 <div class="col-sm-9">
 <div class="card">
 <div class="card-header"><h4 >Información detallada</h4></div>
-<div style="background-image: url('/img/rueda.jpg'); " >
 </br>
 <div class="card-body">
 

@@ -110,6 +110,8 @@ class IncomeController extends Controller
     {
         $incomeE = Income::find($id); $IncomeE->delete();
     }
-
+    public function incomegraphs(){
+        return view('incomeGraphs');
+    }
 
 }

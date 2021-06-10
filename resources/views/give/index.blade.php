@@ -47,7 +47,7 @@
                                                                 <form action="/give/delete/{{ $give->id }}" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')</br>
-                                                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>&nbsp;Eliminar</button>
+                                                                    <button class="btn-danger btn-sm"><i class="fas fa-trash"></i>&nbsp;Eliminar</button>
                                                                 </form>
                                                                 
                                                             </div>

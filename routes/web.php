@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/', 'PrincipalController@welcome');
+Route::get('/administraplantilla', 'PrincipalController@adminlayout');
 //Route::get('/about','PrincipalController@about' );
 
 Route::get('/welcome','PrincipalController@welcome')->name('welcome');
@@ -111,7 +112,7 @@ Route::delete('/reservaciones/delete/{id}', 'ReservationController@destroy')->na
 Route::get('/ingresos', 'IncomeController@index')->name('income');
 Route::get('/ingresos/create','IncomeController@create')->name('income.create');
 Route::post('/ingresos/create','IncomeController@store')->name('income.store');
-
+Route::get('/ingresos/incomegraphs','IncomeController@incomegraphs')->name('incomeGraphs');
 //Roles
 Route::get('/asignarRol', 'UsuarioController@asignarRol')->name('usuario.asignarol');
 Route::get('/showrol/{id}', 'UsuarioController@showrol')->name('usuario.showrol');
