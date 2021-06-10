@@ -28,15 +28,14 @@ class PrincipalController extends Controller
         return view('welcome');
     }
 
-   
     public function actividad()
     {
-        return view('actividad');
+        return view('web.actividad');
     }
 
     public function nosotros()
     {
-        return view('nosotros');
+        return view('web.nosotros');
     }
     public function galeria()
     {
@@ -49,11 +48,11 @@ class PrincipalController extends Controller
 
     public function amigoReq()
     {
-        return view('amigoReq');
+        return view('web.amigoReq');
     }
     public function realizarDonaciones()
     {
-        return view('realizarDonaciones');
+        return view('web.realizarDonaciones');
     }
     public function donation()
     {
@@ -65,7 +64,7 @@ class PrincipalController extends Controller
     }
     public function administration()
     {
-        return view('layouts.administration');
+        return view('layouts.adminlayout');
     }
     public function adminlayout()
     {

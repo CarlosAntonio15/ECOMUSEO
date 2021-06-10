@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class giveRequest extends FormRequest
+class ExpenseRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,20 +24,16 @@ class giveRequest extends FormRequest
     public function rules()
     {
         return [
-            'id'=>'required', 
-            'name'=>'required',
-            'lastname'=>'required', 
-            'donationType'=>'required',
-            'quantity'=>'required', 
+            
+            //'id'=>'requered',
+            'date'=>'required',
+            'voucher'=>'required',
             'description'=>'required',
-            'currentDate'=>'required',
-            'phone'=>'required', 
-            'mail'=>'required'
-
+            'responsable'=>'required',
+            'amount'=>'required'
+            
+            
+            
         ];
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 03be68e9caba48fcf65250246fa5624fc968c925

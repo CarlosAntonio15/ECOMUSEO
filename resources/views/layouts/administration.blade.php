@@ -119,20 +119,33 @@
   
 
       <a href="{{ route ('give.index')}}"><i class="fas fa-donate"></i>
+<<<<<<< HEAD
         <p>
           <strong>  Donaciones </strong><br>
           <span>Administrar</span>
         </p>
+=======
+    <p>
+      <strong>Donaciones</strong><br>
+    </p>
+>>>>>>> 03be68e9caba48fcf65250246fa5624fc968c925
       </a>
       <form action="" method="POST" class="d-lg-inline-flex">
   
     
 
+<<<<<<< HEAD
       <a href="{{ route ('reservation.index')}}"> <i class="fas fa-resistance"></i> 
         <p>
           <strong>Reservaciones </strong>
           <span>Administrar</span>
         </p>
+=======
+    <a href="{{ route ('reservation.index')}}"> <i class="fas fa-resistance"></i> 
+      <p>
+        <strong>Reservaciones </strong>
+      </p>
+>>>>>>> 03be68e9caba48fcf65250246fa5624fc968c925
       </a>
       <form action="" method="POST" class="d-lg-inline-flex">
 
@@ -147,7 +160,7 @@
 
   @method('PUT')
   </a>
-      
+    
       </div>
     </div>
 </div>
@@ -178,11 +191,11 @@
 </head>
 
 <body>
-  <br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br>
     <div class="contenedor">
-        <div class="redAlert">
+        <div style="background-image: url('/img/acceso.jpg'); " >
           <section>
-            <h1 style="color: rgb(0, 0, 0)" class="card-title">*Acceso restringido, solo personal autorizado* </h1>
+            <h1 style="color:  rgb(230, 210, 210)" class="card-title">Acceso restringido</h1>
         </section>
         <div class="card-footer">
           <button class="btn btn-warning">
@@ -190,6 +203,7 @@
           </button>
         </div>
         </div>
+     
       </div>
 </body>
 

@@ -55,7 +55,7 @@
           <li class="<?php if($page ?? '' ?? ''   == 'nosotros'){echo 'active';} ?>"> <a href="{{route ('nosotros')}}"><h6>Sobre nosotros</h6></a></li>
           <li class="<?php if($page ?? '' ?? ''   == 'actividad'){echo 'active';} ?>"> <a href="{{route ('actividad')}}"><h6>Actividades</h6></a></li>
 
-          <li class="drop-down"><h6>Cooperar</h6>
+          <li class="drop-down"><a href="">Cooperar</a>
             <ul>
               <li class="<?php if($page ?? ''??''   == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}">Voluntariado</a></li>
               <div class="dropdown-divider"></div>
@@ -92,6 +92,7 @@
                         
                     @endforeach --}}-->
                     @if( Auth::user()->rol==2 )
+<<<<<<< HEAD
                     <li class="drop-down"><h6>Administración</h6>
                       <ul>
                         <li class="black">
@@ -129,6 +130,44 @@
                     </li>
                   @endif
                   
+=======
+              <li class="drop-down"><h6>Administración</h6>
+                <ul>
+                  <li class="black">
+                    <a href="{{ route ('voluntary.index')}}" class="dropdown-item">
+                      <i class="fas fa-cog"></i> Voluntarios
+                    </a>
+                  </li>  
+                  <form action="" method="POST" class="d-inline">
+                    @method('PUT')
+                    @csrf
+                  </form>
+
+                  <div class="dropdown-divider"></div>
+                  <li class="black">
+                    <a href="{{ route ('donation')}}" class="dropdown-item">
+                      <i class="fas fa-cog"></i> Donaciones
+                    </a>
+                  </li>
+                  <form action="" method="POST" class="d-inline">
+                    @method('PUT')
+                    @csrf
+                  </form>
+
+                  <div class="dropdown-divider"></div>
+                  <li class="black">
+                    <a href="{{ route ('reservation')}}" class="dropdown-item">
+                      <i class="fas fa-cog"></i> Reservaciones
+                    </a>
+                  </li>
+                  <form action="" method="POST" class="d-inline">
+                    @method('PUT')
+                    @csrf
+                  </form>
+                </ul>
+              </li>
+              @endif
+>>>>>>> 03be68e9caba48fcf65250246fa5624fc968c925
                 <div class="dropdown-divider"></div>
                 <li class=" black" > 
                   <a  href="{{ route('logout') }}"  class="dropdown-item"

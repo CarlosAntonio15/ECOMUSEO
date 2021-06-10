@@ -8,7 +8,7 @@ class Reservation extends Model
 {
     protected $fillable = ['id','identification', 'name', 'lastname', 'reservationDate', 'reservationHour', 
                             'adultQuantity', 'childrenQuantity', 'total', 'tourType',
-                            'email','phone'];
+                            'email','phone','status'];
 
     public function Usuario()
     {

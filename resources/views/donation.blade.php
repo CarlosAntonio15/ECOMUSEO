@@ -1,5 +1,4 @@
 <title>Formulario donaciones</title>
-<div style="background-image: url('/img/collage.jpeg'); " >
 @if( Auth::user()->rol==1 or Auth::user()->rol==2)
 @extends('layouts.app')
 @section('content')

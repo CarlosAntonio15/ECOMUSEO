@@ -44,16 +44,25 @@ class DonationController extends Controller
     public function store(DonationRequest $request)
     {
 
+        $messages =[
+            'required' => 'El campo :attribute es obligatorio ',
+            'alpha' => 'El campo :attribute sólo puede contener letras',
+            'max:100' => 'El campo :attribute tiene un máximo de 100 letras',
+            'email' => 'El campo :attribute debe ser tipo email',
+            'unique:donation' => 'El campo :attribute debe ser único',
+            'max:50' => 'El campo :attribute debe contener máximo 50 caracteres'
+        ];
+
         $request->validate([
-            "name" => 'required|string|max:100',
-            "lastName" => 'required|max:200',
-            "donationType" =>'required|max:150',
-            "quantity" =>'required',
-            "description" =>'required|max:40',
+            "name" => 'required|max:50|regex:/^[\pL\s\-]+$/u|min:3',
+            "lastName" => 'required|max:100|min:4|regex:/^[\pL\s\-]+$/u',
+            "donationType" =>'required|max:9|min:8',
+            "quantity" =>'required|min:4',
+            "description" =>'required|max:300|min:30',
             "currentDate" =>'required',
-            "phone" =>'required|unique:donation',
+            "phone" =>'required|unique:donation|integer',
             "mail" =>'required|email|unique:donation'
-        ]);
+        ],  $messages);
 
         $DonationN= new donation;
         //$VoluntaryN->Id= $request->id;

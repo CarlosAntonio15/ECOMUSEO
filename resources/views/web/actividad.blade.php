@@ -1,21 +1,9 @@
-<title>Actividades</title>
+@extends('layouts.web')
+@section('title', 'Actividades')
+@section('content')
+   
 <div style="background-image: url('/img/Ecotrail.jpeg'); " >
-@extends('layouts.main')
-@extends('layouts.app')
-  @section('content')
-    <!-- Vendor CSS Files -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="vendor/aos/aos.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="css/style.css" rel="stylesheet">
-
-    <?php $page='actividad';?>
-    <br>
+    </br></br></br>
   <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -23,16 +11,7 @@
            <div class="container" data-aos="fade-up">
             <br/><br/>
              <!-- <div class="card-header">-->
-             <div class="act">
-                <div class="section-title">
-                 <!-- <h4>Bienvenidos</h4><br>-->
-                  <!--<img src="img/act2.jpeg" width="100px" height="200px"/>
-                    <h5>Te invitamos a conocernos por medio de las actividades que se realizan en el Ecomuseo de las minas de Abangares.</h5><br>-->
-                </div>
-             </div>
 
-
-                
               <div class="row">  
                 <div class="unico">
                   <div class="icon-box">
@@ -49,7 +28,6 @@
                           La temperatura, el mobiliario, el wifi y el entorno general, todo funciona en 
                           armonía para inspirarte a sentarte y ser productivo.</details>
                      </p>
-                    <!--<a href="img/eventos.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Audiotorio"><i class="bx bx-plus"></i></a>-->
                   </div>
                 </div>
 
@@ -63,7 +41,6 @@
                             objetos bélicos de la época, aparatos como la radio, que a finales del siglo XIX revolucionaron
                             la sociedad.</details>
                     </p>
-                    <!--<a href="img/auditorio.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Audiotorio"><i class="bx bx-plus"></i></a>-->
                   </div>
                 </div>
 
@@ -76,7 +53,6 @@
                           Se brindan exhibiciones a visitantes donde se muestran todas las piezas históricas
                           que tiene el Ecomuseo, junto<details> <summary>Leer más/menos</summary> con la historia que estas abarcan.</details>
                     </p>
-                  <!-- <a href="img/piezas.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Galería de piezas históricas"><i class="bx bx-plus"></i></a>-->
                   </div>
                 </div>
 
@@ -85,7 +61,6 @@
                   <div class="icon-box">
                     <h5>Tours y visitas guiadas</h5>
                     <img src="img/tour.jpg" width="100" height="200"/>
-                    <!--<img src="img/tour.jpg" class="rounded float-left img-fluid" alt="...">-->
                    <p class="text-justify">
                           El tour iniciará su recorrido primeramente por parte del área de jardines y 
                           luego por senderos que le llevará al bosque donde<details> <summary>Leer más/menos</summary> tendrá la oportunidad de caminar
@@ -112,7 +87,6 @@
                           de conocer gran variedad de especies de árboles, así como, fauna de
                           todo tipo.</details>
                     </p>
-                   <!-- <a href="img/tour.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Tours y visitas guiadas"><i class="bx bx-plus"></i></a>-->
                   </div>
                 </div>
 
@@ -132,7 +106,6 @@
                           esfuerzo y demanda física pero no ofrecen peligro extremo y son accesibles a todo
                           tipo de público en un espacio muy natural y auténtico.</details>
                     </p>
-                   <!-- <a href="img/senderismo.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Senderismo"><i class="bx bx-plus"></i></a>-->
                   </div>
                 </div>
 
@@ -151,7 +124,6 @@
                          también por el reconocimiento de sus llamados. En la expedición regular podremos
                           identificar diferentes tipos y especies.</details>
                         </p>
-                        <!--<a href="img/avistamiento.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Avistamiento"><i class="bx bx-plus"></i></a>-->
                       </div>
 
                     </div> 
@@ -163,7 +135,6 @@
                            1- Adultos: 1000 colones.<br>
                            2-	Niños: 500 colones<br>
                         </p>
-                        <!--<a href="img/avistamiento.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Avistamiento"><i class="bx bx-plus"></i></a>-->
                       </div>
                     <div>
                       <div class="col-lg-4"> 
@@ -179,18 +150,4 @@
             </div>
           </div>
 
-      <!-- Vendor JS Files -->
-  <script src="vendor/jquery/jquery.min.js" asp-append-version="true"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
-  <script src="vendor/jquery.easing/jquery.easing.min.js" asp-append-version="true"></script>
-  <script src="vendor/php-email-form/validate.js" asp-append-version="true"></script>
-  <script src="vendor/waypoints/jquery.waypoints.min.js" asp-append-version="true"></script>
-  <script src="vendor/counterup/counterup.min.js" asp-append-version="true"></script>
-  <script src="vendor/owl.carousel/owl.carousel.min.js" asp-append-version="true"></script>
-  <script src="vendor/isotope-layout/isotope.pkgd.min.js" asp-append-version="true"></script>
-  <script src="vendor/venobox/venobox.min.js" asp-append-version="true"></script>
-  <script src="vendor/aos/aos.js" asp-append-version="true"></script>
-
-  <!-- Template Main JS File -->
-  <script src="js/main.js"></script>
   @endsection

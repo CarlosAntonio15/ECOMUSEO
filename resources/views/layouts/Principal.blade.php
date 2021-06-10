@@ -60,7 +60,7 @@
             <li class="<?php if($page  == 'actividad'){echo 'active';} ?>"> <a href="{{route ('actividad')}}"><h6>Actividades</h6></a></li>
             <li><a href="#portfolio"><h6>Galería</h6></a></li>
             
-            <li class="drop-down"><h6>Cooperar</h6>
+            <li class="drop-down"><a href="">Cooperar</a>
             <ul>
             <li class="<?php if($page  == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}"><h6>Voluntariado</h6></a></li>
             <li class="<?php if($page  == 'realizarDonaciones'){echo 'active';} ?>"> <a href="{{route ('realizarDonaciones')}}"><h6>Donaciones</h6></a></li>
@@ -98,6 +98,7 @@
                 @csrf
                 </form>
 
+<<<<<<< HEAD
                   {{-- @foreach ($collection as $item)
                       
                   @endforeach --}}
@@ -112,6 +113,22 @@
                     <div class="dropdown-divider"></div>
                     @endif
                       <form action="" method="POST" class="d-inline">
+=======
+              {{-- @foreach ($collection as $item)
+                  
+              @endforeach --}}
+              
+              @if( Auth::user()->rol==1 or Auth::user()->rol==2)
+                <li class="black">
+
+                    <a href="{{ url ('administracion')}}" class="dropdown-item">
+                   <i class="fas fa-cog"></i>Administración
+                   </a>
+                </li>
+                <div class="dropdown-divider"></div>
+                @endif
+                <form action="" method="POST" class="d-inline">
+>>>>>>> 03be68e9caba48fcf65250246fa5624fc968c925
 
    
                       <form action="" method="POST" class="d-inline">
@@ -422,8 +439,8 @@
             <h4>Otras redes sociales</h4>
             <p>Siguenos en todas nuestras redes sociales</p>
             <div class="social-links mt-3">
-              <a href="https://www.facebook.com/ecomuseominero1991" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="https://www.instagram.com/ecomuseoabangares/?hl=es-la" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.facebook.com/ecomuseominero1991" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/ecomuseoabangares/?hl=es-la" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
             </div>
           </div>
           
