@@ -1,6 +1,6 @@
 <title>Formulario voluntariado</title>
 @if( Auth::user()->rol==1 or Auth::user()->rol==2)
-@extends('layouts.app')
+@extends('layouts.adminlayout')
 @section('content')
 <div class = "container">
 <div class="row justify-content-center">

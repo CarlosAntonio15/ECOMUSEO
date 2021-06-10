@@ -1,6 +1,6 @@
 <title>Formulario donaciones</title>
 @if( Auth::user()->rol==1 or Auth::user()->rol==2)
-    @extends('layouts.app')
+@extends('layouts.adminlayout')
     @section('content')
         <?php $page='give';?>
         <div class = "container">
