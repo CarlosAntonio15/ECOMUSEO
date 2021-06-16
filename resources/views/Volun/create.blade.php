@@ -1,6 +1,6 @@
 <title>Formulario voluntariado</title>
 <div style="background-image: url('/img/rueda.jpg'); " >
-@extends('layouts.app')
+@extends('layouts.web')
 @section('title','Create Voluntary')
 @section('content')
 
