@@ -211,11 +211,10 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-              <a href="{{ route ('welcome') }}">Ecomuseo de las Minas de Abangares</a>
+             <a href="{{ route ('welcome') }}">Ecomuseo de las Minas de Abangares</a>
           </div>
           <div class="clearfix"></div>
         </footer>
-
         <!-- /footer content -->
       </div>
     </div>
