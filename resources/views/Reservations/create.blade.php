@@ -83,7 +83,6 @@
                                                 {!! Form::number('total', 0, [ 'class' => 'form-control', 'id' => 'total'  ]) !!}
                                         </div>
                                     </div>
-                                </div>
 
                                 <div class="row">   
                                     <div class="col-md-4">

@@ -31,7 +31,7 @@ Route::get('/actividad', 'PrincipalController@actividad')->name('actividad');
   Route::get('inventario','AdminController@inventario')->name('Admin.inventario');
 
 });
-
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
