@@ -119,33 +119,18 @@
   
 
       <a href="{{ route ('give.index')}}"><i class="fas fa-donate"></i>
-<<<<<<< HEAD
-        <p>
-          <strong>  Donaciones </strong><br>
-          <span>Administrar</span>
-        </p>
-=======
     <p>
       <strong>Donaciones</strong><br>
     </p>
->>>>>>> 03be68e9caba48fcf65250246fa5624fc968c925
       </a>
       <form action="" method="POST" class="d-lg-inline-flex">
   
     
 
-<<<<<<< HEAD
-      <a href="{{ route ('reservation.index')}}"> <i class="fas fa-resistance"></i> 
-        <p>
-          <strong>Reservaciones </strong>
-          <span>Administrar</span>
-        </p>
-=======
     <a href="{{ route ('reservation.index')}}"> <i class="fas fa-resistance"></i> 
       <p>
         <strong>Reservaciones </strong>
       </p>
->>>>>>> 03be68e9caba48fcf65250246fa5624fc968c925
       </a>
       <form action="" method="POST" class="d-lg-inline-flex">
 

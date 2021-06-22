@@ -1,6 +1,6 @@
 <title>Login</title>
 <div style="background-image: url('img/ecomuseo-minero.jpg'); " > 
-@extends('layouts.app')
+@extends('layouts.web')
 
 @section('content')
 

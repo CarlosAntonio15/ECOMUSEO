@@ -120,4 +120,9 @@ class VoluntaryController extends Controller
         Session()->flash('message', 'Voluntario eliminado correctamente');
         return redirect()->route('voluntary.index');
     }
+    public function guardar(){
+
+        return view('Volun.guardar');
+
+    }
 }

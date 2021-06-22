@@ -1,24 +1,12 @@
-<title>Formulario voluntariado</title>
-<div style="background-image: url('/img/rueda.jpg'); " ></div>
-@extends('layouts.app')
+@extends('layouts.web')
+@section('title', 'Formulario de voluntarios')
 @section('content')
-<!--< ?php $page = 'createVol'; ?>-->
 <div class="container">
-
-  @if ($errors->any())
-    <div class="alert alert-danger">
-      <ul>
-        @foreach ($errors->all() as $error)
-          <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-    </div>
-  @endif
   <div class="row justify-content-center">
-    <div class="col-md-6">
-        
+    <div class="col-md-12">
       <div class="row mt-8">
         <div class="col-sm-10 offset-sm-1">
+
           <form action="{{route('voluntary.store')}}" method = "post">
           @csrf
             <div class="card-header"><h4 style="color:  rgb(243, 236, 236)" align="center">Formulario Voluntariado</h4></div>
@@ -110,6 +98,9 @@
             <br/>
 
           </form>
+
+          
+
         </div>
       </div>
     </div>

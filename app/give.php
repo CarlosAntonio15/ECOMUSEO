@@ -16,8 +16,4 @@ class give extends Model
     ];
 
     protected $table = 'gives';
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 03be68e9caba48fcf65250246fa5624fc968c925

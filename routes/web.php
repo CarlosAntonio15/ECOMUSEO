@@ -49,19 +49,7 @@ Route::get('/voluntario/show/{id}', 'VoluntaryController@show')->name('voluntary
 Route::get('/voluntario/edit/{id}', 'VoluntaryController@edit')->name('voluntary.edit');
 Route::put('/voluntario/update/{id}', 'VoluntaryController@update')->name('voluntary.update');
 Route::delete('/voluntario/delete/{id}', 'VoluntaryController@destroy')->name('voluntary.destroy');
-
-<<<<<<< HEAD
-//Give
-Route::get('/give/index','giveController@index')->name('give.index');
-Route::get('/give/create','giveController@create')->name('give.create');
-Route::post('/give/create','giveController@store')->name('give.store');
-Route::get('/give/show/{id}', 'giveController@show')->name('give.show');
-Route::get('/give/edit/{id}','giveController@edit')->name('give.edit');
-Route::put('/give/update/{id}','giveController@update')->name('give.update');
-Route::delete('/give/delete/{id}','giveController@destroy')->name('give.destroy');
-
-=======
->>>>>>> 03be68e9caba48fcf65250246fa5624fc968c925
+Route::get('/voluntario/guardar', 'VoluntaryController@guardar')->name('voluntary.guardar');
 
 //Donaciones
 Route::get('/donaciones', 'DonationController@index')->name('donation');
@@ -85,15 +73,6 @@ Route::put('/reservaciones/{​​id}​​','ReservationController@update')->na
 Route::delete('/reservaciones/delete/{id}', 'ReservationController@destroy')->name('reservation.destroy');
 
 
-<<<<<<< HEAD
-
-//Income
-Route::get('/ingresos', 'IncomeController@index')->name('income');
-Route::get('/ingresos/create','IncomeController@create')->name('income.create');
-Route::post('/ingresos/create','IncomeController@store')->name('income.store');
-Route::get('/ingresos/incomegraphs','IncomeController@incomegraphs')->name('incomeGraphs');
-=======
->>>>>>> 03be68e9caba48fcf65250246fa5624fc968c925
 //Roles
 Route::get('/asignarRol', 'UsuarioController@asignarRol')->name('usuario.asignarol');
 Route::get('/showrol/{id}', 'UsuarioController@showrol')->name('usuario.showrol');
@@ -122,50 +101,6 @@ Route::get('/egresos/create','ExpenseController@create')->name('expense.create')
 Route::post('/egresos/create','ExpenseController@store')->name('expense.store');
 Route::get('/egresos/index', 'ExpenseController@index')->name('expense.index');
 
-<<<<<<< HEAD
-
-
-//SI FUNCIONA
-Route::get('hola', function(){
-    return view('layout');
-});
-
-
-//Route::post('/', );
-//Route::get('/', funtion(){
-  //  return view('layout');
-//});
-Route::resource('/galeria','InformationController');
-Route::resource('/crear','InformationController@create');
-// Rutas CRUD
- 
-/* Crear */
-Route::get('admin/information/create', 'InformationController@create')->name('admin/information/create');
-Route::put('admin/information/store', 'InformationController@store')->name('admin/information/store');
- 
-/* Leer */
-Route::get('/information', 'InformationController@index')->name('/information');
- 
-/* Actualizar */
-Route::get('admin/information/edit/{id}', 'InformationController@edit')->name('admin/information/edit');
-Route::put('admin/information/update/{id}', 'InformationController@update')->name('admin/information/update');
- 
-/* Eliminar */
-Route::put('admin/information/delete/{id}', 'InformationController@delete')->name('admin/information/delete');
- 
-/* Eliminar imagen de un registro */
-Route::get('admin/information/deleteimage/{id}{bid}', 'InformationController@deleteimage')->name('admin/information/deleteimage');
- 
-/* Vista para los detalles de un registro */
-Route::get('admin/information/details/{id}', ['as' => 'admin/information/details', 'uses' => 'InformationController@details']);
-
-
-
-route::view('/app', 'layouts.app');
-
-//Route::resource ('/voluntariado', 'Voluntary.index');
-=======
->>>>>>> 03be68e9caba48fcf65250246fa5624fc968c925
 
 //Give
 Route::get('/give/index','giveController@index')->name('give.index');

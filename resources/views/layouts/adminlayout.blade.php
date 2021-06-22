@@ -211,7 +211,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Ecomuseo de las Minas de Abangares <a href="https://colorlib.com">Colorlib</a>
+             <a href="{{ route ('welcome') }}">Ecomuseo de las Minas de Abangares</a>
           </div>
           <div class="clearfix"></div>
         </footer>

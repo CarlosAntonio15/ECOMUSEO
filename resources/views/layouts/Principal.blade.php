@@ -98,22 +98,6 @@
                 @csrf
                 </form>
 
-<<<<<<< HEAD
-                  {{-- @foreach ($collection as $item)
-                      
-                  @endforeach --}}
-
-                  @if( Auth::user()->rol==2 )
-                    <li class="black">
-
-                        <a href="{{ url ('administracion')}}" class="dropdown-item">
-                          <i class="fas fa-cog"></i>Administración
-                        </a>
-                    </li>
-                    <div class="dropdown-divider"></div>
-                    @endif
-                      <form action="" method="POST" class="d-inline">
-=======
               {{-- @foreach ($collection as $item)
                   
               @endforeach --}}
@@ -128,7 +112,6 @@
                 <div class="dropdown-divider"></div>
                 @endif
                 <form action="" method="POST" class="d-inline">
->>>>>>> 03be68e9caba48fcf65250246fa5624fc968c925
 
    
                       <form action="" method="POST" class="d-inline">
