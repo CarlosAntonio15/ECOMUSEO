@@ -58,7 +58,7 @@ $page = Route::current();
             <li class="<?php if($page  == 'actividad'){echo 'active';} ?>"> <a href="{{route ('actividad')}}"><h6>Actividades</h6></a></li>
             <li><a href="{{route('welcome')}}"><h6>Galería</h6></a></li>
             
-            <li class="drop-down"><a href="">Cooperar</a>
+            <li class="drop-down"><a class="cursor">Cooperar</a>
             <ul>
             <li class="<?php if($page  == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}"><h6>Voluntariado</h6></a></li>
             <li class="<?php if($page  == 'realizarDonaciones'){echo 'active';} ?>"> <a href="{{route ('realizarDonaciones')}}"><h6>Donaciones</h6></a></li>
@@ -161,7 +161,7 @@ $page = Route::current();
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-contact">
+          <div class="col-lg-4 col-md-6 footer-contact">
             <h4>Ecomuseo de las minas de Abangares</h4>
             <p>
               Ubicación <br>
@@ -172,7 +172,7 @@ $page = Route::current();
             </p>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-4 col-md-6 footer-links">
             <h4>Enlaces útiles</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="{{route('welcome')}}">Inicio</a></li>
@@ -181,7 +181,7 @@ $page = Route::current();
           </div>
 
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-4 col-md-6 footer-links">
             <h4>Otras redes sociales</h4>
             <p>Siguenos en todas nuestras redes sociales</p>
             <div class="social-links mt-3">
@@ -189,6 +189,7 @@ $page = Route::current();
               <a href="https://www.instagram.com/ecomuseoabangares/?hl=es-la" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
             </div>
           </div>
+          
         </div>
       </div>
     </div>

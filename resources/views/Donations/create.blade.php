@@ -1,6 +1,6 @@
 <title>Formulario donaciones</title>
 <div style="background-image: url('/img/rueda.jpg'); " >
-@extends('layouts.app')
+@extends('layouts.form')
 @section('title','Create Donation')
 @section('content')
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<h4>Otras redes sociales</h4><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -114,20 +114,20 @@
                 <form action="" method="POST" class="d-inline">
 
    
-                <form action="" method="POST" class="d-inline">
-                @method('PUT')
-                @csrf
-                </form>
+                      <form action="" method="POST" class="d-inline">
+                        @method('PUT')
+                        @csrf
+                      </form>
 
 
-                <div class="dropdown-divider"></div>
-                <li class=" black" > <a  href="{{ route('logout') }}"  class="dropdown-item"
-                  onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();">
-                  <i class="fas fa-sign-out-alt"></i>  {{ __('Cerrar sesión') }}</a>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                  </form>
+                      
+                      <li class=" black" > <a  href="{{ route('logout') }}"  class="dropdown-item"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt"></i>  {{ __('Cerrar sesión') }}</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                    </form>
               </ul>
             </li> 
           @endif
@@ -197,9 +197,16 @@
                                 <p class="text-justify">Ser el motor socioeconómico y cultural del cantón de Abangares, una organización
                                   autosustentable que promueve el turismo histórico-cultural de Guanacaste a nivel nacional e
                                   internacional, por medio de la excelencia y la mejora continua.</p>
-                                  <a href="{{route ('nosotros')}}" class="btn btn-primary" >Ver más</a>
+                                  
                               </div>
                               </div>
+
+                              <div class="row mt-5">
+                                <div class="col text-center">
+                                  <a href="{{route ('nosotros')}}" class="btn btn-primary" >Ver más</a> 
+                                </div>
+                              </div>
+
                               <br/>
 
 
@@ -309,23 +316,27 @@
           <p> Con gusto antenderemos sus consultas </p>
         </div>
 
+
         <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-6">
-            <div class="info-box mb-4">
+        <div class="col-lg-3 col-md-6">
+        <div class="info-box mb-4">
               <i class="bx bx-map"></i>
               <h3>Ubicación</h3>
+              <p>Las Juntas, Abangares.</p>
+
               <p></p>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="info-box  mb-4">
+
+          <div class="col-lg-6">
+          <div class="info-box  mb-4">
               <i class="bx bx-envelope"></i>
               <h3>Email</h3>
               <p>ecomuseominadeoroabangares@gmail.com</p>
             </div>
           </div>
-
+       
           <div class="col-lg-3 col-md-6">
             <div class="info-box  mb-4">
               <i class="bx bx-phone-call"></i>
@@ -337,9 +348,8 @@
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-6" >
-            <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251255.89784848035!2d-85.34835049027099!3d10.271782895348275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa01e3c298e75bb%3A0xc1f9da3951795615!2sEcomuseo%20de%20las%20Minas%20de%20Abangares!5e0!3m2!1ses-419!2scr!4v1600228907172!5m2!1ses-419!2scr" width="800" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          <div class="col" >
+            <iframe  class="maps img-fluid" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251255.89784848035!2d-85.34835049027099!3d10.271782895348275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa01e3c298e75bb%3A0xc1f9da3951795615!2sEcomuseo%20de%20las%20Minas%20de%20Abangares!5e0!3m2!1ses-419!2scr!4v1600228907172!5m2!1ses-419!2scr" width="800" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
          <!-- <div class="col-lg-6">
            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
@@ -380,59 +390,58 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
-   <!-- <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <h4>Noticias</h4>
-            <p>Únete a nuestras noticias</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Suscríbete">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>-->
+<!-- <div class="footer-newsletter">
+   <div class="container">
+     <div class="row justify-content-center">
+       <div class="col-lg-6">
+         <h4>Noticias</h4>
+         <p>Únete a nuestras noticias</p>
+         <form action="" method="post">
+           <input type="email" name="email"><input type="submit" value="Suscríbete">
+         </form>
+       </div>
+     </div>
+   </div>
+ </div>-->
 
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
+ <div class="footer-top">
+   <div class="container">
+     <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Ecomuseo de las minas de Abangares</h4>
-            <p>
-              Ubicación <br>
-              La Sierra, Abangares<br>
-              Guanacaste, Costa Rica <br><br>
-              <strong>Telefono:</strong>+506 2662 0004<br>
-              <strong>Email:</strong>ecomuseominadeoroabangares@gmail.com<br>
-            </p>
-          </div>
+       <div class="col-lg-4 col-md-6 footer-contact">
+         <h4>Ecomuseo de las minas de Abangares</h4>
+         <p>
+           Ubicación <br>
+           La Sierra, Abangares<br>
+           Guanacaste, Costa Rica <br><br>
+           <strong>Telefono:</strong>+506 2662 0004<br>
+           <strong>Email:</strong>ecomuseominadeoroabangares@gmail.com<br>
+         </p>
+       </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Enlaces útiles</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Inicio</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="nosotros">Sobre nosotros</a></li>
-            </ul>
-          </div>
+       <div class="col-lg-4 col-md-6 footer-links">
+         <h4>Enlaces útiles</h4>
+         <ul>
+           <li><i class="bx bx-chevron-right"></i> <a href="{{route('welcome')}}">Inicio</a></li>
+           <li><i class="bx bx-chevron-right"></i> <a href="{{route ('nosotros')}}">Sobre nosotros</a></li>
+         </ul>
+       </div>
 
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Otras redes sociales</h4>
-            <p>Siguenos en todas nuestras redes sociales</p>
-            <div class="social-links mt-3">
-              <a href="https://www.facebook.com/ecomuseominero1991" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
-              <a href="https://www.instagram.com/ecomuseoabangares/?hl=es-la" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
-            </div>
-          </div>
-          
-        <br>
-        </div>
-      </div>
-    </div>
+       <div class="col-lg-4 col-md-6 footer-links">
+         <h4>Otras redes sociales</h4>
+         <p>Siguenos en todas nuestras redes sociales</p>
+         <div class="social-links mt-3">
+           <a href="https://www.facebook.com/ecomuseominero1991" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+           <a href="https://www.instagram.com/ecomuseoabangares/?hl=es-la" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+         </div>
+       </div>
+       
+     </div>
+   </div>
+ </div>
 
-  </footer><!-- End Footer -->
+</footer><!-- End Footer -->
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>

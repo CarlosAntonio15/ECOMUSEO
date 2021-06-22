@@ -2,20 +2,21 @@
 @section('title', 'Actividades')
 @section('content')
    
-<div style="background-image: url('/img/Ecotrail.jpeg'); " >
-    </br></br></br>
-  <div class="container">
+<div   >
+  <div class="container actividades">
     <div class="row justify-content-center">
         <div class="col-md-12">
           <!--<div class="card">-->
-           <div class="container" data-aos="fade-up">
-            <br/><br/>
-             <!-- <div class="card-header">-->
-
-              <div class="row">  
-                <div class="unico">
-                  <div class="icon-box">
-                    <h5>Auditorio de eventos</h5>
+            <div class="container">
+              <div class="section-title">
+                <h3>Descubre más sobre nosotros</h3>
+              </div>
+            </div>
+          <div class="container" data-aos="fade-up">
+             <div class="card-columns">
+                <div class="card">
+                   <div class="col mt-3 mb-4">
+                   <h5>Auditorio de eventos</h5>
                     <img src="img/eventos.jpg" width="100" height="200"/>
                     <p class="text-justify">
                           Un excelente lugar para aprender y para reunirse. Si tienes necesidad 
@@ -28,12 +29,11 @@
                           La temperatura, el mobiliario, el wifi y el entorno general, todo funciona en 
                           armonía para inspirarte a sentarte y ser productivo.</details>
                      </p>
-                  </div>
+                   </div>
                 </div>
-
-             <div class="unico">
-                  <div class="icon-box">
-                    <h5>Exhibición permanente</h5>
+                <div class="card">
+                 <div class="col mt-3 mb-4">
+                 <h5>Exhibición permanente</h5>
                     <img src="img/auditorio.jpg" width="100" height="200"/>
                    <p class="text-justify">
                             La exposición incluye objetos que usaron los mineros para extraer el mineral y obtener el oro 
@@ -41,13 +41,11 @@
                             objetos bélicos de la época, aparatos como la radio, que a finales del siglo XIX revolucionaron
                             la sociedad.</details>
                     </p>
-                  </div>
+                 </div>
                 </div>
-
-
-                <div class="unico">
-                  <div class="icon-box">
-                    <h5>Galería piezas históricas</h5>
+                <div class="card">
+                  <div class="col mt-3 mb-4">
+                  <h5>Galería piezas históricas</h5>
                     <img src="img/piezash.jpeg" width="100" height="200"/>
                     <p class="text-justify">
                           Se brindan exhibiciones a visitantes donde se muestran todas las piezas históricas
@@ -55,11 +53,9 @@
                     </p>
                   </div>
                 </div>
-
-
-                <div class="unico">
-                  <div class="icon-box">
-                    <h5>Tours y visitas guiadas</h5>
+                <div class="card">
+                 <div class="col mt-3 mb-4">
+                 <h5>Tours y visitas guiadas</h5>
                     <img src="img/tour.jpg" width="100" height="200"/>
                    <p class="text-justify">
                           El tour iniciará su recorrido primeramente por parte del área de jardines y 
@@ -87,13 +83,11 @@
                           de conocer gran variedad de especies de árboles, así como, fauna de
                           todo tipo.</details>
                     </p>
-                  </div>
+                 </div>
                 </div>
-
-
-                <div class="unico">
-                  <div class="icon-box">
-                    <h5>Senderismo</h5>
+                <div class="card">
+                 <div class="col mt-3 mb-4">
+                 <h5>Senderismo</h5>
                     <img src="img/senderismo.jpg" width="100" height="200"/>
                     <p class="text-justify">
                           El recorrido por los senderos del EM, consiste en un maravilloso recorrido de tres 
@@ -106,12 +100,11 @@
                           esfuerzo y demanda física pero no ofrecen peligro extremo y son accesibles a todo
                           tipo de público en un espacio muy natural y auténtico.</details>
                     </p>
-                  </div>
-                </div>
-
-                <div class="unico">
-                  <div class="icon-box">
-                    <h5>Avistamiento de aves</h5>
+                 </div>
+                </div> 
+                <div class="card">
+                 <div class="col mt-3 mb-4">
+                 <h5>Avistamiento de aves</h5>
                     <img src="img/avistamiento.jpg" width="100" height="200" />
                    <p class="text-justify">
                          La Sierra de Abangares puede ser un Paraíso para los amantes de las aves, 
@@ -124,30 +117,31 @@
                          también por el reconocimiento de sus llamados. En la expedición regular podremos
                           identificar diferentes tipos y especies.</details>
                         </p>
-                      </div>
+                 </div>
+                </div>             
+             </div>
 
-                    </div> 
-
-                  <div class="unico">
-                  <div class="icon-box">
-                    <h5>Precios</h5>
-                        <p class="text-justify">
-                           1- Adultos: 1000 colones.<br>
-                           2-	Niños: 500 colones<br>
-                        </p>
-                      </div>
-                    <div>
-                      <div class="col-lg-4"> 
-                        <div class="form-group">
-                          <a href="{{ route('reservation.create')}}" class="btn btn-success">Reservar</a>
-                        </div>
-                      </div>
-                    <!--</div>-->
+             <div class="row">
+              <div class="card col-md-4 offset-md-4 mt-3 mb-5">
+              <div class="mt-4 mb-4 ml-4">
+                <h5>Precios</h5>
+                <p class="text-justify">
+                  1- Adultos: 1000 colones.<br>
+                  2-	Niños: 500 colones<br>
+                </p>
+                <div class="col text-right">
+                  <a href="{{ route('reservation.create')}}" class="btn btn-success">Reservar</a>
                 </div>
-                    </div>   
-                  </div> 
+              </div>
+                
               </div>
             </div>
+             
           </div>
+                  
 
+        </div>  
+    </div>
+  </div>
+</div>
   @endsection

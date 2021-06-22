@@ -1,8 +1,7 @@
 @extends('layouts.web')
 @section('title', 'Hazte amigo del Ecomuseo')
 @section('content')
-   </br> </br> </br> </br> </br> </br> </br> 
-    <div class="container">
+    <div class="container amigo">
         <div class="row justify-content-center">
             <div class="col-md-14">
                             <div class="section-title">
@@ -24,7 +23,7 @@
                     </div>
                    
                     <div class="row" data-aos="fade-up">
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 text-center">
                                 <div class="card-body">
                                     <h5 class="card-title">¿Qué es “El Programa Amigos del ECOMUSEO”, de Asociación Junta
                                                            Administradora del Ecomuseo de Abangares (AJADEMA)?
@@ -49,7 +48,7 @@
                                     </p>
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 text-center">
                            <div class="card-body">
                                 <h5 class="card-title">Requisitos para ser voluntario</h5>
                                 <p class="text-justify">
@@ -59,10 +58,14 @@
                                     4-	Traer alimentación propia debido a que el Ecomuseo no cuenta con un lugar adecuado para brindar alimentación.<br>
                                     5-	Asistir con ropa cómoda.<br>
                                 </p>
-                                <a href="{{ route('voluntary.create')}}" class="btn btn-primary">Voluntariado</a>
+                                <div class="row">
+                                  <div class="col text-right">
+                                    <a href="{{ route('voluntary.create')}}" class="btn btn-primary">Voluntariado</a>
+                                  </div>
+                                </div>
                                 
-                            </div>
-                            </div>
+                                </div> </div>
+                          </div>
 
 <div class="container" data-aos="fade-up">
 

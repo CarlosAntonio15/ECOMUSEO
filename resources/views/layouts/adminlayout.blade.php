@@ -15,7 +15,7 @@
     <!-- Font Awesome -->
     <link href="{{ asset('admin/vendor/fontawesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <!-- NProgress -->
-    <link href="{{ asset('admin/vendor/nprogress/css/nprogress.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/nprogress/nprogress.css') }}" rel="stylesheet">
    
     <!-- Custom Theme Style -->
     <link href="{{ asset('admin/css/custom.min.css') }}" rel="stylesheet">
@@ -209,7 +209,12 @@
         
 
         <!-- footer content -->
-
+        <footer>
+          <div class="pull-right">
+              <a href="{{ route ('welcome') }}">Ecomuseo de las Minas de Abangares</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
 
         <!-- /footer content -->
       </div>

@@ -3,7 +3,7 @@
 @section('content')
    
  <!--<div class="container">-->
-    <div class="row justify-content-center">
+    <div class="row justify-content-center nosotros">
         <div class="col-md-12">
             <div class="card">
                 <section id="about" class="about section-bg">
@@ -59,32 +59,35 @@
                         <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="100">
                           <img src="img/portfolio/Ecotrail.jpeg" class="img-fluid" alt="">
                         </div>
-                        <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                          <ul>
-                            <li>
-                             
-                              
+
+
+
+
+                        <div class="col-lg-6  mb-4 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                       
                             <div>
                                 <h5>Misión:</h5>
                                 <p class="text-left">
-                                Somos un espacio de protección y resguardo del patrimonio histórico-cultural minero
-                              de Costa Rica donde se fortalece la economía e identidad del cantón de Abangares.
+                                  Somos un espacio de protección y resguardo del patrimonio histórico-cultural minero
+                                  de Costa Rica donde se fortalece la economía e identidad del cantón de Abangares.
                                 </p>
                             </div>
-<br/>
-                            
-                              <div>
-                                <h5>Visión:</h5>
-                                <p class="text-justify">
-                                  Ser el motor socioeconómico y cultural del cantón de Abangares, una organización
-                                  autosustentable que promueve el turismo histórico-cultural de Guanacaste a nivel nacional e
-                                  internacional, por medio de la excelencia y la mejora continua.</p>
-                              </div>
-                            </li>
-                            <li>
-                            </li>
-                          </ul>            
+
+                            <br/>
+
+                            <div>
+                              <h5>Visión:</h5>
+                              <p class="text-justify">
+                                Ser el motor socioeconómico y cultural del cantón de Abangares, una organización
+                                autosustentable que promueve el turismo histórico-cultural de Guanacaste a nivel nacional e
+                                internacional, por medio de la excelencia y la mejora continua.</p>
+                            </div>   
+
                         </div>
+
+
+
+
                       </div>
                       <div>
                       <br>

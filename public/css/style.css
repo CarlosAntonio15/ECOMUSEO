@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
  .maps{
-   height: 350px;
+   height: 500px;
    width: 1110px;
 }
 
@@ -1348,3 +1348,69 @@ margin-bottom: 0px;
     margin-right: 200px;
   }
 
+
+
+  .register{
+    margin-top: 200px;
+  }
+
+  @media only screen and (max-width: 570px) {
+    .register {
+      margin-top: 100px;
+    }
+  }
+
+  .login{
+    margin-top: 250px;
+  }
+
+  @media only screen and (max-width: 570px) {
+    .login {
+      margin-top: 100px;
+    }
+  }
+  .login-body{
+    height: 700px;
+  }
+
+  .nosotros{
+    margin-top: 110px;
+  }
+  @media only screen and (max-width: 570px) {
+    .nosotros {
+      margin-top: 25px;
+    }
+  }
+
+  .donation-page {
+    margin-top: 150px;
+  }
+  @media only screen and (max-width: 570px) {
+    .donation-page {
+      margin-top: 80px;
+    }
+  }
+  
+
+  .actividades{
+    margin-top: 100px;
+    padding-top: 50px;
+  }
+  @media only screen and (max-width: 570px) {
+    .actividades{
+      margin-top: 20px;
+    }
+  }
+
+  .amigo {
+    margin-top: 150px;
+  }
+  @media only screen and (max-width: 570px) {
+    .amigo {
+      margin-top: 80px;
+    }
+  }
+
+  .cursor{
+    cursor: pointer;
+  }

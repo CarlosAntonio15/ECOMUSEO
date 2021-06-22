@@ -1,10 +1,10 @@
 <title>Registro</title>
 <div style="background-image: url('img/rueda.jpg'); " >
-@extends('layouts.app')
+@extends('layouts.web')
 
 @section('content')
-<br/><br/><br/><br/>
-<div class="container">
+<!-- <br/><br/><br/><br/><br/><br/><br/> -->
+<div class="container register">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
