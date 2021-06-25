@@ -68,7 +68,7 @@
         <div class="container mb-4 mt-4">
             <div class="row">
                 <div class="col text-center">
-                    <a href="{{ route('donation.create')}}" class="btn btn-primary">Realizar Donación</a>
+                    <a href="{{ route('give.createInfo')}}" class="btn btn-primary">Realizar Donación</a>
                 </div>
             </div>
         </div>

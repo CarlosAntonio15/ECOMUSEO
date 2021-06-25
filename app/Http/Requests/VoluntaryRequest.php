@@ -24,7 +24,6 @@ class VoluntaryRequest extends FormRequest
     public function rules()
     {
         return [
-            //'Id'=>'required',
             'Nombre'=>'required',
             'Apellido_1'=>'required', 
             'Apellido_2'=>'required',

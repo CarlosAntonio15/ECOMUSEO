@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="icon" href="{{ asset('admin/images/favicon.ico') }}" type="image/ico" />
+    <link rel="icon" href="{{ asset('img/ecoAbangares.jpeg') }}" type="image/ico" />
 
     <title>Administración</title>
 
@@ -16,8 +16,20 @@
     <link href="{{ asset('admin/vendor/fontawesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <!-- NProgress -->
     <link href="{{ asset('admin/vendor/nprogress/nprogress.css') }}" rel="stylesheet">
-   
-    <!-- Custom Theme Style -->
+  
+    <!-- PNotify -->
+    <link href="{{ asset('admin/vendor/pnotify/pnotify.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/pnotify.buttons.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/pnotify.nonblock.css') }}" rel="stylesheet">
+    
+    <!-- Datatables -x->
+    
+    <link href="{{ asset('admin/vendor/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet">
+
+    <x!-- Custom Theme Style -->
     <link href="{{ asset('admin/css/custom.min.css') }}" rel="stylesheet">
   </head>
 
@@ -28,7 +40,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="{{ route ('welcome') }}" class="site_title"><i class="fa fa-paw"></i> <span>Ecomuseo</span></a>
+              <a href="{{ route ('welcome') }}" class="site_title"> <img src="{{ asset('img/ecoAbangares.jpeg') }}" width="70" height="40"><span> Ecomuseo</span> </a>
             </div>
 
             <div class="clearfix"></div>
@@ -52,60 +64,64 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Parte informativa<span class="fa fa-chevron-down"></span></a>
+                  
+                  <li><a><i class="fa fa-book"></i> Reservaciones <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{route ('welcome')}}">Inicio</a></li>
+                      <li><a href="{{route('reservation.index')}}">Lista de reservaciones</a></li>
+                      <li><a href="{{route('reservation.create')}}">Nueva reservación</a></li>
+                      
                     </ul>
                   </li>
-
-                  <li><a><i class="fa fa-table"></i> Formularios <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-male"></i> Voluntariado <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{route('voluntary.index')}}">Voluntariado</a></li>
-                      <li><a href="{{route('give.index')}}">Donaciones</a></li>
-                      <li><a href="{{route('reservation.index')}}">Reservaciones</a></li>
+                      <li><a href="{{route('voluntary.index')}}">Lista de voluntarios</a></li>
+                      <li><a href="{{route('createGus')}}">Nuevo voluntario</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-gift"></i> Donaciones <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{route('give.index')}}">Lista de donaciones</a></li>
+                      <li><a href="{{route('give.create')}}">Nueva donación</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-bar-chart-o"></i> Ingresos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{route('tiquete.index')}}">Entrada</a></li>
+                      <li><a href="{{route('tiquete.index')}}">Lista de tiquetes</a></li>
+                      <li><a href="{{route('tiquete.create')}}">Nuevo tiquete</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-clone"></i>Egresos<span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-file-text"></i>Egresos<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{route('expense.store')}}">Datos</a></li>
+                      <li><a href="{{route('expense.index')}}">Lista de egresos</a></li>
+                      <li><a href="{{route('expense.store')}}">Nuevo egreso</a></li>
                     </ul>
                   </li>
-
                 </ul>
               </div>
               <div class="menu_section">
                 <h3>Asignasión</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-bug"></i> Roles <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-group"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{ route ('usuario.asignarol')}}">Asignar rol</a></li>
                     </ul>
                   </li>
                 </ul>
+              
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-home"></i> Parte informativa <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{route ('welcome')}}">Inicio</a></li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
-
             </div>
             <!-- /sidebar menu -->
 
             <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
+              
             </div>
             <!-- /menu footer buttons -->
           </div>
@@ -124,7 +140,7 @@
                     <img src="{{ asset('admin/images/img.jpg') }}" alt="">Admin
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="{{ route('logout') }}"><i class="fa fa-sign-out pull-right"></i> Cerrar sesión</a>
+                    <a class="dropdown-item"  href="#"><i class="fa fa-sign-out pull-right"></i> Cerrar sesión</a>
                   </div>
                 </li>
 
@@ -133,64 +149,7 @@
                     <i class="fa fa-envelope-o"></i>
                     <span class="badge bg-green"></span>
                   </a>
-                  <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
-                    <li class="nav-item">
-                      <a class="dropdown-item">
-                        <span class="image"><img src="{{ asset('admin/images/img.jpg') }}" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="dropdown-item">
-                        <span class="image"><img src="{{ asset('admin/images/img.jpg') }}}" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="dropdown-item">
-                        <span class="image"><img src="{{ asset('admin/images/img.jpg') }}" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="dropdown-item">
-                        <span class="image"><img src="{{ asset('admin/images/img.jpg') }}" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <div class="text-center">
-                        <a class="dropdown-item">
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
+                  
                 </li>
               </ul>
             </nav>
@@ -211,7 +170,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-             <a href="{{ route ('welcome') }}">Ecomuseo de las Minas de Abangares</a>
+            <a href="{{ route ('welcome') }}">Ecomuseo de las Minas de Abangares</a>
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -225,9 +184,23 @@
     <script src="{{ asset('admin/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <!-- NProgress -->
     <script src="{{ asset('admin/vendor/nprogress/nprogress.js') }}"></script>
-    <!-- Custom Theme Scripts -->
+    <!-- PNotify --> 
+    <script src="{{ asset('admin/vendor/pnotify/pnotify.js') }}"></script>
+    <script src="{{ asset('admin/vendor/pnotify/pnotify.buttons.js') }}"></script>
+    <script src="{{ asset('admin/vendor/pnotify/pnotify.nonblock.js') }}"></script>
+	  <!-- Datatables -- >
+    <script src="{{ asset('admin/vendor/datatables.jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/datatablesdataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/datatables/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/datatables/buttons.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/datatables/dataTables.fixedHeader.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/datatables/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/datatables/responsive.bootstrap.js') }}"></script>
+    <! -- Custom Theme Scripts -->
     <script src="{{ asset('admin/js/custom.min.js') }}"></script>
-	
+
+    @yield('js')
+
   </body>
 
 </html>

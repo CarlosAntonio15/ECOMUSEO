@@ -1,93 +1,141 @@
-<title>Formulario reservaciones</title>
+<title>Lista reservaciones</title>
 @if( Auth::user()->rol==1 or Auth::user()->rol==2)
 @extends('layouts.adminlayout')
 @section('content')
-<div class = "container">
-    <div class="row justify-content-center">
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="card-header"><h4>Lista reservaciones</h4>
-                    <a href="{{route('reservation.create')}}" class="btn btn-info">Nueva reservación</a>
-                    <a href="{{route('administracion')}}" class="btn btn-secondary">Atrás</a>
-                </div>
-
-                <div class="card-body">
-
-                    <div class="row">
-
-                        @forelse($reservation as $reservation)
-
-
-                            <div class="col-md-4">
-                            
-                                <div class="card-deck">
-                                    <div class="col-dm-4 col-reservation" >
-                                        <div class="card reservation" style="min-width: 18rem; max-width: 18rem;">
-                                            
-                                            <div class="card-body">
-                                                <h5 class="card-footer">
-                                                    <i class="fa fa-user-circle"></i>
-                                                    &nbsp;{{ $reservation-> name }}
-                                                    &nbsp;{{ $reservation-> lastname }}
-                                                </h5>
-                                            </div>
-                                            
-                                            <ul class="list-group list-group-flush">
-                                                <li class="list-group-item"><i class="fa fa-birthday-cake"></i>&nbsp;{{ $reservation->reservationDate }}</li>
-                                                <li class="list-group-item"><i class="fa fa-phone"></i>&nbsp;{{ $reservation->reservationHour }}</li>
-                                                <li class="list-group-item" 
-                                                    style="display:block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
-                                                        <i class="fas fa-map-marked-alt"></i>&nbsp;{{ $reservation->adultQuantity }}</li>
-                                                <li class="list-group-item"><i class="fa fa-paper-plane"></i>&nbsp;{{ $reservation->childrenQuantity }}</li>
-                                                <li class="list-group-item"><i class="fa fa-users"></i>&nbsp;{{ $reservation->tourType }}</li>
-                                                <li class="list-group-item"><i class="fa fa-address-card"></i> &nbsp;{{ $reservation->email }}</li>
-                                                <li class="list-group-item"><i class="fa fa-address-card"></i> &nbsp;{{ $reservation->phone }}</li>
-                                                <li class="list-group-item"><i class="fa fa-donate"></i> &nbsp;{{ $reservation->status }}</li>
-                                            </ul>
-
-                                            <div class="card-footer">
-                                                <a href="{{route('reservation.show',[$reservation->id])}}" class="btn btn-primary">Ver más</a>
-                                                <a href="{{route('reservation.edit',[$reservation->id])}}" class="btn btn-warning" class="margin:25px;">Editar</a>
-                                                <form action="/reservaciones/delete/{{$reservation->id}}" method="POST">
-                                            @csrf
-                                            @method('DELETE')</br>
-                                            <button class='btn btn-danger'><i class="fa fa-trash" class="margin:25px;"></i>&nbsp;Eliminar</button>  
-                                            </form>
-                                                
-                                            
-                                            </div>
-
-                                        </div>
-                                    </div> 
-                                </div> 
-                            </div>
-                        
-                        @empty
-                            <h4> No existen voluntarios agregados. </h4> 
-                        @endforelse
+    <div class="row">
+        <div class="col-md-12 col-sm-12 ">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Lista de reservaciones </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                    </ul>
+                    <div class="x_content">
+                        <div class="container" data-aos="fade-up">
+                            <a href="{{route('reservation.create')}}" class="btn-sm btn-info">Nueva reservación</a>
+                        </div>
                     </div>
+                    <div class="clearfix"></div>
+                    @if(Session::has('message'))
+                        <div class="alert alert-info alert-dismissible " role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                            </button>
+                            {{ Session::get('message') }}
+                        </div>
+                    @endif
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection   
+                <div class="x_content">
+                    <div class="card-body">
 
-@endif
-@if( Auth::user()->rol==3 )
-<br><br><br><br><br><br>
-    <div class="card">
-        <div class="card-content">
-            <div class="card-body">
-                <div class="form-body">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <br>
-                            <h2 style="color: red" class="card-title">Acceso denegado, comuníquese con el administrador. </h2>
+                        <div class="row">
+
+                            @forelse($reservation as $reservation)
+
+
+                                <div class="col-md-4">
+                                
+                                    <div class="card-deck">
+                                        <div class="col-dm-4 col-reservation" >
+                                            <div class="card reservation" style="min-width: 18rem; max-width: 18rem;">
+                                                
+                                                <div class="card-body">
+                                                    <h4 class="card-header">
+                                                        <i class="fa fa-user"></i>
+                                                        &nbsp;{{ $reservation-> name }}
+                                                        &nbsp;{{ $reservation-> lastname }}
+                                                    </h4>
+                                                
+                                                
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item"><i class="fa fa-calendar"></i>
+                                                            &nbsp;{{ $reservation->reservationDate }}
+                                                            <i class="fa fa-clock-o"></i> &nbsp;{{ $reservation->reservationHour }}
+                                                        </li>
+                                                        <li class="list-group-item" 
+                                                            style="display:block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                                                                <i class="fa fa-female"></i><i class="fa fa-child"></i><i class="fa fa-male"></i>&nbsp;{{ $reservation->adultQuantity }}
+                                                                &nbsp;{{ $reservation->childrenQuantity }}
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <i class="fa fa-tree"></i>&nbsp;{{ $reservation->tourType }}
+                                                        </li>
+                                                        <li class="list-group-item"><i class="fa fa-phone"></i> &nbsp;{{ $reservation->phone }}</li>
+                                                        <li class="list-group-item"><i class="fa fa-tags"></i> &nbsp;{{ $reservation->status }}</li>
+                                                    </ul>
+
+                                                    <div class="card-footer">
+                                                        <a href="{{route('reservation.show',[$reservation->id])}}" class="btn-sm btn-primary"><i class="fa fa-eye"></i>&nbsp;Ver más</a>
+                                                        <a href="{{route('reservation.edit',[$reservation->id])}}" class="btn-sm btn-warning"><i class="fa fa-edit"></i>&nbsp;Editar</a>
+                                                        
+                                                        <form action="/reservaciones/delete/{{$reservation->id}}" class="d-inline formulario-eliminar" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="btn-sm btn-danger source"><i class="fa fa-trash"></i>&nbsp;Eliminar</button>  
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div> 
+                                </div>
+                            
+                            @empty
+                                <h4> No existen voluntarios agregados. </h4> 
+                            @endforelse
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection   
+@section('js')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+
+        $('.formulario-eliminar').submit(function(e){
+            e.preventDefault();
+            Swal.fire({
+            title: 'Esta seguro?',
+            text: "Esta reservacion se eliminara definitivamente",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, eliminar!',
+            cancelButtonText: 'Cancelar',
+            }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                'Eliminado!',
+                'La reservación a sido eliminada.',
+                'success'
+                )
+                this.submit();
+            }
+        })
+    });
+    
+    </script>
+@endsection
+@endif
+@if( Auth::user()->rol==3 )
+    @section('content')
+        <!-- page content -->
+        <div class="col-md-12">
+            <div class="col-middle">
+                <div class="text-center text-center">
+                    <h1 class="error-number">403</h1>
+                    <h2>Accesso denegado</h2>
+                    <p>Se requiere autenticación completa para acceder a este recurso. <a href="{{ route('login') }}">Inicie sesión</a>
+                    </p>
+                    <div class="mid_center">
+                        <h3>Ecomuseo</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /page content -->
+    @endsection
 @endif

@@ -24,7 +24,8 @@ class EntradaController extends Controller
             "nombre" => 'required|alpha|max:100',
             "adultQuantity" => 'required',
             "childrenQuantity" =>'required',
-            "tourType" =>'required'
+            "tourType" =>'required',
+            "total"=>'required'
         ]);
         
         $data=[
@@ -32,6 +33,7 @@ class EntradaController extends Controller
             'adultQuantity'=>$request->adultQuantity, 
             'childrenQuantity'=>$request->childrenQuantity, 
             'tourType'=>$request->tourType,
+            'total'=>$request->total,
         ];
         
         $entrada= Entrada::create($data);
@@ -42,15 +44,23 @@ class EntradaController extends Controller
     }
     public function createPDF(){
         $data=Entrada::all();
-        view()->share('tiquete', $data);
+        View()->share('tiquete', $data);
         $pdf=PDF::loadView('tiquete.allTiquete', $data);
         return $pdf->download('Tiquetes.pdf');
-   }
-   
-   public function download($id){
-       $entrada=Entrada::find($id);
-       view()->share('tiquete', $entrada);
-       return PDF::loadView('tiquete.tiquetePDF', $entrada)->download("Entrada-$entrada->id, 
-       Nombre-$entrada->nombre, Tour-$entrada->tourType.pdf");
-   }
+    }
+    public function download($id){
+        
+        $entrada = Entrada::find($id);
+        view()->share('tiquete', $entrada);
+
+        return PDF::loadView('tiquete.tiquetePDF', $entrada)->download("Entrada-$entrada->id, Nombre-$entrada->nombre, Tour-$entrada->tourType.pdf");
+    }
+
+    public function destroy($id)
+    {
+        Entrada::find($id)->delete();
+        
+        Session()->flash('message', 'Tiquete eliminado correctamente');
+        return redirect()->route('tiquete.index');
+    }
 }
