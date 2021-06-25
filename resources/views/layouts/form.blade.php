@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="{{ asset('admin/images/favicon.ico') }}" type="image/ico" />
+        <link rel="icon" href="{{ asset('img/ecoAbangares.jpeg') }}" type="image/ico" />
 
         <title>Administración</title>
 
@@ -27,8 +27,9 @@
             <div class="main_container">
                 <div class="col-md-3 left_col">
                     <div class="left_col scroll-view">
+                        
                         <div class="navbar nav_title" style="border: 0;">
-                            <a href="{{ route ('welcome') }}" class="site_title"><i class="fa fa-paw"></i> <span>Ecomuseo</span></a>
+                            <a href="{{ route ('welcome') }}" class="site_title"> <img src="{{ asset('img/ecoAbangares.jpeg') }}" width="70" height="40"><span> Ecomuseo</span> </a>
                         </div>
                         <div class="clearfix"></div>
                         <br />

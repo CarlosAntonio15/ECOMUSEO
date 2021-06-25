@@ -40,6 +40,12 @@ class UsuarioController extends Controller
         ->update([
             'rol'=> $request->rol,
         ]);
-    return redirect()->route('usuario.asignarol');
+        return redirect()->route('usuario.asignarol');
+    }
+    public function destroy($id){
+
+        User::find($id)->delete();
+        return redirect()->route('usuario.asignarRol');
+
     }
 }

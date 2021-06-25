@@ -3,18 +3,19 @@ namespace App\Http\Controllers;
 use App\voluntary;
 use Illuminate\Http\Request;
 use App\Http\Requests\VoluntaryRequest;
+use Response;
 
 class VoluntaryController extends Controller
 {
 
     public function index()
     {
-        $voluntaryC = voluntary::all();
+        $voluntaryC = voluntary::orderBy('id', 'desc')->paginate(6);
         return view('voluntary')->with('voluntaryN', $voluntaryC);
     }
     public function indexGus()
     {
-        $voluntaryC = voluntary::all();
+        $voluntaryC = voluntary::orderBy('id', 'desc')->paginate(3);
         return view('Volun.index')->with('Volun', $voluntaryC);
     }
 

@@ -1,4 +1,4 @@
-<title>Tiquete</title>
+<title>Egresos</title>
 @if( Auth::user()->rol==1 or Auth::user()->rol==2)
 @extends('layouts.adminlayout')
 @section('content')
@@ -6,61 +6,51 @@
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Lista de reservaciones </h2>
+                    <h2>Lista de egresos </h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                     </ul>
                     <div class="x_content">
                         <div class="container" data-aos="fade-up">
-                            <a href="{{route('tiquete.create')}}" class="btn-sm btn-info">Tiquete de compra</a>
-                            <a class="btn-sm btn-primary" href="{{ url('/tiquete/PDF') }}"><i class="fa fa-file-pdf-o"></i>&nbsp;Exportar lista a PDF</a>
-                       
+        
                         </div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
                     @if(Session::has('message'))
-                            <div class="alert alert-success alert-dismissible " role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                                </button>
-                                {{ Session::get('message') }}
-                                <a class="btn-sm btn-primary" href="{{ url('/tiquete/PDF', Session::get('id') )}}"><i class="fa fa-file-pdf-o"></i>&nbsp;Exportar a PDF</a>
-                            </div>
-                    
+                        <div class="alert alert-success alert-dismissible " role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                            </button>
+                            {{ Session::get('message') }}
+                        </div>
+                        
                     @endif
-                    
                     <div class="card-body">
                         <div class="table-responsive-md">
                             <table class="table table-hover table-striped" id="tiquetes">
                                 
                                 <thead>
                                     <tr>
-                                        <th> ID </th>
-                                        <th >Nombre</th>
-                                        <th >Cantidad Adultos</th>
-                                        <th >Cantidad niños</th>
-                                        <th >Tipo tour</th>
-                                        <th>Total</th>
-                                        <th> Descarga </th>
+                                        <th> Fecha </th>
+                                        <th >Voucher</th>
+                                        <th >Descripción</th>
+                                        <th >Responsable</th>
+                                        <th >Total</th>
 
                                         <th colspan="3">&nbsp;</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($entradas as $entrada)
+                                    @forelse($expenseN as $egresos)
                                         <tr class = "text-center">
-                                            <td> {{ $entrada->id }}</td>
-                                            <td>{{ $entrada->nombre }}</td>
-                                            <td>{{ $entrada->adultQuantity }}</td>
-                                            <td>{{ $entrada->childrenQuantity }}</td>
-                                            <td>{{ $entrada->tourType }}</td>
-                                            <td>{{ $entrada->total }}</td>
-                                            <td> 
-                                                <a class="btn-sm btn-primary" href="{{ url('/tiquete/PDF', $entrada->id) }}"><i class="fa fa-file-pdf-o"></i>&nbsp;PDF</a>
-                                            </td>
+                                            <td> {{ $egresos->date }}</td>
+                                            <td>{{ $egresos->voucher }}</td>
+                                            <td>{{ $egresos->description }}</td>
+                                            <td>{{ $egresos->responsable }}</td>
+                                            <td>{{ $egresos->amount }}</td>
                                             <td>
-                                                <form action="/tiquete/delete/{{ $entrada->id }}" class="d-inline formulario-eliminar" method="POST">
+                                                <form action="/egresos/delete/{{ $egresos->id }}" class="d-inline formulario-eliminar" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                         <button class="btn-sm btn-danger" ><i class="fa fa-trash"></i>
@@ -74,22 +64,11 @@
                                 </tbody>
                             </table>
                         </div>  
-
-                        <div class="d-flex justify-content-center">
-                            {!! $entradas->links() !!}
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function() {
-            $('#tiquetes').DataTable();
-        } );
-    </script>
-
 @endsection
 @section('js')
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -108,7 +87,7 @@
                 }).then((result) => {
                 if (result.isConfirmed) {
                     Swal.fire(
-                    '¡Tiquete eliminado!',
+                    '¡Egreso eliminado!',
                     'Su archivo ha sido eliminado.',
                     'success'
                     )

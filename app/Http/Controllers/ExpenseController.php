@@ -10,7 +10,7 @@ class ExpenseController extends Controller
     public function index()
     {
         $expenseC = Expense::all();
-        return view('expense')->with('expenseN', $expenseC);
+        return view('Expenses.index')->with('expenseN', $expenseC);
     }
 
     public function create()
@@ -39,7 +39,7 @@ class ExpenseController extends Controller
         $ExpenseN->amount= $request->amount;
         $ExpenseN->save();
         $request->session()->flash('message', 'Egreso registrado correctamente.');
-        return redirect()->route('welcome');
+        return redirect()->route('expense.index');
     }
 
     public function show(Expense $id)

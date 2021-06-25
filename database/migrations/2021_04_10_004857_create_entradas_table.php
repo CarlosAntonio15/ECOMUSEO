@@ -19,6 +19,7 @@ class CreateEntradasTable extends Migration
             $table->integer ('adultQuantity');
             $table->integer ('childrenQuantity');
             $table->string ('tourType');
+            $table->integer ('total');
             $table->timestamps();
         });
     }

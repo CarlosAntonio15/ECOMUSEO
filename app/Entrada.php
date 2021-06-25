@@ -10,7 +10,8 @@ class Entrada extends Model
         'nombre',
         'adultQuantity', 
         'childrenQuantity', 
-        'tourType'
+        'tourType',
+        'total'
     ];
     protected $table = 'entradas';
 

@@ -6,7 +6,6 @@ use App\Http\Requests\giveRequest;
 
 class GiveController extends Controller
 {
-
     public function index()
     {
         $give = give::all();
@@ -18,7 +17,11 @@ class GiveController extends Controller
         return view('give.create');
     }
 
-    public function store(Request $request)
+    public function createInfo(){
+        return view('give.createInfo');
+    }
+
+    public function store(giveRequest $request)
     {
         $messages =[
             'required' => 'El campo :attribute es obligatorio ',
@@ -30,19 +33,17 @@ class GiveController extends Controller
         ];
 
         $request->validate([
-            "id"=> 'required|min:7|max:15',
-            "name" => 'required|max:50|regex:/^[\pL\s\-]+$/u|min:3',
-            "lastName" => 'required|max:100|min:4|regex:/^[\pL\s\-]+$/u',
-            "donationType" =>'required|max:9|min:8',
-            "quantity" =>'required|min:4',
-            "description" =>'required|max:300|min:30',
+            "name" => 'required|max:25|regex:/^[\pL\s\-]+$/u|min:3',
+            "lastname" => 'required|max:100|min:2|regex:/^[\pL\s\-]+$/u',
+            "donationType" =>'required',
+            "quantity" =>'required|min:1',
+            "description" =>'required|max:300|min:',
             "currentDate" =>'required',
-            "phone" =>'required|unique:donation|integer',
-            "mail" =>'required|email|unique:donation'
+            "phone" =>'required|integer',
+            "mail" =>'required|email'
         ],  $messages);
-        
+
         $data =[
-            'id'=>$request->id,
             'name'=>$request->name,
             'lastname'=>$request->lastname, 
             'donationType'=>$request->donationType,
@@ -52,10 +53,48 @@ class GiveController extends Controller
             'phone'=>$request->phone,
             'mail'=>$request->mail
         ];
+        
         $give = give::create($data);
         $request->session()->flash('message', 'donacion enviada correctamenta');
         
         return redirect()->route('give.index');
+    }
+
+    public function storeInfo(giveRequest $request){
+        $messages =[
+            'required' => 'El campo :attribute es obligatorio ',
+            'alpha' => 'El campo :attribute sólo puede contener letras',
+            'max:100' => 'El campo :attribute tiene un máximo de 100 letras',
+            'email' => 'El campo :attribute debe ser tipo email',
+            'unique:donation' => 'El campo :attribute debe ser único',
+            'max:50' => 'El campo :attribute debe contener máximo 50 caracteres'
+        ];
+
+        $request->validate([
+            "name" => 'required|max:25|regex:/^[\pL\s\-]+$/u|min:3',
+            "lastname" => 'required|max:100|min:2|regex:/^[\pL\s\-]+$/u',
+            "donationType" =>'required',
+            "quantity" =>'required|min:1',
+            "description" =>'required|max:300|min:',
+            "currentDate" =>'required',
+            "phone" =>'required|integer',
+            "mail" =>'required|email'
+        ],  $messages);
+
+        $data =[
+            'name'=>$request->name,
+            'lastname'=>$request->lastname, 
+            'donationType'=>$request->donationType,
+            'quantity'=>$request->quantity,
+            'description'=>$request->description,
+            'currentDate'=>$request->currentDate,
+            'phone'=>$request->phone,
+            'mail'=>$request->mail
+        ];
+        
+        $give = give::create($data);
+        $request->session()->flash('message', 'donacion enviada correctamenta');
+        return redirect()->route('realizarDonaciones');
     }
 
     public function show(give $id)
@@ -71,13 +110,13 @@ class GiveController extends Controller
         if(is_null($give)){
             return redirect()->route('index');
         }
+        //dd($give);
         return view('give.create')->with('give', $give);
     }
 
     public function update(giveRequest $request, $id)
     {
         $give = give::find($id);
-        $give-> id = $request->id;
         $give-> name = $request->name;
         $give-> lastname = $request->lastname; 
         $give-> donationType = $request->donationType;

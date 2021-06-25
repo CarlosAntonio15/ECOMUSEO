@@ -24,7 +24,7 @@ class ReservationRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            
             'identification'=>'required',
             'name'=>'required',
             'lastname'=>'required',

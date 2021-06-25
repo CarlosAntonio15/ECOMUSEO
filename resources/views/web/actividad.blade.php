@@ -130,7 +130,7 @@
                   2-	Niños: 500 colones<br>
                 </p>
                 <div class="col text-right">
-                  <a href="{{ route('reservation.create')}}" class="btn btn-success">Reservar</a>
+                  <a href="{{ route('reservation.createRe')}}" class="btn btn-success">Reservar</a>
                 </div>
               </div>
                 

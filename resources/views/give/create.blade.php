@@ -1,125 +1,147 @@
 <title>Formulario donaciones</title>
-<div style="background-image: url('/img/rueda.jpg'); " >
-@extends('layouts.app')
+@if( Auth::user()->rol==1 or Auth::user()->rol==2)
+@extends('layouts.adminlayout')
+@section('title','Create Donation')
 @section('content')
-<div class = "container">
-    <div class="row justify-content-center">
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="card-header">Donaciones</div>
-                <div class="container" data-aos="fade-up">
 
-                    @if(!empty($give))
-                        {!! Form::model($give, ['route' => ['give.update', $give->id], 'method'=>'put']) !!}
-                    @else
-                        {!! Form::open(['route' => 'give.store', 'method'=>'post']) !!}
-                    @endif
-                    <div class="row mt-5">
-                        <div class="col-sm-8 offset-sm-2">  
+<div class="row">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Donaciones <small>Formulario</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
+                @if(!empty($give))
+                    {!! Form::model($give, ['route' => ['give.update', $give->id], 'method'=>'put']) !!}
+                @else
+                    {!! Form::open(['route' => 'give.store', 'method'=>'post']) !!}
+                @endif
+            
+           
+          
+                    <div class="row mt-12">
+                        <div class="col-sm-8 offset-sm-2">
+            
+                            <div class="form-group">
+                                <label for="Nombre"><h5>Ingrese los datos que se le sean solicitados para procesar su donacion..</h5></label>
+                            </div>
+                  
                             <div class="row">
-
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        {!! Form::Label('id', 'Identificación') !!}
-                                        {!! Form::number('id', null, ['placeholder' => 'Ingresa su número de Identificación', 'class' => 'form-control' ]) !!}
+                                    {!! Form::label('name', 'Nombre ') !!}
+                                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
                                     </div>
                                 </div>
-
-                                <div class="col-md-4">
+                            
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        {!! Form::label('name', 'Nombre') !!}
-                                        {!! Form::text('name', null, [
-                                            'placeholder' => 'Ingrese su nombre',
-                                            'class' => 'form-control'.(!empty($errors->first('Nombre')) ? 'is-invalid' : '') ]) 
-                                        !!}
-                                        @error('name')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        {!! Form::Label('lastname', 'Apellidos') !!}
-                                        {!! Form::text('lastname', null, ['placeholder' => 'Ingresa sus apellidos', 'class' => 'form-control' ]) !!}
+                                        {!! Form::Label('lastname', 'Primer apellido') !!}
+                                        {!! Form::text('lastname', null, ['class' => 'form-control' ]) !!}
                                     </div>
                                 </div>
                             </div>
-
+                        
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
 
-                                    <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::Label('donationType', 'Donacion a escoger:') !!}</h5>
-                                        <br>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center">   {!! Form::radio('donationType', 'Monetaria') !!} Monetaria</h5>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center"> {!! Form::radio('donationType', 'Alimenticia') !!} Alimenticia</h5>
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center">{!! Form::radio('donationType', 'Material') !!} Material</h5>
-                                    
+                                        <h4> {!! Form::Label('donationType', 'Donacion a escoger:') !!}</h4>
+                                            <h2>{!! Form::radio('donationType', 'Monetaria') !!} Monetaria</h2>
+                                            <h2>{!! Form::radio('donationType', 'Alimenticia') !!} Alimenticia</h2>
+                                            <h2>{!! Form::radio('donationType', 'Material') !!} Material</h2>
+                    
                                     </div>
                                 </div>
 
-                            
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        {!! Form::Label('quantity', 'Cantidad a donar') !!}
-                                        {!! Form::number('quantity', null, ['placeholder' => 'Ingresa su donación', 'class' => 'form-control' ]) !!}
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            {!! Form::Label('quantity', 'Edad') !!}
+                                            {!! Form::number('quantity', null, ['class' => 'form-control' ]) !!}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label for="currentDate"><h4>Fecha</h4></label>
+                                            <input type="date" name = "currentDate" id = "currentDate" class="form-control" required>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="row"> 
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        {!! Form::Label('phone', 'Teléfono') !!}
+                                        {!! Form::number('phone', null, ['class' => 'form-control' ]) !!}
+                                    </div>
+                                </div>
+                
+
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        {!! Form::Label('mail', 'Correo electrónico') !!}
+                                        {!! Form::text('mail', null, ['placeholder' => 'Ingresa un correo electrónico', 'class' => 'form-control' ]) !!}  </div>
+                                </div>
+
+                    
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         {!! Form::Label('description', 'Descripción') !!}
-                                        {!! Form::textarea('description', null, ['placeholder' => 'Breve descripción de su donación', 'class' => 'form-control' ]) !!}
+                                        {!! Form::textarea('description', null, ['class' => 'form-control' ]) !!}
                                     </div>
-                                </div>
-                            </div> 
-
-                            <div class="row">      
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <h5 style="color:  rgb(243, 236, 236)" align="center">{!! Form::Label('currentDate', 'Fecha de donación') !!}</h5>
-                                            {!! Form::date('currentDate', \Carbon\Carbon::now()) !!}
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        {!! Form::Label('phone', 'Teléfono') !!}
-                                        {!! Form::number('phone', null, ['placeholder' => 'Ingresa su teléfono', 'class' => 'form-control' ]) !!}
-                                    </div>
-                                </div>
-                                    
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        {!! Form::Label('mail', 'Correo electrónico') !!}
-                                        {!! Form::text('mail', null, ['placeholder' => 'Ingresa un correo electrónico', 'class' => 'form-control' ]) !!}
-                                    </div>
-                                </div>
-
-                            </div>
-                                    
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <button type="summit" class="btn btn-primary">
-                                        <i class="fas fa-save"></i> {{ !empty($give) ? 'Actualizar ' : 'Guardar ' }}
-                                    </button>
-                                    <a href="{{ route('give.index') }}" class="btn btn-secondary">
-                                        <i class="fas fa-undo"></i> Atras
-                                    </a>
                                 </div>
                             </div>
-                        </div>    
+                
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                                <button type = "submit" class = "btn btn-success"><i class="fa fa-save"></i> Procesar solicitud</button>
+                                
+                                <input type="button" class = "btn btn-secondary" onclick="history.back()" name="Atrás" value="Atrás">
+                            </div>
+                  
+                        </div>
                     </div>
-                    {!! Form::close() !!}
                 </div>
-            </div>
-        </div>
+
+                <br/>
+            {!! Form::close() !!}
+        </div> 
     </div>
 </div>
 @endsection
+@endif
+@if( Auth::user()->rol==3 )
+    @section('content')
+        <!-- page content -->
+        <div class="col-md-12">
+            <div class="col-middle">
+                <div class="text-center text-center">
+                    <h1 class="error-number">403</h1>
+                    <h2>Accesso denegado</h2>
+                    <p>Se requiere autenticación completa para acceder a este recurso. <a href="{{ route('login') }}">Inicie sesión</a>
+                    </p>
+                    <div class="mid_center">
+                        <h3>Ecomuseo</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /page content -->
+    @endsection
+@endif

@@ -1,6 +1,5 @@
 <title>Formulario reservaciones</title>
-@if( Auth::user()->rol==1 or Auth::user()->rol==2)
-@extends('layouts.adminlayout')
+@extends('layouts.form')
 @section('title','Create Reservation')
 @section('content')
 
@@ -29,7 +28,7 @@
                         @if(!empty($reservation))
                             {!! Form::model($reservation, ['route' => ['reservation.update', $reservation->id], 'method'=>'put']) !!}
                         @else
-                            {!! Form::open(['route' => 'reservation.store', 'method'=>'post']) !!}
+                            {!! Form::open(['route' => 'reservation.storeRe', 'method'=>'post']) !!}
                         @endif
                             <div class="row mt-8">
                                 <div class="col-sm-8 offset-sm-2">  
@@ -200,23 +199,3 @@
 </script>
 
 @endsection
-@endif
-@if( Auth::user()->rol==3 )
-    @section('content')
-        <!-- page content -->
-        <div class="col-md-12">
-            <div class="col-middle">
-                <div class="text-center text-center">
-                    <h1 class="error-number">403</h1>
-                    <h2>Accesso denegado</h2>
-                    <p>Se requiere autenticación completa para acceder a este recurso. <a href="{{ route('login') }}">Inicie sesión</a>
-                    </p>
-                    <div class="mid_center">
-                        <h3>Ecomuseo</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /page content -->
-    @endsection
-@endif

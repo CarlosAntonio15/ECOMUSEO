@@ -23,8 +23,7 @@ class giveRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'id'=>'required', 
+        return [ 
             'name'=>'required',
             'lastname'=>'required', 
             'donationType'=>'required',

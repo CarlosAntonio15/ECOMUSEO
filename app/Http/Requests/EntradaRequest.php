@@ -27,7 +27,8 @@ class EntradaRequest extends FormRequest
             'nombre'=>'required',
             'adultQuantity'=>'required', 
             'childrenQuantity'=>'required', 
-            'tourType'=>'required'
+            'tourType'=>'required',
+            'total'=>'required'
         ];
     }
 }
