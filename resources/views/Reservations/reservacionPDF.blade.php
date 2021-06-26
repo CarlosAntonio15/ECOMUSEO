@@ -22,9 +22,9 @@
         /* Defina ahora los márgenes reales de cada página en el PDF */
         body {
             margin-top: 3cm;
-            margin-left: 2cm;
-            margin-right: 2cm;
-            margin-bottom: 2cm;
+            margin-left: 0cm;
+            margin-right: 4cm;
+            margin-bottom: 4cm;
         }
 
         /* Definir las reglas del encabezado */
@@ -62,28 +62,40 @@
 
  <main>
   <body>
-    <h2 align="center"><FONT FACE="arial">Reporte individual de tiquetes</FONT></h2>
+    <h2 align="center"><FONT FACE="arial">Reporte Individual de reservaciones</FONT></h2> 
     <table class="table table-bordered">
       <thead>
         <tr class="table-danger">
-          <td>Nombre</td>
-          <td>Adultos</td>
-          <td>Niños</td>
-          <td>Tipo de tour</td>
-          <td>Total</td>
+        <td>Nombre</td>
+        <td>Apellidos</td>
+        <td>Fecha</td>
+        <td>Hora</td>
+        <td>Adultos</td>
+        <td>Niños</td>
+        <td>Tour</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Estado</td>
+        <td>Total</td>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>{{ $tiquete->nombre }}</td>
-          <td>{{ $tiquete->adultQuantity }}</td>
-          <td>{{ $tiquete->childrenQuantity }}</td>
-          <td>{{ $tiquete->tourType }}</td>
-          <td>{{ $tiquete->total }}</td>
+          <td>{{ $reservacion->name }}</td>
+          <td>{{ $reservacion->lastname}}</td>
+          <td>{{ $reservacion->reservationDate }}</td>
+          <td>{{ $reservacion->reservationHour}}</td>
+          <td>{{ $reservacion->adultQuantity }}</td>
+          <td>{{ $reservacion->childrenQuantity }}</td>
+          <td>{{ $reservacion->tourType  }}</td>
+          <td>{{ $reservacion->email }}</td>
+          <td>{{ $reservacion->phone }}</td>
+          <td>{{ $reservacion->status }}</td>
+          <td>{{ $reservacion->total }}</td>
         </tr>
       </tbody>
     </table>
    </body>
   </main>
- </body> 
+ </body>
 </html>

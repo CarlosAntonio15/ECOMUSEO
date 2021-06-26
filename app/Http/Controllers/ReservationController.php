@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 use App\Reservation;
 use Illuminate\Http\Request;
 use App\Http\Requests\ReservationRequest;
-use Response;
+use PDF;
 
 class ReservationController extends Controller
 {
@@ -148,7 +148,21 @@ class ReservationController extends Controller
         //dd($reservation);
         $reservation->save();
         $request->session()->flash('message', 'Reservación actualizada correctamente.');
-        return redirect()->route('reservation');
+        return redirect()->route('reservation.index');
+    }
+
+    public function createPDF(){
+        $data=Reservation::all();
+        View()->share('reservacion', $data);
+        $pdf=PDF::loadView('reservations.allReservation', $data);
+        return $pdf->download('Reservations.pdf');
+    }
+    public function download($id){
+        
+        $reservation = Reservation::find($id);
+        view()->share('reservacion', $reservation);
+
+        return PDF::loadView('Reservations.ReservacionPDF', $reservation)->download("Reservación-$reservation->id, Nombre-$reservation->nombre, Apellidos-$reservation->apellidos.pdf");
     }
 
     public function destroy($id)
@@ -158,4 +172,13 @@ class ReservationController extends Controller
         Session()->flash('message', 'Voluntario eliminado correctamente');
         return redirect()->route('reservation');
     }
+
+    public function graficarReservation(){
+        $reservation = Reservation::select(\DB::raw("COUNT(*) as count"))->whereYear('created_at', 
+        date('Y'))->groupBy(\DB::raw("Month(created_at)"))->pluck('count');
+
+        return view('Reservations.graficarReservation', compact('reservation'));
+
+    }
+
 }

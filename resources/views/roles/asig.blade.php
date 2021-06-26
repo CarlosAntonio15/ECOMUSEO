@@ -9,12 +9,12 @@
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                        <div class="col-md-4">
-                            <h3>Asignar rol </h3>
-                        </div>
-                        <div class="col-md-4">
-                            <h3>@yield('title') {{ $usuario->name }} </h3>
-                        </div>
+                    <div class="col-md-4">
+                        <h3>Asignar rol </h3>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>@yield('title') {{ $usuario->name }} </h3>
+                    </div>
                     
                     <ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
@@ -22,7 +22,7 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-
+                    
                     <form class="form form-vertical" action="{{ route('usuario.saverol') }}" method="POST">
                         @csrf
                         <div class="col-4">
@@ -43,7 +43,7 @@
                                 <button type="submit" class="btn btn-success">
                                 <i class="fa fa-save"></i> Guardar cambios</button>
                                 <a href="{{ url('asignarRol') }}" class="btn btn-secondary">
-                                <i class="fa fa-undo"></i> Regresar</a>
+                                <i class="fa fa-reply"></i> Regresar</a>
                             </div>
                         </div>
                         

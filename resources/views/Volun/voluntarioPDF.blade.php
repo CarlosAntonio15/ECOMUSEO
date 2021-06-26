@@ -8,7 +8,6 @@
     <title>Factura</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   </head>
-
   <head>
     <style>
         /** 
@@ -62,28 +61,30 @@
 
  <main>
   <body>
-    <h2 align="center"><FONT FACE="arial">Reporte individual de tiquetes</FONT></h2>
+
+    <h2 align="center"><FONT FACE="arial">Reporte indivudual de voluntarios</FONT></h2>
+  
     <table class="table table-bordered">
       <thead>
         <tr class="table-danger">
-          <td>Nombre</td>
-          <td>Adultos</td>
-          <td>Niños</td>
-          <td>Tipo de tour</td>
-          <td>Total</td>
+        <td>Nombre</td>
+        <td>Apellido_1</td>
+        <td>Apellido_2</td>
+        <td>Teléfono</td>
+        <td>Email</td>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>{{ $tiquete->nombre }}</td>
-          <td>{{ $tiquete->adultQuantity }}</td>
-          <td>{{ $tiquete->childrenQuantity }}</td>
-          <td>{{ $tiquete->tourType }}</td>
-          <td>{{ $tiquete->total }}</td>
+          <td>{{ $voluntary->Nombre }}</td>
+          <td>{{ $voluntary->Apellido_1 }}</td>
+          <td>{{ $voluntary->Apellido_2 }}</td>
+          <td>{{ $voluntary->Telefono}}</td>
+          <td>{{ $voluntary->Email }}</td>
         </tr>
       </tbody>
     </table>
    </body>
   </main>
- </body> 
+ </body>
 </html>

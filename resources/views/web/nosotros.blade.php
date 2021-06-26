@@ -8,7 +8,7 @@
             <div class="card">
                 <section id="about" class="about section-bg">
                  <div class="container" data-aos="fade-up">
-
+       
                       <div class="section-title">
                         <h3>Descubre más sobre nosotros</h3>
                       </div>

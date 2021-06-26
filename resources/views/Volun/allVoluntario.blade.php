@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Factura</title>
+    <title>PDF Demo in Laravel 7</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   </head>
-
   <head>
     <style>
         /** 
@@ -62,28 +61,31 @@
 
  <main>
   <body>
-    <h2 align="center"><FONT FACE="arial">Reporte individual de tiquetes</FONT></h2>
+    <h2 align="center"><FONT FACE="arial">Reporte General de voluntarios</FONT></h2>
     <table class="table table-bordered">
-      <thead>
-        <tr class="table-danger">
-          <td>Nombre</td>
-          <td>Adultos</td>
-          <td>Niños</td>
-          <td>Tipo de tour</td>
-          <td>Total</td>
-        </tr>
+    <thead>
+      <tr class="table-danger">
+        <td>Nombre</td>
+        <td>Apellido_1</td>
+        <td>Apellido_2</td>
+        <td>Teléfono</td>
+        <td>Email</td>
+      </tr>
       </thead>
       <tbody>
+        @foreach($voluntary as $data)
         <tr>
-          <td>{{ $tiquete->nombre }}</td>
-          <td>{{ $tiquete->adultQuantity }}</td>
-          <td>{{ $tiquete->childrenQuantity }}</td>
-          <td>{{ $tiquete->tourType }}</td>
-          <td>{{ $tiquete->total }}</td>
+            <td>{{ $data->Nombre }}</td>
+            <td>{{ $data->Apellido_1}}</td>
+            <td>{{ $data->Apellido_2 }}</td>
+            <td>{{ $data->Telefono }}</td>
+            <td>{{ $data->Email }}</td>
+            
         </tr>
+       @endforeach
       </tbody>
     </table>
    </body>
   </main>
- </body> 
+ </body>
 </html>

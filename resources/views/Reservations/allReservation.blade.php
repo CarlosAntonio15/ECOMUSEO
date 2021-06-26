@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Factura</title>
+    <title>PDF Demo in Laravel 7</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   </head>
 
@@ -22,9 +22,9 @@
         /* Defina ahora los márgenes reales de cada página en el PDF */
         body {
             margin-top: 3cm;
-            margin-left: 2cm;
-            margin-right: 2cm;
-            margin-bottom: 2cm;
+            margin-left: 0cm;
+            margin-right: 4cm;
+            margin-bottom: 4cm;
         }
 
         /* Definir las reglas del encabezado */
@@ -55,35 +55,48 @@
   <footer>
       <img src="img/PieEcomuseo.png" width="100%" height="100%"/>
   </footer>
-
-
-
- <!-- Envuelva el contenido de su PDF dentro de una etiqueta principal -->
+   <!-- Envuelva el contenido de su PDF dentro de una etiqueta principal -->
 
  <main>
   <body>
-    <h2 align="center"><FONT FACE="arial">Reporte individual de tiquetes</FONT></h2>
+    <h2 align="center"><FONT FACE="arial">Reporte General de reservaciones</FONT></h2>
     <table class="table table-bordered">
-      <thead>
-        <tr class="table-danger">
-          <td>Nombre</td>
-          <td>Adultos</td>
-          <td>Niños</td>
-          <td>Tipo de tour</td>
-          <td>Total</td>
-        </tr>
+    <thead>
+      <tr class="table-danger">
+        <td>Nombre</td>
+        <td>Apellidos</td>
+        <td>Fecha</td>
+        <td>Hora</td>
+        <td>Adultos</td>
+        <td>Niños</td>
+        <td>Tipo tour</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Estado</td>
+        <td>Total</td>
+      </tr>
       </thead>
       <tbody>
+        @foreach($reservacion as $data)
         <tr>
-          <td>{{ $tiquete->nombre }}</td>
-          <td>{{ $tiquete->adultQuantity }}</td>
-          <td>{{ $tiquete->childrenQuantity }}</td>
-          <td>{{ $tiquete->tourType }}</td>
-          <td>{{ $tiquete->total }}</td>
+            <td>{{ $data->name }}</td>
+            <td>{{ $data->lastname}}</td>
+            <td>{{ $data->reservationDate }}</td>
+            <td>{{ $data->reservationHour }}</td>
+            <td>{{ $data->adultQuantity }}</td>
+            <td>{{ $data->childrenQuantity }}</td>
+            <td>{{ $data->tourType }}</td>
+            <td>{{ $data->email }}</td>
+            <td>{{ $data->phone }}</td>
+            <td>{{ $data->status }}</td>
+            <td>{{ $data->total }}</td>
+
+            
         </tr>
+       @endforeach
       </tbody>
     </table>
    </body>
   </main>
- </body> 
+ </body>
 </html>

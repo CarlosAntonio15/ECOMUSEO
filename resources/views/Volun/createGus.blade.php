@@ -28,13 +28,8 @@
                                         {!! Form::label('Nombre', 'Nombre') !!}
                                         {!! Form::text('Nombre', null, [
                                             'placeholder' => 'Ingrese su nombre',
-                                            'class' => 'form-control'.(!empty($errors->first('Nombre')) ? 'is-invalid' : '') ]) 
+                                            'class' => 'form-control' ]) 
                                         !!}
-                                        @error('Nombre')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
                                     </div>
                                 </div>
 
@@ -97,11 +92,11 @@
                         </div> 
                         <div class="ln_solid"></div>
                         <div class="form-group col-md-12">
-                            <button type="summit" class="btn btn-primary">
+                            <button type="summit" class="btn-md btn-success">
                                 <i class="fa fa-save"></i> {{ !empty($voluntary) ? 'Actualizar ' : 'Guardar ' }}
                             </button>
-                            <a href="{{ route('voluntary.index') }}" class="btn btn-secondary">
-                                <i class="fa fa-undo"></i> Atras
+                            <a href="{{ route('voluntary.index') }}" class="btn-sm btn-secondary">
+                                <i class="fa fa-reply"></i> Atrás
                             </a>
                         </div>
                     </div>    

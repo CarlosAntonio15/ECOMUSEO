@@ -8,7 +8,6 @@
     <title>Factura</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   </head>
-
   <head>
     <style>
         /** 
@@ -62,24 +61,26 @@
 
  <main>
   <body>
-    <h2 align="center"><FONT FACE="arial">Reporte individual de tiquetes</FONT></h2>
+
+    <h2 align="center"><FONT FACE="arial">Reporte individual de egresos</FONT></h2>
+
     <table class="table table-bordered">
       <thead>
         <tr class="table-danger">
-          <td>Nombre</td>
-          <td>Adultos</td>
-          <td>Niños</td>
-          <td>Tipo de tour</td>
+          <td>Fecha</td>
+          <td>Voucher</td>
+          <td>Description</td>
+          <td>Responsable</td>
           <td>Total</td>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>{{ $tiquete->nombre }}</td>
-          <td>{{ $tiquete->adultQuantity }}</td>
-          <td>{{ $tiquete->childrenQuantity }}</td>
-          <td>{{ $tiquete->tourType }}</td>
-          <td>{{ $tiquete->total }}</td>
+          <td>{{ $expenses->date }}</td>
+          <td>{{ $expenses->voucher }}</td>
+          <td>{{ $expenses->description }}</td>
+          <td>{{ $expenses->responsable}}</td>
+          <td>{{ $expenses->amount }}</td>
         </tr>
       </tbody>
     </table>

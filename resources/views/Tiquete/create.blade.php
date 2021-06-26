@@ -49,14 +49,14 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                 {!! Form::Label('adultQuantity', 'Cantidad de adultos') !!}</h5>
-                                                {!! Form::number('adultQuantity', null, ['class' => 'form-control', 'id' => 'Adult', 'onkeyup'=>"suma();" ]) !!}
+                                                {!! Form::number('adultQuantity', 0, ['class' => 'form-control', 'id' => 'Adult', 'onkeyup'=>"suma();" ]) !!}
                                                 </div>
                                             </div>
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                 {!! Form::Label('childrenQuantity', 'Cantidad de niños') !!}
-                                                {!! Form::number('childrenQuantity', null, ['class' => 'form-control', 'id' => 'Childrent', 'onkeyup'=>"suma();" ]) !!}
+                                                {!! Form::number('childrenQuantity', 0, ['class' => 'form-control', 'id' => 'Childrent', 'onkeyup'=>"suma();" ]) !!}
                                                 </div>
                                             </div>
 
@@ -87,11 +87,11 @@
                                         </div>
                                         <div class="ln_solid"></div>
                                         <div class="form-group">
-                                            <button type="summit" class="btn btn-primary">
+                                            <button type="summit" class="btn-md btn-success">
                                                 <i class="fa fa-save"></i> {{ !empty($voluntary) ? 'Actualizar ' : 'Guardar ' }}
                                             </button>
-                                            <a href="{{ route('tiquete.index') }}" class="btn btn-secondary btn-sm">
-                                                <i class="fa fa-undo"></i> Atras
+                                            <a href="{{ route('tiquete.index') }}" class="btn-sm btn-secondary">
+                                                <i class="fa fa-reply"></i> Atras
                                             </a>
                                         </div>
 

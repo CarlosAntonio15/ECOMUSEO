@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Factura</title>
+    <title>PDF Demo in Laravel 7</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   </head>
 
@@ -56,34 +56,34 @@
       <img src="img/PieEcomuseo.png" width="100%" height="100%"/>
   </footer>
 
+  <!-- Envuelva el contenido de su PDF dentro de una etiqueta principal -->
 
-
- <!-- Envuelva el contenido de su PDF dentro de una etiqueta principal -->
-
- <main>
-  <body>
-    <h2 align="center"><FONT FACE="arial">Reporte individual de tiquetes</FONT></h2>
+  <main>
+    <body>
+      <h2 align="center"><FONT FACE="arial">Reporte General de egresos</FONT></h2>
     <table class="table table-bordered">
-      <thead>
-        <tr class="table-danger">
-          <td>Nombre</td>
-          <td>Adultos</td>
-          <td>Niños</td>
-          <td>Tipo de tour</td>
+    <thead>
+      <tr class="table-danger">
+      <td>Fecha</td>
+          <td>Voucher</td>
+          <td>Description</td>
+          <td>Responsable</td>
           <td>Total</td>
-        </tr>
+      </tr>
       </thead>
       <tbody>
+        @foreach($expense as $data)
         <tr>
-          <td>{{ $tiquete->nombre }}</td>
-          <td>{{ $tiquete->adultQuantity }}</td>
-          <td>{{ $tiquete->childrenQuantity }}</td>
-          <td>{{ $tiquete->tourType }}</td>
-          <td>{{ $tiquete->total }}</td>
+            <td>{{ $data->date }}</td>
+            <td>{{ $data->voucher }}</td>
+            <td>{{ $data->description }}</td>
+            <td>{{ $data->responsable }}</td>
+            <td>{{ $data->amount }}</td>
         </tr>
+       @endforeach
       </tbody>
     </table>
    </body>
   </main>
- </body> 
-</html>
+ </body>
+<html>

@@ -71,7 +71,7 @@
                                 <div class="row">
                                     <div class="col-md-10">
                                         <div class="form-group">
-                                            {!! Form::Label('quantity', 'Edad') !!}
+                                            {!! Form::Label('quantity', 'Cantidad') !!}
                                             {!! Form::number('quantity', null, ['class' => 'form-control' ]) !!}
                                         </div>
                                     </div>
@@ -110,9 +110,8 @@
                 
                             <div class="ln_solid"></div>
                             <div class="form-group">
-                                <button type = "submit" class = "btn btn-success"><i class="fa fa-save"></i> Procesar solicitud</button>
-                                
-                                <input type="button" class = "btn btn-secondary" onclick="history.back()" name="Atrás" value="Atrás">
+                                <button type = "submit" class = "btn-md btn-success"><i class="fa fa-save"></i> Guardar</button>
+                                <a href="{{ route('give.index') }}" class="btn-sm btn-secondary"><i class="fa fa-reply"></i> Atrás</a>
                             </div>
                   
                         </div>

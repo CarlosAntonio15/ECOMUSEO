@@ -25,7 +25,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name"><h5>Nombre:</h5></label>
+                                        <label for="name"><h4>Nombre:</h4></label>
                                         <input type="text" name = "name" id = "name" class="form-control" required>
                                     </div>
                                 </div>
@@ -41,25 +41,25 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
 
-                                        <h5> {!! Form::Label('donationType', 'Donacion a escoger:') !!}</h5>
+                                        <h4> {!! Form::Label('donationType', 'Donacion a escoger:') !!}</h4>
                                             <br>
-                                            <h5> {!! Form::radio('donationType', 'Monetaria') !!} Monetaria</h5>
-                                            <h5> {!! Form::radio('donationType', 'Alimenticia') !!} Alimenticia</h5>
-                                            <h5>{!! Form::radio('donationType', 'Material') !!} Material</h5>
+                                            <h2> {!! Form::radio('donationType', 'Monetaria') !!} Monetaria</h2>
+                                            <h2> {!! Form::radio('donationType', 'Alimenticia') !!} Alimenticia</h2>
+                                            <h2>{!! Form::radio('donationType', 'Material') !!} Material</h2>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label for="quantity"><h5>Cantidad:</h5></label>
+                                            <label for="quantity"><h4>Cantidad:</h4></label>
                                             <input type="number" min="1" name = "quantity" id = "quantity" class="form-control" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label for="currentDate"><h5>Fecha:</h5></label>
+                                            <label for="currentDate"><h4>Fecha:</h4></label>
                                             <input type="date" name = "currentDate" id = "currentDate" class="form-control" required>
                                         </div>
                                     </div>
@@ -68,7 +68,7 @@
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="form-group">
-                                        <label for="phone"><h5>Teléfono de contacto:</h5></label>
+                                        <label for="phone"><h4>Teléfono de contacto:</h4></label>
                                         <input type="tel" name = "phone" id = "phone" class="form-control" required>
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@
 
                                 <div class="col-md-7">
                                     <div class="form-group">
-                                        <label for="mail"><h5>Correo electronico:</h5></label>
+                                        <label for="mail"><h4>Correo electronico:</h4></label>
                                         <input type="text" name = "mail" id = "mail" class="form-control" required>
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@
                     
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="description"><h5>Descripcion:</h5></label>
+                                        <label for="description"><h4>Descripcion:</h4></label>
                                         <input type="text" name = "description" id = "description" class="form-control" required>
                                     </div>
                                 </div>
@@ -92,9 +92,8 @@
                     
                             <div class="ln_solid"></div>
                             <div class="form-group">
-                                <button type = "submit" class = "btn btn-success"><i class="fa fa-save"></i> Procesar solicitud</button>
-                            
-                                <input type="button" class = "btn btn-secondary" onclick="history.back()" name="Atrás" value="Atrás">
+                                <button type = "submit" class = "btn-dm btn-success"><i class="fa fa-save"></i> Procesar solicitud</button>
+                                <a href="{{ route('realizarDonaciones') }}" class="btn-sm btn-secondary"><i class="fa fa-reply"></i> Atrás</a>
                             </div>
                         </div>
                     </div>

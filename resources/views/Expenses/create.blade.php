@@ -4,10 +4,17 @@
 @section('title','Registrar egreso')
 @section('content')
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
+<div class="row">
+    <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Egreso <small> formulario</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
                 <div class="container" data-aos="fade-up">
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -27,25 +34,22 @@
                     @endif
                     <div class="row mt-5">
                         <div class="col-sm-8 offset-sm-2">          
-                            <h5 >Formulario Control de Egresos </h5>
-
-                            
 
                             <div class="row">
                                 <div class="col-md-9">
-                                        <label for="date"><h6>Fecha de egreso:</h6></label>
-                                        <br/>
-                                        <input type="date" name = "date" id = "date" class="form-control" required>
-                                    </div>
+                                    <label for="date"><h6>Fecha de egreso:</h6></label>
+                                    <br/>
+                                    <input type="date" name = "date" id = "date" class="form-control" required>
+                                </div>
                             </div>
                             
 
                             <div class="row">
                                 <div class="col-md-9">
-                                        {!! Form::Label('voucher', 'Numero de factura') !!}
-                                        {!! Form::text('voucher', null, ['placeholder' => 'Ingrese el numero de la factura', 'class' => 'form-control' ]) !!}
+                                    {!! Form::Label('voucher', 'Numero de factura') !!}
+                                    {!! Form::text('voucher', null, ['placeholder' => 'Ingrese el numero de la factura', 'class' => 'form-control' ]) !!}
                             
-                                    </div>
+                                </div>
                             </div>
 
                             
@@ -73,34 +77,24 @@
 
                             </div>
 
-                        
-                            
-
                             <div class="form-group">
-                                <button type="summit" class="btn btn-primary">
+                                <button type="summit" class="btn-md btn-success">
                                     <i class="fa fa-save"></i> {{ !empty($expense) ? 'Actualizar ' : 'Guardar ' }}
                                 </button>
-                                <a href="{{ route('expense.index') }}" class="btn btn-secondary btn-sm">
-                                    <i class="fa fa-undo"></i> Atras
+                                <a href="{{ route('expense.index') }}" class="btn-sm btn-secondary btn-sm">
+                                    <i class="fa fa-reply"></i> Atras
                                 </a>
                             </div>
                             
                             <br/>
-                    
                         </div>
                     </div>
-
-                    {!! Form::close() !!}
-              
-                      
-                    <br/>
-                </div>
-            
+                    {!! Form::close() !!}    
+                </div>    
             </div>
-        
         </div>
-
     </div>
+</div>
 
 @endsection
 @endif

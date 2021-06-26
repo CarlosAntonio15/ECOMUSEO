@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\give;
 use Illuminate\Http\Request;
 use App\Http\Requests\giveRequest;
+use PDF;
 
 class GiveController extends Controller
 {
@@ -93,7 +94,7 @@ class GiveController extends Controller
         ];
         
         $give = give::create($data);
-        $request->session()->flash('message', 'donacion enviada correctamenta');
+        $request->session()->flash('message', 'Donación enviada correctamenta');
         return redirect()->route('realizarDonaciones');
     }
 
@@ -129,6 +130,20 @@ class GiveController extends Controller
         $request->session()->flash('message','Donación acualizada correctamente');
         return redirect()->route('give.index');
     }
+    
+    public function createPDF(){
+        $data=Give::all();
+        View()->share('give', $data);
+        $pdf=PDF::loadView('give.allGive', $data);
+        return $pdf->download('give.pdf');
+    }
+    public function download($id){
+        
+        $give = Give::find($id);
+        view()->share('give', $give);
+
+        return PDF::loadView('give.givePDF', $give)->download("name-$give->name, lastname-$give->lastname, donationtype-$give->donationtype.pdf");
+    }
 
     public function destroy($id)
     {
@@ -136,4 +151,13 @@ class GiveController extends Controller
         session()->flash('message', 'Donación eliminada corectamente');
         return redirect()->route('give.index');
     }
+
+    public function graficarGive(){
+        $give = give::select(\DB::raw("COUNT(*) as count"))->whereYear('created_at', 
+        date('Y'))->groupBy(\DB::raw("Month(created_at)"))->pluck('count');
+
+        return view('give.graficarGive', compact('give'));
+
+    }
+
 }
