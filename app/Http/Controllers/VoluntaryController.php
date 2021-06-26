@@ -50,7 +50,7 @@ class VoluntaryController extends Controller
             "Telefono" =>'required|max:8|min:8|',
             "Direccion" =>'required|min:5|max:50',
             "Email" =>'required|email|unique:voluntaries',
-            "Descripcion" =>'required|min:20|max:300'
+            "Descripcion" =>'required|min:10|max:300'
         ],$messages);
 
         $VoluntaryN= new voluntary;
@@ -87,7 +87,7 @@ class VoluntaryController extends Controller
             "Telefono" =>'required|max:8|min:8|',
             "Direccion" =>'required|min:5|max:50',
             "Email" =>'required|email|unique:voluntaries',
-            "Descripcion" =>'required|min:20|max:300'
+            "Descripcion" =>'required|min:10|max:300'
         ],$messages);
 
         $data = [
