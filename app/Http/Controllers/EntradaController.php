@@ -20,13 +20,20 @@ class EntradaController extends Controller
     }
     public function store(EntradaRequest $request)
     {
+        $messages =[
+            'required' => 'El campo :attribute es obligatorio ',
+            'max:100' => 'El campo :attribute tiene un máximo de 100 letras',
+            'min:3'  => 'El campo :attribute debe contener mínimo 3 caracteres',
+            'regex:/^[\pL\s\-]+$/u' => 'El campo :attribute no puede contener números'
+        ];
+
         $request->validate([
-            "nombre" => 'required|alpha|max:100',
+            "nombre" => 'required|max:100|regex:/^[\pL\s\-]+$/u|min:3',
             "adultQuantity" => 'required',
             "childrenQuantity" =>'required',
             "tourType" =>'required',
             "total"=>'required'
-        ]);
+        ], $messages);
         
         $data=[
             'nombre'=> $request->nombre,
@@ -62,5 +69,13 @@ class EntradaController extends Controller
         
         Session()->flash('message', 'Tiquete eliminado correctamente');
         return redirect()->route('tiquete.index');
+    }
+
+    public function graficarEntrada(){
+        $entradas = Entrada::select(\DB::raw("COUNT(*) as count"))->whereYear('created_at', 
+        date('Y'))->groupBy(\DB::raw("Month(created_at)"))->pluck('count');
+
+        return view('Tiquete.graficarEntrada', compact('entradas'));
+
     }
 }

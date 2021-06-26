@@ -2,12 +2,19 @@
 @section('title', 'Actividades')
 @section('content')
    
-<div   >
+<div>
   <div class="container actividades">
     <div class="row justify-content-center">
         <div class="col-md-12">
           <!--<div class="card">-->
             <div class="container">
+              @if(Session::has('message'))
+                <div class="alert alert-info alert-dismissible " role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                    </button>
+                    {{ Session::get('message') }}
+                </div>
+              @endif
               <div class="section-title">
                 <h3>Descubre más sobre nosotros</h3>
               </div>

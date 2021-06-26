@@ -10,6 +10,11 @@
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                         </ul>
+                        <div class="x_content">
+                            <div class="container" data-aos="fade-up">
+                                <a href="{{route('usuario.grafica')}}" class="btn-sm btn-dark"><i class="fa fa-line-chart"></i> Gráficas</a>
+                            </div>
+                        </div>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
@@ -35,15 +40,7 @@
                                             @if( $usuarios->rol == 2 )Administrador @endif
                                             @if( $usuarios->rol == 3 )Usuario @endif</td>
                                         <td>
-                                            <a href="{{ route('usuario.showrol', ['id' => $usuarios->id]) }}" class="btn btn-warning">Asignar</a>
-                                        </td>
-                                        <td>
-                                            <form action="/deleterol/ $usuarios->id }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                    <button class="btn-sm btn-danger"><i class="fa fa-trash"></i>
-                                                    </button>  
-                                            </form>
+                                            <a href="{{ route('usuario.showrol', ['id' => $usuarios->id]) }}" class="btn-sm btn-warning"> <i class="fa fa-tags"></i>Asignar</a>
                                         </td>
                                     </tr>
                                     @endforeach

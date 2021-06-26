@@ -19,14 +19,16 @@ Route::get('/nosotros', 'PrincipalController@nosotros')->name('nosotros');
 Route::get('/actividad', 'PrincipalController@actividad')->name('actividad');
 
 
-  Route::middleware(['isSuperAdmin', 'isAdmin'])->group(function () {
+Route::middleware(['isSuperAdmin', 'isAdmin'])->group(function () {
   Route::get('/asignarRol', 'UsuarioController@asignarRol')->name('usuario.asignarol');
   Route::get('/showrol/{id}', 'UsuarioController@showrol')->name('usuario.showrol');
   Route::post('/saverol', 'UsuarioController@saveRol')->name('usuario.saverol');
+ 
 });
+Route::get('/usuario/graficaVoluntarios', 'UsuarioController@graficarUser')->name('usuario.grafica');
 
 
-  Route::name('admin')->group(function () {
+Route::name('admin')->group(function () {
   Route::get('inventario','AdminController@inventario')->name('Admin.inventario');
 
 });
@@ -48,7 +50,9 @@ Route::get('/voluntario/show/{id}', 'VoluntaryController@show')->name('voluntary
 Route::get('/voluntario/edit/{id}', 'VoluntaryController@edit')->name('voluntary.edit');
 Route::put('/voluntario/update/{id}', 'VoluntaryController@update')->name('voluntary.update');
 Route::delete('/voluntario/delete/{id}', 'VoluntaryController@destroy')->name('voluntary.destroy');
-
+Route::get('/voluntario/graficaVoluntarios', 'VoluntaryController@graficarVoluntarios')->name('voluntary.grafica');
+Route::get('/voluntario/PDF','VoluntaryController@createPDF');
+Route::get('/voluntario/PDF/{id}','VoluntaryController@download');
 
 //Donaciones
 Route::get('/donaciones', 'DonationController@index')->name('donation');
@@ -75,6 +79,9 @@ Route::get('/reservaciones/show/{id}','ReservationController@show')->name('reser
 Route::get('/reservaciones/edit/{id}','ReservationController@edit')->name('reservation.edit');
 Route::put('/reservaciones/update/{id}', 'ReservationController@update')->name('reservation.update');
 Route::delete('/reservaciones/delete/{id}', 'ReservationController@destroy')->name('reservation.destroy');
+Route::get('/reservaciones/PDF','ReservationController@createPDF');
+Route::get('/reservaciones/PDF/{id}','ReservationController@download');
+Route::get('/reservaciones/graficarReservation', 'ReservationController@graficarReservation')->name('reservation.grafica');
 
 
 //Roles
@@ -94,13 +101,16 @@ Route::get('/tiquete/index', 'EntradaController@index')->name('tiquete.index');
 Route::delete('/tiquete/delete/{id}', 'EntradaController@destroy')->name('tiquete.destroy');
 Route::get('/tiquete/PDF','EntradaController@createPDF');
 Route::get('/tiquete/PDF/{id}','EntradaController@download');
+Route::get('/tiquete/graficarEntrada', 'EntradaController@graficarEntrada')->name('tiquete.grafica');
 
 //RUTA EGRESOS
-Route::get('/egresos', 'ExpenseController@index')->name('expense');
 Route::get('/egresos/create','ExpenseController@create')->name('expense.create');
 Route::post('/egresos/create','ExpenseController@store')->name('expense.store');
 Route::get('/egresos/index', 'ExpenseController@index')->name('expense.index');
 Route::delete('/egresos/delete/{id}', 'ExpenseController@destroy')->name('expense.destroy');
+Route::get('/egresos/PDF','ExpenseController@createPDF');
+Route::get('/egresos/PDF/{id}','ExpenseController@download');
+Route::get('/egresos/graficarEgresos', 'ExpenseController@graficarEgresos')->name('expense.grafica');
 
 //Give
 Route::get('/give/index','giveController@index')->name('give.index');
@@ -109,8 +119,10 @@ Route::get('/give/create','giveController@create')->name('give.create');
 Route::get('/give/createInfo','giveController@createInfo')->name('give.createInfo');
 Route::post('/give/create','giveController@store')->name('give.store');
 Route::post('/give/createInfo','giveController@storeInfo')->name('give.storeInfo');
-
 Route::get('/give/show/{id}', 'giveController@show')->name('give.show');
 Route::get('/give/edit/{id}','giveController@edit')->name('give.edit');
 Route::put('/give/update/{id}','giveController@update')->name('give.update');
 Route::delete('/give/delete/{id}','giveController@destroy')->name('give.destroy');
+Route::get('/give/PDF','giveController@createPDF');
+Route::get('/give/PDF/{id}','giveController@download');
+Route::get('/give/graficarGive', 'giveController@graficarGive')->name('give.grafica');

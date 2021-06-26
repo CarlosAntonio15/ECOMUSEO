@@ -12,7 +12,9 @@
                     </ul>
                     <div class="x_content">
                         <div class="container" data-aos="fade-up">
-                            <a href="{{route('createGus')}}" class="btn-sm btn-info">Nuevo voluntario</a>
+                            <a href="{{route('createGus')}}" class="btn-sm btn-primary"><i class="fa fa-plus-circle"></i> Voluntario</a>
+                            <a class="btn-sm btn-info" href="{{ url('/voluntario/PDF') }}"><i class="fa fa-file-pdf-o"></i> Exportar PDF</a>
+                            <a href="{{route('voluntary.grafica')}}" class="btn-sm btn-dark"><i class="fa fa-line-chart"></i> Gráficas</a>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -32,7 +34,7 @@
                                 
                                     <div class="card-deck">
                                         <div class="col-dm-4 col-voluntary" >
-                                            <div class="card voluntary" style="min-width: 18rem; max-width: 18rem;">
+                                            <div class="card voluntary" style="min-width: 16rem; max-width: 16rem;">
                                                 <div class="card-body">
                                                     <h4 class="card-footer">
                                                         <i class="fa fa-user-user"></i>
@@ -51,12 +53,13 @@
                                                 </ul>
 
                                                 <div class="card-footer">
-                                                    <a href="{{ route('voluntary.show', [$voluntary->id]) }}" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-                                                    <a href="{{ route('voluntary.edit', [$voluntary->id]) }}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                                                    <a href="{{ route('voluntary.show', [$voluntary->id]) }}" class="btn-sm btn-primary"><i class="fa fa-eye"></i></a>
+                                                    <a href="{{ route('voluntary.edit', [$voluntary->id]) }}" class="btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                                    <a  href="{{ url('/voluntario/PDF', $voluntary->id) }}" class="btn-sm btn-info"><i class="fa fa-file-pdf-o"></i></a>
                                                     <form action="/voluntario/delete/{{ $voluntary->id }}" class="d-inline formulario-eliminar" method="POST">
                                                     @csrf
-                                                    @method('DELETE')</br>
-                                                        <button class="btn btn-danger "><i class="fa fa-trash"></i></button>
+                                                    @method('DELETE')
+                                                        <button class="btn-sm btn-danger "><i class="fa fa-trash"></i></button>
                                                        
                                                     </form>
                                                     

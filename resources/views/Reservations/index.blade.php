@@ -12,7 +12,10 @@
                     </ul>
                     <div class="x_content">
                         <div class="container" data-aos="fade-up">
-                            <a href="{{route('reservation.create')}}" class="btn-sm btn-info">Nueva reservación</a>
+                            <a href="{{route('reservation.create')}}" class="btn-sm btn-primary"><i class="fa fa-plus-circle"></i> Reservación</a>
+                            <a class="btn-sm btn-info" href="{{ url('/reservaciones/PDF') }}"><i class="fa fa-file-pdf-o"></i> Exportar PDF</a>
+                            <a href="{{route('reservation.grafica')}}" class="btn-sm btn-dark"><i class="fa fa-line-chart"></i> Gráficas</a>
+                       
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -36,7 +39,7 @@
                                 
                                     <div class="card-deck">
                                         <div class="col-dm-4 col-reservation" >
-                                            <div class="card reservation" style="min-width: 18rem; max-width: 18rem;">
+                                            <div class="card reservation" style="min-width: 16rem; max-width: 16rem;">
                                                 
                                                 <div class="card-body">
                                                     <h4 class="card-header">
@@ -53,8 +56,8 @@
                                                         </li>
                                                         <li class="list-group-item" 
                                                             style="display:block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
-                                                                <i class="fa fa-female"></i><i class="fa fa-child"></i><i class="fa fa-male"></i>&nbsp;{{ $reservation->adultQuantity }}
-                                                                &nbsp;{{ $reservation->childrenQuantity }}
+                                                                <i class="fa fa-female"></i><i class="fa fa-male"></i>&nbsp;{{ $reservation->adultQuantity }}
+                                                                <i class="fa fa-child"></i>&nbsp;{{ $reservation->childrenQuantity }}
                                                         </li>
                                                         <li class="list-group-item">
                                                             <i class="fa fa-tree"></i>&nbsp;{{ $reservation->tourType }}
@@ -64,13 +67,13 @@
                                                     </ul>
 
                                                     <div class="card-footer">
-                                                        <a href="{{route('reservation.show',[$reservation->id])}}" class="btn-sm btn-primary"><i class="fa fa-eye"></i>&nbsp;Ver más</a>
-                                                        <a href="{{route('reservation.edit',[$reservation->id])}}" class="btn-sm btn-warning"><i class="fa fa-edit"></i>&nbsp;Editar</a>
-                                                        
+                                                        <a href="{{route('reservation.show',[$reservation->id])}}" class="btn-sm btn-primary"><i class="fa fa-eye"></i></a>
+                                                        <a href="{{route('reservation.edit',[$reservation->id])}}" class="btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn-sm btn-info" href="{{ url('/reservaciones/PDF', $reservation->id) }}"><i class="fa fa-file-pdf-o"></i></a>
                                                         <form action="/reservaciones/delete/{{$reservation->id}}" class="d-inline formulario-eliminar" method="POST">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button class="btn-sm btn-danger source"><i class="fa fa-trash"></i>&nbsp;Eliminar</button>  
+                                                            <button class="btn-sm btn-danger "><i class="fa fa-trash"></i></button>  
                                                         </form>
                                                     </div>
                                                 </div>

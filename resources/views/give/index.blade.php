@@ -12,7 +12,9 @@
                         </ul>
                         <div class="x_content">
                             <div class="container" data-aos="fade-up">
-                            <a href="{{route('give.create')}}" class="btn-sm btn-info">Nuevo voluntario</a>
+                                <a href="{{route('give.create')}}" class="btn-sm btn-primary"><i class="fa fa-plus-circle"></i> Donación</a>
+                                <a class="btn-sm btn-info" href="{{ url('/give/PDF') }}"><i class="fa fa-file-pdf-o"></i> Exportar PDF</a>
+                                <a href="{{route('give.grafica')}}" class="btn-sm btn-dark"><i class="fa fa-line-chart"></i> Gráficas</a>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -32,7 +34,7 @@
                                     <div class="col-md-4">
                                         <div class="card-deck">
                                             <div class="col-dm-4 col-voluntary" >
-                                                <div class="card voluntary" style="min-width: 18rem; max-width: 18rem;">
+                                                <div class="card voluntary" style="min-width: 16rem; max-width: 16rem;">
                                                     <div class="card-body">
                                                         
                                                         <h5 class="card-header">
@@ -50,12 +52,13 @@
                                                         </ul>
 
                                                         <div class="card-footer">
-                                                            <a href="{{ route('give.show', [$give->id]) }}" class="btn-sm btn-primary"><i class="fa fa-eye"></i>&nbsp;Ver más</a>
-                                                            <a href="{{ route('give.edit', [$give->id]) }}" class="btn-sm btn-warning"><i class="fa fa-edit"></i>&nbsp;Editar</a>
+                                                            <a href="{{ route('give.show', [$give->id]) }}" class="btn-sm btn-primary"><i class="fa fa-eye"></i>&nbsp;</a>
+                                                            <a href="{{ route('give.edit', [$give->id]) }}" class="btn-sm btn-warning"><i class="fa fa-edit"></i>&nbsp;</a>
+                                                            <a class="btn-sm btn-info" href="{{ url('/give/PDF', $give->id) }}"><i class="fa fa-file-pdf-o"></i>&nbsp;</a>
                                                             <form action="/give/delete/{{ $give->id }}" class="d-inline formulario-eliminar" method="POST">
                                                             @csrf
-                                                            @method('DELETE')</br>
-                                                                <button class="btn-sm btn-danger "><i class="fa fa-trash"></i>&nbsp;Eliminar</button>
+                                                            @method('DELETE')
+                                                                <button class="btn-sm btn-danger "><i class="fa fa-trash"></i></button>
                                                             </form>
                                                             
                                                         </div>

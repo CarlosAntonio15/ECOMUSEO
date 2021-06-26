@@ -35,16 +35,16 @@
                                 <div class="col-sm-8 offset-sm-2">  
 
                                     <div class="row">
-                                        <div class="col-md-8">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                            <h5>{!! Form::Label('identification', 'Identificación') !!}</h5>
+                                            <h4>{!! Form::Label('identification', 'Identificación') !!}</h4>
                                                 {!! Form::number('identification', null, ['class' => 'form-control' ]) !!}
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <h5>{!! Form::Label('name', 'Nombre') !!}</h5>
+                                                <h4>{!! Form::Label('name', 'Nombre') !!}</h4>
                                                     {!! Form::text('name', null, [ 'class' => 'form-control' ]) !!}
                                     
                                             </div>
@@ -52,7 +52,7 @@
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <h5>{!! Form::Label('lastname', 'Apellidos') !!}</h5>
+                                                <h4>{!! Form::Label('lastname', 'Apellidos') !!}</h4>
                                                     {!! Form::text('lastname', null, [ 'class' => 'form-control' ]) !!}
                                             </div>
                                         </div>
@@ -62,21 +62,21 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <h5>{!! Form::Label('adultQuantity', 'Cantidad de adultos') !!}</h5>
+                                                <h4>{!! Form::Label('adultQuantity', 'Cantidad de adultos') !!}</h4>
                                                     {!! Form::number('adultQuantity', 0, ['class' => 'form-control', 'id' => 'Adult', 'onkeyup'=>"suma();" ]) !!}
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <h5>{!! Form::Label('childrenQuantity', 'Cantidad de niños') !!}</h5>
+                                                <h4>{!! Form::Label('childrenQuantity', 'Cantidad de niños') !!}</h4>
                                                     {!! Form::number('childrenQuantity', 0, ['class' => 'form-control', 'id' => 'Childrent', 'onkeyup'=>"suma();" ]) !!}
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <h5>{!! Form::Label('total', 'Total(Colones)') !!}</h5>
+                                                <h4>{!! Form::Label('total', 'Total(Colones)') !!}</h4>
                                                     {!! Form::number('total', 0, [ 'class' => 'form-control', 'id' => 'total'  ]) !!}
                                             </div>
                                         </div>
@@ -85,7 +85,7 @@
                                     <div class="row">   
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <h5>{!! Form::Label('reservationDate', 'Fecha de reservación') !!}</h5>
+                                                <h4>{!! Form::Label('reservationDate', 'Fecha de reservación') !!}</h4>
                                                 
                                                 <input type="date" class="input100 form-control" type="date" name="reservationDate" id="reservationDate" 
                                                     min = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 1 days"));?>" 
@@ -97,7 +97,7 @@
                                         <div class="col-md-8">
                                             <div class="form-group">
 
-                                            <h5>{!! Form::Label('reservationHour', 'Hora del tour') !!}</h5>
+                                            <h4>{!! Form::Label('reservationHour', 'Hora del tour') !!}</h4>
                                                 <br>
                                                 <h4>{!! Form::radio('reservationHour', '8:00 am') !!} 8:00 am</h4>
                                                 <h4>{!! Form::radio('reservationHour', '10:00 am') !!} 10:00 am</h4>
@@ -110,7 +110,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
 
-                                                <h5> {!! Form::Label('tourType', 'Tipo de tour' ) !!}</h5>
+                                                <h4> {!! Form::Label('tourType', 'Tipo de tour' ) !!}</h4>
                                                 <br>
                                                 <h4>{!! Form::checkbox('tourType', 'Senderismo') !!} Senderismo y hiking  
                                                 {!! Form::checkbox('tourType', 'AvistamientoAves') !!} Avistamiento de ave 
@@ -126,14 +126,14 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <h5>{!! Form::Label('email', 'Correo electronico') !!}</h5>
+                                                <h4>{!! Form::Label('email', 'Correo electronico') !!}</h4>
                                                 {!! Form::text('email', null, ['class' => 'form-control' ]) !!}
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                            <h5>{!! Form::Label('phone', 'Teléfono' ) !!}</h5>
+                                            <h4>{!! Form::Label('phone', 'Teléfono' ) !!}</h4>
                                                 {!! Form::number('phone', null, ['class' => 'form-control' ]) !!}
                                             </div>
                                         </div>                    
@@ -142,18 +142,18 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <h5>{!! Form::Label('status', 'Estado de pago:' ) !!}</h5>
+                                                <h4>{!! Form::Label('status', 'Estado de pago:' ) !!}</h4>
                                                     {!! Form::select('status', ['Espera' => 'En espera']) !!}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="ln_solid"></div>
                                     <div class="form-group">
-                                        <button type="summit" class="btn btn-primary">
+                                        <button type="summit" class="btn-md btn-success">
                                             <i class="fa fa-save"></i> {{ !empty($reservation) ? 'Actualizar ' : 'Enviar ' }}
                                         </button>
-                                        <a href="{{ route('actividad') }}" class="btn btn-secondary ">
-                                            <i class="fa fa-undo"></i> Atras
+                                        <a href="{{ route('actividad') }}" class="btn-sm btn-secondary ">
+                                            <i class="fa fa-reply"></i> Atras
                                         </a>
                                     </div>
                                     

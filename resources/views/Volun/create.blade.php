@@ -31,7 +31,7 @@
               <div class="col-md-12">
             
                 <div class="form-group">
-                  <label for="Nombre"><h5>Ingrese los datos que se le sean solicitados para procesar su solicitud..</h5></label>
+                  <label for="Nombre"><h4>Ingrese los datos que se le sean solicitados para procesar su solicitud..</h4></label>
                 </div>
               </div>
             </div>
@@ -39,7 +39,7 @@
             <div class="row">
               <div class="col-md-4">
                   <div class="form-group">
-                    <label for="Nombre"><h5>Nombre completo:</h5></label>
+                    <label for="Nombre"><h4>Nombre completo:</h4></label>
                     <input type="text" name = "Nombre" id = "Nombre" class="form-control" required>
                   
                   </div>
@@ -47,14 +47,14 @@
 
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="Apellido_1"><h5>Primer Apellido:</h5></label>
+                  <label for="Apellido_1"><h4>Primer Apellido:</h4></label>
                   <input type="text" name = "Apellido_1" id = "Apellido_1" class="form-control" required>
                 </div>
               </div>
 
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="Apellido_2"><h5>Segundo Apellido:</h5></label>
+                  <label for="Apellido_2"><h4>Segundo Apellido:</h4></label>
                   <input type="text" name = "Apellido_2" id = "Apellido_2" class="form-control" required>
                 </div>
               </div>
@@ -63,14 +63,14 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="Edad"><h5>Edad:</h5></label>
+                  <label for="Edad"><h4>Edad:</h4></label>
                   <input type="number" min="1"name = "Edad" id = "Edad" class="form-control" required>
                 </div>
               </div>
 
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="Telefono"><h5>Teléfono de contacto:</h5></label>
+                  <label for="Telefono"><h4>Teléfono de contacto:</h4></label>
                   <input type="tel" name = "Telefono" id = "Telefono" class="form-control" required>
                 </div>
               </div>
@@ -80,14 +80,14 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="Direccion"><h5>Dirección:</h5></label>
+                  <label for="Direccion"><h4>Dirección:</h4></label>
                   <input type="text" name = "Direccion" id = "Direccion" class="form-control" required>
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="Email"><h5>Email:</h5></label>
+                  <label for="Email"><h4>Email:</h4></label>
                   <input type="text" name = "Email" id = "Email" class="form-control" required>
                 </div>
               </div>
@@ -97,7 +97,7 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <label for="Descripcion"><h5>Ingrese la actividad en la que desea ser voluntario:</h5></label>
+                  <label for="Descripcion"><h4>Ingrese la actividad en la que desea ser voluntario:</h4></label>
                   <input type="text" name = "Descripcion" id = "Descripcion" class="form-control" required>
               
                   
@@ -107,9 +107,8 @@
 
             <div class="ln_solid"></div>
             <div class="form-group">
-              <button type = "submit" class = "btn btn-success"><i class="fa fa-save"></i> Procesar solicitud</button>
-            
-              <input type="button" class = "btn btn-secondary" onclick="history.back()" name="Atrás" value="Atrás">
+              <button type = "submit" class = "btn-md btn-success"><i class="fa fa-save"></i> Procesar solicitud</button>
+              <a href="{{ route('amigoReq') }}" class="btn-sm btn-secondary"><i class="fa fa-reply"></i> Atrás</a>
             </div>
           <br/>
       </form>

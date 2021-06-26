@@ -6,15 +6,15 @@
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Lista de reservaciones </h2>
+                    <h2>Lista de tiquetes vendidos</h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                     </ul>
                     <div class="x_content">
                         <div class="container" data-aos="fade-up">
-                            <a href="{{route('tiquete.create')}}" class="btn-sm btn-info">Tiquete de compra</a>
-                            <a class="btn-sm btn-primary" href="{{ url('/tiquete/PDF') }}"><i class="fa fa-file-pdf-o"></i>&nbsp;Exportar lista a PDF</a>
-                       
+                            <a href="{{route('tiquete.create')}}" class="btn-sm btn-primary"><i class="fa fa-plus-circle"></i> Tiquete de compra</a>
+                            <a class="btn-sm btn-info" href="{{ url('/tiquete/PDF') }}"><i class="fa fa-file-pdf-o"></i> Exportar PDF</a>
+                            <a href="{{route('tiquete.grafica')}}" class="btn-sm btn-dark"><i class="fa fa-line-chart"></i> Gráficas</a>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -25,15 +25,13 @@
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                                 </button>
                                 {{ Session::get('message') }}
-                                <a class="btn-sm btn-primary" href="{{ url('/tiquete/PDF', Session::get('id') )}}"><i class="fa fa-file-pdf-o"></i>&nbsp;Exportar a PDF</a>
                             </div>
                     
                     @endif
                     
                     <div class="card-body">
                         <div class="table-responsive-md">
-                            <table class="table table-hover table-striped" id="tiquetes">
-                                
+                            <table class="table table-striped table-bordered" style="width:100%" id="tiquetes">  
                                 <thead>
                                     <tr>
                                         <th> ID </th>
@@ -57,7 +55,7 @@
                                             <td>{{ $entrada->tourType }}</td>
                                             <td>{{ $entrada->total }}</td>
                                             <td> 
-                                                <a class="btn-sm btn-primary" href="{{ url('/tiquete/PDF', $entrada->id) }}"><i class="fa fa-file-pdf-o"></i>&nbsp;PDF</a>
+                                                <a class="btn-sm btn-info" href="{{ url('/tiquete/PDF', $entrada->id) }}"><i class="fa fa-file-pdf-o"></i> PDF</a>
                                             </td>
                                             <td>
                                                 <form action="/tiquete/delete/{{ $entrada->id }}" class="d-inline formulario-eliminar" method="POST">

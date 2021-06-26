@@ -12,7 +12,10 @@
                     </ul>
                     <div class="x_content">
                         <div class="container" data-aos="fade-up">
-        
+                            <a href="{{route('expense.create')}}" class="btn-sm btn-primary"><i class="fa fa-plus-circle"></i> Egreso</a>
+                            <a class="btn-sm btn-info" href="{{ url('/egresos/PDF') }}"><i class="fa fa-file-pdf-o"></i> Exportar PDF</a>
+                            <a href="{{route('expense.grafica')}}" class="btn-sm btn-dark"><i class="fa fa-line-chart"></i> Gráficas</a>
+
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -28,7 +31,8 @@
                     @endif
                     <div class="card-body">
                         <div class="table-responsive-md">
-                            <table class="table table-hover table-striped" id="tiquetes">
+                            <table class="table table-striped table-bordered" style="width:100%" id="tiquetes">
+                            
                                 
                                 <thead>
                                     <tr>
@@ -49,6 +53,9 @@
                                             <td>{{ $egresos->description }}</td>
                                             <td>{{ $egresos->responsable }}</td>
                                             <td>{{ $egresos->amount }}</td>
+                                            <td>
+                                                <a class="btn-sm btn-info" href="{{ url('/egresos/PDF', $egresos->id) }}"><i class="fa fa-file-pdf-o"></i></a>
+                                            </td>
                                             <td>
                                                 <form action="/egresos/delete/{{ $egresos->id }}" class="d-inline formulario-eliminar" method="POST">
                                                     @csrf

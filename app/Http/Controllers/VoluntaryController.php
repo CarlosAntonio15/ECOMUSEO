@@ -4,6 +4,7 @@ use App\voluntary;
 use Illuminate\Http\Request;
 use App\Http\Requests\VoluntaryRequest;
 use Response;
+use PDF;
 
 class VoluntaryController extends Controller
 {
@@ -61,13 +62,34 @@ class VoluntaryController extends Controller
         $VoluntaryN->Direccion= $request->Direccion;
         $VoluntaryN->Email= $request->Email;
         $VoluntaryN->Descripcion= $request->Descripcion;
-
+        //dd($voluntaryN);
         $VoluntaryN->save();
+        $request->session()->flash('message', 'Voluntario creado correctamente.');
         return redirect()->route('amigoReq');
     }
 
     public function storeGus(VoluntaryRequest $request)
     {
+        $messages =[
+            'required' => 'El campo :attribute es obligatorio ',
+            'alpha' => 'El campo :attribute sólo puede contener letras',
+            'max:100' => 'El campo :attribute tiene un máximo de 50 letras',
+            'email' => 'El campo :attribute debe ser tipo email',
+            'unique:voluntaries' => 'El campo :attribute debe ser único',
+            'max:8' => 'El campo :attribute debe contener máximo 8 caracteres'      
+        ];
+
+        $request->validate([
+            "Nombre" => 'required|regex:/^[\pL\s\-]+$/u|max:50|min:3',
+            "Apellido_1" => 'required|max:50|regex:/^[\pL\s\-]+$/u|min:4',
+            "Apellido_2" =>'required|max:50|regex:/^[\pL\s\-]+$/u|min:4',
+            "Edad" =>'required',
+            "Telefono" =>'required|max:8|min:8|',
+            "Direccion" =>'required|min:5|max:50',
+            "Email" =>'required|email|unique:voluntaries',
+            "Descripcion" =>'required|min:20|max:300'
+        ],$messages);
+
         $data = [
             'Nombre'=>$request->Nombre,
             'Apellido_1'=>$request->Apellido_1,
@@ -115,10 +137,32 @@ class VoluntaryController extends Controller
         return redirect()->route('voluntary.index');
     }
 
+    public function createPDF(){
+        $data=Voluntary::all();
+        View()->share('voluntary', $data);
+        $pdf=PDF::loadView('Volun.allVoluntario', $data);
+        return $pdf->download('Volun.pdf');
+    }
+    public function download($id){
+        
+        $voluntary = Voluntary::find($id);
+        view()->share('voluntary', $voluntary);
+
+        return PDF::loadView('Volun.voluntarioPDF', $voluntary)->download("Nombre-$voluntary->nombre, Apellido_1-$voluntary->Apellido_1, Apellido_2-$voluntary->Apellido_2.pdf");
+    }
+
     public function destroy($id)
     {
         Voluntary::find($id)->delete();
         Session()->flash('message', 'Voluntario eliminado correctamente');
         return redirect()->route('voluntary.index');
+    }
+    
+    public function graficarVoluntarios(){
+        $voluntaryC = Voluntary::select(\DB::raw("COUNT(*) as count"))->whereYear('created_at', 
+        date('Y'))->groupBy(\DB::raw("Month(created_at)"))->pluck('count');
+
+        return view('Volun.graficarVoluntarios', compact('voluntaryC'));
+
     }
 }

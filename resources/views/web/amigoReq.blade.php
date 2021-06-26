@@ -4,6 +4,13 @@
 <div class="container amigo">
   <div class="row justify-content-center">
     <div class="col-md-14">
+      @if(Session::has('message'))
+        <div class="alert alert-info alert-dismissible " role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+          </button>
+          {{ Session::get('message') }}
+        </div>
+      @endif
       <div class="section-title">
         <h4>¡Hazte Amigo del ECOMUSEO de Abangares!</h4>
       </div>

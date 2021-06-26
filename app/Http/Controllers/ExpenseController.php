@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\Expense;
 use Illuminate\Http\Request;
 use App\Http\Requests\ExpenseRequest;
+use PDF;
 
 class ExpenseController extends Controller
 {
@@ -21,15 +22,22 @@ class ExpenseController extends Controller
     public function store(ExpenseRequest $request)
     {
 
+        $messages =[
+            'required' => 'El campo :attribute es obligatorio ',
+            'max:100' => 'El campo :attribute tiene un máximo de 100 letras',
+            'min:10'  => 'El campo :attribute debe contener mínimo 10 caracteres',
+            'regex:/^[\pL\s\-]+$/u' => 'El campo :attribute no puede contener números'
+        ];
+
         $request->validate([
 
             "date" =>'required',
             "voucher" => 'required',
-            "description" =>'required|max:50',
-            "responsable" => 'required|string|max:100',
+            "description" =>'required|max:100|min:10',
+            "responsable" => 'required|regex:/^[\pL\s\-]+$/u|max:100',
             "amount" =>'required'
  
-        ]);
+        ],$messages );
 
         $ExpenseN= new expense;
         $ExpenseN->date= $request->date;
@@ -72,10 +80,33 @@ class ExpenseController extends Controller
         return redirect()->route('expense');
     }
 
+    public function createPDF(){
+        $data=Expense::all();
+        View()->share('expense', $data);
+        $pdf=PDF::loadView('expenses.allExpense', $data);
+        return $pdf->download('Expenses.pdf');
+    }
+    public function download($id){
+        
+        $expense = Expense::find($id);
+        view()->share('expenses', $expense);
+
+        return PDF::loadView('Expenses.egresoPDF', $expense)->download("date-$expense->date, voucher-$expense->voucher, description-$expense->description.pdf");
+    }
+
     public function destroy($id)
     {
         Expense::find($id)->delete();
         Session()->flash('message', 'Egreso eliminado correctamente');
         return redirect()->route('expense');
     }
+
+    public function graficarEgresos(){
+        $expense = Expense::select(\DB::raw("COUNT(*) as count"))->whereYear('created_at', 
+        date('Y'))->groupBy(\DB::raw("Month(created_at)"))->pluck('count');
+
+        return view('Expenses.graficarEgresos', compact('expense'));
+
+    }
+
 }

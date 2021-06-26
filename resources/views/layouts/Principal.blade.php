@@ -60,7 +60,7 @@
             <li class="<?php if($page  == 'actividad'){echo 'active';} ?>"> <a href="{{route ('actividad')}}"><h6>Actividades</h6></a></li>
             <li><a href="#portfolio"><h6>Galería</h6></a></li>
             
-            <li class="drop-down"><a href="">Cooperar</a>
+            <li class="drop-down"><a>Cooperar</a>
             <ul>
             <li class="<?php if($page  == 'amigoReq'){echo 'active';} ?>"> <a href="{{route ('amigoReq')}}"><h6>Voluntariado</h6></a></li>
             <li class="<?php if($page  == 'realizarDonaciones'){echo 'active';} ?>"> <a href="{{route ('realizarDonaciones')}}"><h6>Donaciones</h6></a></li>
