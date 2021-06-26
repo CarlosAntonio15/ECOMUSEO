@@ -100,8 +100,8 @@
         $('.formulario-eliminar').submit(function(e){
             e.preventDefault();
             Swal.fire({
-            title: 'Esta seguro?',
-            text: "Esta reservacion se eliminara definitivamente",
+            title: 'Está seguro?',
+            text: "Esta reservación se eliminará definitivamente",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

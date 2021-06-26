@@ -153,7 +153,7 @@
                                             <i class="fa fa-save"></i> {{ !empty($reservation) ? 'Actualizar ' : 'Enviar ' }}
                                         </button>
                                         <a href="{{ route('actividad') }}" class="btn-sm btn-secondary ">
-                                            <i class="fa fa-reply"></i> Atras
+                                            <i class="fa fa-reply"></i> Atrás
                                         </a>
                                     </div>
                                     
