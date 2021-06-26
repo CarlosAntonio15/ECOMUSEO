@@ -1,5 +1,6 @@
 @extends('layouts.web')
 @section('title', 'Realizar donaciones')
+<title>Realizar donaciones</title>
 @section('content')
 
 <div class="container  donation-page">
