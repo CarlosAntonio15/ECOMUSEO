@@ -151,8 +151,8 @@
                                         <button type="summit" class="btn-md btn-success">
                                             <i class="fa fa-save"></i> {{ !empty($reservation) ? 'Actualizar ' : 'Enviar ' }}
                                         </button>
-                                        <a href="{{ route('actividad') }}" class="btn-sm btn-secondary ">
-                                            <i class="fa fa-reply"></i> Atras
+                                        <a href="{{ route('actividad') }}" class="btn-sm btn-secondary">
+                                            <i class="fa fa-reply"></i> Atrás
                                         </a>
                                     </div>
                                     
@@ -197,5 +197,36 @@
 
     }
 </script>
+
+@section('js')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+
+        $('.formulario-eliminar').submit(function(e){
+            e.preventDefault();
+            Swal.fire({
+            title: 'Está seguro?',
+            text: "Esta reservación se cancelará definitivamente",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, cancelar!',
+            cancelButtonText: 'Cancelar',
+            }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                'Eliminado!',
+                'La reservación a sido cancelada.',
+                'success'
+                )
+                this.submit();
+            }
+        })
+    });
+    
+    </script>
+@endsection
 
 @endsection

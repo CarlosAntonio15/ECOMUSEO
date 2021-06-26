@@ -82,7 +82,7 @@
                                     <i class="fa fa-save"></i> {{ !empty($expense) ? 'Actualizar ' : 'Guardar ' }}
                                 </button>
                                 <a href="{{ route('expense.index') }}" class="btn-sm btn-secondary btn-sm">
-                                    <i class="fa fa-reply"></i> Atras
+                                    <i class="fa fa-reply"></i> Atrás
                                 </a>
                             </div>
                             
