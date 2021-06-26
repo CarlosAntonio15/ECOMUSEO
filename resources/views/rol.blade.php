@@ -40,7 +40,7 @@
                                             @if( $usuarios->rol == 2 )Administrador @endif
                                             @if( $usuarios->rol == 3 )Usuario @endif</td>
                                         <td>
-                                            <a href="{{ route('usuario.showrol', ['id' => $usuarios->id]) }}" class="btn-sm btn-warning"> <i class="fa fa-tags"></i>Asignar</a>
+                                            <a href="{{ route('usuario.showrol', ['id' => $usuarios->id]) }}" class="btn-sm btn-warning"> <i class="fa fa-tags"></i> Asignar</a>
                                         </td>
                                     </tr>
                                     @endforeach

@@ -1,5 +1,6 @@
 @extends('layouts.web')
 @section('title', 'Actividades')
+<title>Actividades</title> 
 @section('content')
    
 <div>

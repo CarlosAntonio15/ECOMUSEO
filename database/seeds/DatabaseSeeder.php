@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
         $seeds[] = UserSeeder::class;
 
         if (config('app.env') != 'production') {
-            $seeds[] = VoluntarySeeder::class;
+            $seeds[] = VoluntarySeeder::class;            
         }
 
         $this->call($seeds);        

@@ -1,5 +1,6 @@
 @extends('layouts.web')
 @section('title', 'Hazte amigo del Ecomuseo')
+<title>Hazte amigo del Ecomuseo</title>
 @section('content')
 <div class="container amigo">
   <div class="row justify-content-center">

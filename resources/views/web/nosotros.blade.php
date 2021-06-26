@@ -1,5 +1,6 @@
 @extends('layouts.web')
 @section('title', 'Nosotros')
+<title>Nosotros</title>     
 @section('content')
    
  <!--<div class="container">-->
