@@ -30,7 +30,7 @@ class GiveController extends Controller
             'max:100' => 'El campo :attribute tiene un máximo de 100 letras',
             'email' => 'El campo :attribute debe ser tipo email',
             'unique:donation' => 'El campo :attribute debe ser único',
-            'max:50' => 'El campo :attribute debe contener máximo 50 caracteres'
+            'max:60' => 'El campo :attribute debe contener máximo 60 caracteres'
         ];
 
         $request->validate([
